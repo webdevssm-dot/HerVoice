@@ -6,13 +6,17 @@ interface HeaderProps {
   setActiveTab: (tab: TabType) => void;
   onOpenJoinUs: () => void;
   onOpenSearch: () => void;
+  isDarkMode?: boolean;
+  onToggleDarkMode?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
   onOpenJoinUs,
-  onOpenSearch
+  onOpenSearch,
+  isDarkMode = false,
+  onToggleDarkMode
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -31,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#f2e8f2] transition-all">
+    <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#1a0e19]/95 backdrop-blur-md border-b border-[#f2e8f2] dark:border-[#381f35] transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <button
@@ -39,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
           className="flex items-center gap-2 text-left focus:outline-none group py-1"
           id="brand-logo-btn"
         >
-          <span className="text-2xl sm:text-3xl font-black text-[#e040a0] tracking-tight group-hover:opacity-90 transition-opacity">
+          <span className="text-2xl sm:text-3xl font-black text-[#e040a0] dark:text-[#f25cb8] tracking-tight group-hover:opacity-90 transition-opacity">
             HerVoice
           </span>
         </button>
@@ -53,8 +57,8 @@ export const Header: React.FC<HeaderProps> = ({
               id={`nav-${item.id}-btn`}
               className={`text-sm font-semibold transition-all relative py-2 ${
                 activeTab === item.id
-                  ? 'text-[#e040a0] font-bold border-b-2 border-[#e040a0]'
-                  : 'text-[#604868] hover:text-[#e040a0]'
+                  ? 'text-[#e040a0] dark:text-[#f25cb8] font-bold border-b-2 border-[#e040a0] dark:border-[#f25cb8]'
+                  : 'text-[#604868] dark:text-[#d2b8cf] hover:text-[#e040a0] dark:hover:text-[#f25cb8]'
               }`}
             >
               {item.label}
@@ -64,11 +68,26 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right Actions */}
         <div className="flex items-center gap-2 sm:gap-3">
+          {/* Dark Mode Toggle Button */}
+          {onToggleDarkMode && (
+            <button
+              onClick={onToggleDarkMode}
+              id="header-theme-toggle-btn"
+              aria-label={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              className="w-10 h-10 rounded-full text-[#2e1a28] dark:text-[#f8f0f7] hover:text-[#e040a0] dark:hover:text-[#f25cb8] hover:bg-[#fce8f5] dark:hover:bg-[#2c182b] flex items-center justify-center transition-all border border-transparent dark:border-[#381f35]"
+            >
+              <span className="material-symbols-outlined text-2xl">
+                {isDarkMode ? 'light_mode' : 'dark_mode'}
+              </span>
+            </button>
+          )}
+
           <button
             onClick={onOpenSearch}
             id="header-search-btn"
             aria-label="Search"
-            className="w-10 h-10 rounded-full text-[#2e1a28] hover:text-[#e040a0] hover:bg-[#fce8f5] flex items-center justify-center transition-colors"
+            className="w-10 h-10 rounded-full text-[#2e1a28] dark:text-[#f8f0f7] hover:text-[#e040a0] dark:hover:text-[#f25cb8] hover:bg-[#fce8f5] dark:hover:bg-[#2c182b] flex items-center justify-center transition-colors"
           >
             <span className="material-symbols-outlined text-2xl">search</span>
           </button>
@@ -79,7 +98,7 @@ export const Header: React.FC<HeaderProps> = ({
               onOpenJoinUs();
             }}
             id="header-join-us-btn"
-            className="px-5 sm:px-6 py-2.5 bg-[#e040a0] hover:bg-[#c82f8c] text-white rounded-full text-xs sm:text-sm font-bold shadow-md shadow-pink-500/20 transition-all bouncy-hover hidden sm:inline-flex items-center gap-1.5"
+            className="px-5 sm:px-6 py-2.5 bg-[#e040a0] hover:bg-[#c82f8c] dark:bg-[#f25cb8] dark:hover:bg-[#e040a0] text-white rounded-full text-xs sm:text-sm font-bold shadow-md shadow-pink-500/20 transition-all bouncy-hover hidden sm:inline-flex items-center gap-1.5"
           >
             Join Us
           </button>
@@ -89,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             id="header-mobile-toggle-btn"
             aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
-            className="lg:hidden w-10 h-10 rounded-full text-[#2e1a28] hover:text-[#e040a0] hover:bg-[#fce8f5] flex items-center justify-center transition-colors border border-[#f2e8f2]"
+            className="lg:hidden w-10 h-10 rounded-full text-[#2e1a28] dark:text-[#f8f0f7] hover:text-[#e040a0] dark:hover:text-[#f25cb8] hover:bg-[#fce8f5] dark:hover:bg-[#2c182b] flex items-center justify-center transition-colors border border-[#f2e8f2] dark:border-[#381f35]"
           >
             <span className="material-symbols-outlined text-2xl">
               {isMobileMenuOpen ? 'close' : 'menu'}
@@ -100,7 +119,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile & Tablet Dropdown Drawer at top */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 border-b border-[#f2e8f2] shadow-xl animate-fadeIn px-4 pt-3 pb-6 space-y-3">
+        <div className="lg:hidden bg-white/98 dark:bg-[#1a0e19]/98 border-b border-[#f2e8f2] dark:border-[#381f35] shadow-xl animate-fadeIn px-4 pt-3 pb-6 space-y-3">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {navItems.map((item) => (
               <button
@@ -108,11 +127,11 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={() => handleTabClick(item.id)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-left text-sm font-bold transition-all ${
                   activeTab === item.id
-                    ? 'bg-[#fce8f5] text-[#e040a0] shadow-sm'
-                    : 'text-[#604868] hover:bg-[#fcf7fc] hover:text-[#e040a0]'
+                    ? 'bg-[#fce8f5] dark:bg-[#341832] text-[#e040a0] dark:text-[#f25cb8] shadow-sm'
+                    : 'text-[#604868] dark:text-[#d2b8cf] hover:bg-[#fcf7fc] dark:hover:bg-[#281427] hover:text-[#e040a0] dark:hover:text-[#f25cb8]'
                 }`}
               >
-                <span className={`material-symbols-outlined text-xl ${activeTab === item.id ? 'text-[#e040a0]' : 'text-[#7c52aa]'}`}>
+                <span className={`material-symbols-outlined text-xl ${activeTab === item.id ? 'text-[#e040a0] dark:text-[#f25cb8]' : 'text-[#7c52aa] dark:text-[#b08cc9]'}`}>
                   {item.icon}
                 </span>
                 <span>{item.label}</span>
@@ -120,13 +139,25 @@ export const Header: React.FC<HeaderProps> = ({
             ))}
           </div>
 
-          <div className="pt-2 border-t border-[#f2e8f2] flex flex-col gap-2">
+          <div className="pt-2 border-t border-[#f2e8f2] dark:border-[#381f35] flex flex-col gap-2">
+            {onToggleDarkMode && (
+              <button
+                onClick={onToggleDarkMode}
+                className="w-full py-2.5 px-4 bg-[#f0e5ff] dark:bg-[#2b172a] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-[#e040a0] hover:text-white rounded-2xl text-xs font-bold transition-all flex items-center justify-center gap-2 border border-purple-100 dark:border-[#3d233c]"
+              >
+                <span className="material-symbols-outlined text-lg">
+                  {isDarkMode ? 'light_mode' : 'dark_mode'}
+                </span>
+                <span>{isDarkMode ? 'Switch to Light Appearance' : 'Switch to Dark Appearance'}</span>
+              </button>
+            )}
+
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 onOpenJoinUs();
               }}
-              className="w-full py-3 bg-[#e040a0] hover:bg-[#c82f8c] text-white rounded-2xl text-sm font-bold shadow-md shadow-pink-500/20 text-center flex items-center justify-center gap-2"
+              className="w-full py-3 bg-[#e040a0] hover:bg-[#c82f8c] dark:bg-[#f25cb8] dark:hover:bg-[#e040a0] text-white rounded-2xl text-sm font-bold shadow-md shadow-pink-500/20 text-center flex items-center justify-center gap-2"
             >
               <span className="material-symbols-outlined text-lg">favorite</span>
               <span>Join HerVoice Movement</span>
@@ -137,4 +168,5 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
+
 

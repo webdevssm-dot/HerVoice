@@ -1,10 +1,18 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   body {
     font-family: 'DM Sans', sans-serif;
     background-color: #fcf7fc;
     color: #2e1a28;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dark body {
+    background-color: #130a12;
+    color: #f8f0f7;
   }
 }
 
@@ -27,6 +35,12 @@
 .dream-canvas {
   background-color: #fbf5fc;
   background-image: radial-gradient(circle at 2px 2px, #ebd5eb 1.5px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.dark .dream-canvas {
+  background-color: #1a0d19;
+  background-image: radial-gradient(circle at 2px 2px, #3a1c37 1.5px, transparent 0);
   background-size: 28px 28px;
 }
 
@@ -59,3 +73,4 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+

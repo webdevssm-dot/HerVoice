@@ -21,21 +21,21 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#fce8f5] rounded-full">
-                <span className="material-symbols-outlined text-sm text-[#d12b8d]">target</span>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#d12b8d]">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#fce8f5] dark:bg-[#341832] rounded-full">
+                <span className="material-symbols-outlined text-sm text-[#d12b8d] dark:text-[#f25cb8]">target</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-[#d12b8d] dark:text-[#f25cb8]">
                   FUTURE LEADERS OF BOTSWANA
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-[#2e1a28] leading-[1.1]">
+              <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-[#2e1a28] dark:text-[#f8f0f7] leading-[1.1]">
                 Empowering the <br className="hidden sm:inline" />
-                <span className="text-[#e040a0]">Next Generation</span> <br className="hidden sm:inline" />
+                <span className="text-[#e040a0] dark:text-[#f25cb8]">Next Generation</span> <br className="hidden sm:inline" />
                 of Botswana's <br className="hidden sm:inline" />
                 Leaders
               </h1>
 
-              <p className="text-sm sm:text-base text-[#604868] max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+              <p className="text-sm sm:text-base text-[#604868] dark:text-[#d2b8cf] max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
                 A joyful digital space where young women find their voice, learn their rights, and connect with mentors who have paved the way for a brighter future.
               </p>
 
@@ -43,7 +43,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <button
                   onClick={() => setActiveTab('rights')}
                   id="hero-explore-rights-btn"
-                  className="px-7 py-3.5 bg-[#e040a0] hover:bg-[#c82f8c] text-white rounded-full font-bold text-sm shadow-lg shadow-pink-500/20 transition-all bouncy-hover flex items-center gap-2"
+                  className="px-7 py-3.5 bg-[#e040a0] dark:bg-[#f25cb8] hover:bg-[#c82f8c] dark:hover:bg-[#e040a0] text-white rounded-full font-bold text-sm shadow-lg shadow-pink-500/20 transition-all bouncy-hover flex items-center gap-2"
                 >
                   <span>Explore Platform</span>
                   <span className="material-symbols-outlined text-lg">arrow_forward</span>
@@ -52,7 +52,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 <button
                   onClick={onOpenJoinUs}
                   id="hero-join-community-btn"
-                  className="px-7 py-3.5 bg-white border border-[#7c52aa] text-[#7c52aa] hover:bg-[#f0e5ff] rounded-full font-bold text-sm transition-all bouncy-hover flex items-center gap-2"
+                  className="px-7 py-3.5 bg-white dark:bg-[#281427] border border-[#7c52aa] dark:border-[#b08cc9] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-[#f0e5ff] dark:hover:bg-[#3d223a] rounded-full font-bold text-sm transition-all bouncy-hover flex items-center gap-2"
                 >
                   <span>Platform Vision</span>
                 </button>
@@ -61,7 +61,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             {/* Right Hero Image Card */}
             <div className="lg:col-span-5 relative flex justify-center">
-              <div className="relative rounded-[2.5rem] bg-white p-3 shadow-2xl border border-pink-100/60 rotate-2 transform hover:rotate-0 transition-transform duration-300 max-w-md w-full">
+              <div className="relative rounded-[2.5rem] bg-white dark:bg-[#1e0f1d] p-3 shadow-2xl border border-pink-100/60 dark:border-[#381f35] rotate-2 transform hover:rotate-0 transition-transform duration-300 max-w-md w-full">
                 <div className="rounded-[2rem] overflow-hidden relative">
                   <img
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdlk4RqAC_vlOia9RB09BQ1usKzXFpu5mHiAMYF_amVLJAUGRP-v8YlqO8UjVCwbuFvbyGYPGuVRKofjEJ94Uq301wUwQPIB_K7SfzED3FYqZpyhrHQtkrQ5lxgWt4nEAKZAdPtO6PND3TisGq7vSnpVK7TOZTmvbHFe2Ku9pPC1UEOIMDrHfKc_tIKfMxceRaHqgBpTdZqswbiMolj29sQSssXkgnG9h6ogb0HlM4F_W0ilXpp0X4pW89pvww1HQaOOMXIcP1tgg4"
@@ -84,8 +84,8 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* Your Journey Starts Here Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-          <h2 className="text-3xl font-black text-[#2e1a28]">Your Journey Starts Here</h2>
-          <p className="text-sm text-[#604868]">
+          <h2 className="text-3xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Your Journey Starts Here</h2>
+          <p className="text-sm text-[#604868] dark:text-[#d2b8cf]">
             Click through our key pillars designed to uplift, educate, and inspire every young woman in Botswana.
           </p>
         </div>
@@ -94,18 +94,18 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Pillar 1: Rights */}
           <div
             onClick={() => setActiveTab('rights')}
-            className="p-8 bg-white rounded-3xl border border-[#f2e8f2] hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group flex flex-col justify-between space-y-6"
+            className="p-8 bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group flex flex-col justify-between space-y-6"
           >
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#fce8f5] text-[#e040a0] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-[#fce8f5] dark:bg-[#341832] text-[#e040a0] dark:text-[#f25cb8] flex items-center justify-center">
                 <span className="material-symbols-outlined text-2xl font-bold">edit_note</span>
               </div>
-              <h3 className="text-xl font-black text-[#2e1a28]">Know Your Rights</h3>
-              <p className="text-xs text-[#604868] leading-relaxed">
+              <h3 className="text-xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Know Your Rights</h3>
+              <p className="text-xs text-[#604868] dark:text-[#d2b8cf] leading-relaxed">
                 Understanding legal protections, gender equality, and your voice in society starts with the right information.
               </p>
             </div>
-            <span className="text-xs font-bold text-[#e040a0] flex items-center gap-1 group-hover:gap-2 transition-all">
+            <span className="text-xs font-bold text-[#e040a0] dark:text-[#f25cb8] flex items-center gap-1 group-hover:gap-2 transition-all">
               <span>Learn More</span>
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </span>
@@ -114,18 +114,18 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Pillar 2: Spotlights */}
           <div
             onClick={() => setActiveTab('spotlights')}
-            className="p-8 bg-white rounded-3xl border border-[#f2e8f2] hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group flex flex-col justify-between space-y-6"
+            className="p-8 bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group flex flex-col justify-between space-y-6"
           >
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#f0e5ff] text-[#7c52aa] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-[#f0e5ff] dark:bg-[#2b172a] text-[#7c52aa] dark:text-[#b08cc9] flex items-center justify-center">
                 <span className="material-symbols-outlined text-2xl font-bold">auto_awesome</span>
               </div>
-              <h3 className="text-xl font-black text-[#2e1a28]">Inspirational Women</h3>
-              <p className="text-xs text-[#604868] leading-relaxed">
+              <h3 className="text-xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Inspirational Women</h3>
+              <p className="text-xs text-[#604868] dark:text-[#d2b8cf] leading-relaxed">
                 Meet the trailblazers of Botswana. From tech leaders to human rights activists, find your role model.
               </p>
             </div>
-            <span className="text-xs font-bold text-[#7c52aa] flex items-center gap-1 group-hover:gap-2 transition-all">
+            <span className="text-xs font-bold text-[#7c52aa] dark:text-[#b08cc9] flex items-center gap-1 group-hover:gap-2 transition-all">
               <span>See Stories</span>
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </span>
@@ -134,18 +134,18 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Pillar 3: Dream Board */}
           <div
             onClick={() => setActiveTab('dream-board')}
-            className="p-8 bg-white rounded-3xl border border-[#f2e8f2] hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group flex flex-col justify-between space-y-6"
+            className="p-8 bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group flex flex-col justify-between space-y-6"
           >
             <div className="space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#e0f2fe] text-[#0096cc] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-[#e0f2fe] dark:bg-[#152a38] text-[#0096cc] dark:text-[#38bdf8] flex items-center justify-center">
                 <span className="material-symbols-outlined text-2xl font-bold">cloud</span>
               </div>
-              <h3 className="text-xl font-black text-[#2e1a28]">Dream Board</h3>
-              <p className="text-xs text-[#604868] leading-relaxed">
+              <h3 className="text-xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Dream Board</h3>
+              <p className="text-xs text-[#604868] dark:text-[#d2b8cf] leading-relaxed">
                 Visualize your future. Set goals, share your aspirations, and find the resources to make them a reality.
               </p>
             </div>
-            <span className="text-xs font-bold text-[#0096cc] flex items-center gap-1 group-hover:gap-2 transition-all">
+            <span className="text-xs font-bold text-[#0096cc] dark:text-[#38bdf8] flex items-center gap-1 group-hover:gap-2 transition-all">
               <span>Start Dreaming</span>
               <span className="material-symbols-outlined text-sm">arrow_forward</span>
             </span>
@@ -157,12 +157,12 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-8 gap-4">
           <div>
-            <h2 className="text-3xl font-black text-[#2e1a28]">Latest Spotlights</h2>
-            <p className="text-xs text-[#604868] mt-1">Shining a light on the incredible achievements of women in our community.</p>
+            <h2 className="text-3xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Latest Spotlights</h2>
+            <p className="text-xs text-[#604868] dark:text-[#d2b8cf] mt-1">Shining a light on the incredible achievements of women in our community.</p>
           </div>
           <button
             onClick={() => setActiveTab('spotlights')}
-            className="text-xs font-bold text-[#e040a0] hover:text-[#c82f8c] flex items-center gap-1"
+            className="text-xs font-bold text-[#e040a0] dark:text-[#f25cb8] hover:text-[#c82f8c] flex items-center gap-1"
           >
             <span>View All Spotlights</span>
             <span className="material-symbols-outlined text-sm">arrow_forward</span>
@@ -173,7 +173,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Spotlight 1 */}
           <div
             onClick={() => onOpenStory(SPOTLIGHTS_LIST[0])}
-            className="bg-white rounded-3xl border border-[#f2e8f2] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
+            className="bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
           >
             <div className="h-64 overflow-hidden relative">
               <img
@@ -186,10 +186,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               </span>
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
-              <h3 className="font-bold text-base text-[#2e1a28] group-hover:text-[#e040a0] transition-colors">
+              <h3 className="font-bold text-base text-[#2e1a28] dark:text-[#f8f0f7] group-hover:text-[#e040a0] dark:group-hover:text-[#f25cb8] transition-colors">
                 Pioneering Tech in Gaborone
               </h3>
-              <p className="text-xs text-[#604868] line-clamp-2">
+              <p className="text-xs text-[#604868] dark:text-[#d2b8cf] line-clamp-2">
                 How Thato Moloi is revolutionizing education through her new digital literacy platform for girls.
               </p>
             </div>
@@ -198,7 +198,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Spotlight 2 */}
           <div
             onClick={() => onOpenStory(SPOTLIGHTS_LIST[3])}
-            className="bg-white rounded-3xl border border-[#f2e8f2] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
+            className="bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
           >
             <div className="h-64 overflow-hidden relative">
               <img
@@ -211,10 +211,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               </span>
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
-              <h3 className="font-bold text-base text-[#2e1a28] group-hover:text-[#7c52aa] transition-colors">
+              <h3 className="font-bold text-base text-[#2e1a28] dark:text-[#f8f0f7] group-hover:text-[#7c52aa] dark:group-hover:text-[#b08cc9] transition-colors">
                 Voices of the Kalahari
               </h3>
-              <p className="text-xs text-[#604868] line-clamp-2">
+              <p className="text-xs text-[#604868] dark:text-[#d2b8cf] line-clamp-2">
                 The grassroots movement empowering young indigenous women to protect their heritage.
               </p>
             </div>
@@ -223,7 +223,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Spotlight 3 */}
           <div
             onClick={() => onOpenStory(SPOTLIGHTS_LIST[2])}
-            className="bg-white rounded-3xl border border-[#f2e8f2] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
+            className="bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
           >
             <div className="h-64 overflow-hidden relative">
               <img
@@ -236,10 +236,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               </span>
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
-              <h3 className="font-bold text-base text-[#2e1a28] group-hover:text-[#0096cc] transition-colors">
+              <h3 className="font-bold text-base text-[#2e1a28] dark:text-[#f8f0f7] group-hover:text-[#0096cc] dark:group-hover:text-[#38bdf8] transition-colors">
                 Canvas for Change
               </h3>
-              <p className="text-xs text-[#604868] line-clamp-2">
+              <p className="text-xs text-[#604868] dark:text-[#d2b8cf] line-clamp-2">
                 Using mural art to spark conversations about domestic safety and female empowerment.
               </p>
             </div>
@@ -248,7 +248,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Spotlight 4 */}
           <div
             onClick={() => onOpenStory(SPOTLIGHTS_LIST[1])}
-            className="bg-white rounded-3xl border border-[#f2e8f2] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
+            className="bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
           >
             <div className="h-64 overflow-hidden relative">
               <img
@@ -261,10 +261,10 @@ export const HomePage: React.FC<HomePageProps> = ({
               </span>
             </div>
             <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
-              <h3 className="font-bold text-base text-[#2e1a28] group-hover:text-[#e040a0] transition-colors">
+              <h3 className="font-bold text-base text-[#2e1a28] dark:text-[#f8f0f7] group-hover:text-[#e040a0] dark:group-hover:text-[#f25cb8] transition-colors">
                 Defending Her Future
               </h3>
-              <p className="text-xs text-[#604868] line-clamp-2">
+              <p className="text-xs text-[#604868] dark:text-[#d2b8cf] line-clamp-2">
                 Meet the legal team working pro-bono to ensure every girl in Botswana has access to justice.
               </p>
             </div>
@@ -272,27 +272,27 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Light Banner Callout */}
+      {/* Light / Dark Banner Callout */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-[#fce8f5] via-[#f8e8f8] to-[#f0e5ff] p-10 sm:p-14 rounded-3xl text-[#2e1a28] text-center shadow-lg border border-pink-200/80 space-y-6 relative overflow-hidden">
-          <h2 className="text-3xl sm:text-5xl font-black max-w-3xl mx-auto tracking-tight text-[#2e1a28]">
+        <div className="bg-gradient-to-r from-[#fce8f5] via-[#f8e8f8] to-[#f0e5ff] dark:from-[#2a1329] dark:via-[#221021] dark:to-[#1e1026] p-10 sm:p-14 rounded-3xl text-[#2e1a28] dark:text-[#f8f0f7] text-center shadow-lg border border-pink-200/80 dark:border-[#3d233c] space-y-6 relative overflow-hidden">
+          <h2 className="text-3xl sm:text-5xl font-black max-w-3xl mx-auto tracking-tight text-[#2e1a28] dark:text-[#f8f0f7]">
             Ready to add your voice?
           </h2>
-          <p className="text-sm text-[#604868] max-w-xl mx-auto font-medium leading-relaxed">
+          <p className="text-sm text-[#604868] dark:text-[#d2b8cf] max-w-xl mx-auto font-medium leading-relaxed">
             Join thousands of young women across Botswana who are already building a more equitable and joyful future together.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <button
               onClick={onOpenJoinUs}
               id="cta-join-now-btn"
-              className="px-8 py-3.5 bg-[#e040a0] hover:bg-[#c82f8c] text-white font-bold rounded-full text-sm shadow-lg shadow-pink-500/20 transition-all bouncy-hover"
+              className="px-8 py-3.5 bg-[#e040a0] hover:bg-[#c82f8c] dark:bg-[#f25cb8] dark:hover:bg-[#e040a0] text-white font-bold rounded-full text-sm shadow-lg shadow-pink-500/20 transition-all bouncy-hover"
             >
               Create Your Account
             </button>
             <button
               onClick={onOpenJoinUs}
               id="cta-volunteer-btn"
-              className="px-8 py-3.5 bg-white hover:bg-pink-50 text-[#7c52aa] font-bold rounded-full text-sm border border-[#7c52aa] transition-all bouncy-hover"
+              className="px-8 py-3.5 bg-white dark:bg-[#2b172a] hover:bg-pink-50 dark:hover:bg-[#3d223a] text-[#7c52aa] dark:text-[#d8bdd5] font-bold rounded-full text-sm border border-[#7c52aa] dark:border-[#3d233c] transition-all bouncy-hover"
             >
               Volunteer With Us
             </button>

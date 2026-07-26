@@ -77,16 +77,16 @@ export const StoryModal: React.FC<StoryModalProps> = ({
       {/* Modal Container */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white rounded-3xl max-w-3xl w-full my-auto shadow-2xl border border-[#f2e8f2] flex flex-col relative text-[#2e1a28] overflow-hidden max-h-[92vh] sm:max-h-[90vh]"
+        className="bg-white dark:bg-[#1a0c1a] rounded-3xl max-w-3xl w-full my-auto shadow-2xl border border-[#f2e8f2] dark:border-[#381f35] flex flex-col relative text-[#2e1a28] dark:text-[#f8f0f7] overflow-hidden max-h-[92vh] sm:max-h-[90vh]"
       >
         
         {/* Sticky Top Navigation Bar */}
-        <div className="bg-white/95 backdrop-blur-md px-4 py-3 border-b border-[#f2e8f2] flex items-center justify-between gap-2 z-20 shrink-0">
+        <div className="bg-white/95 dark:bg-[#1a0c1a]/95 backdrop-blur-md px-4 py-3 border-b border-[#f2e8f2] dark:border-[#381f35] flex items-center justify-between gap-2 z-20 shrink-0">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-0.5 bg-[#7c52aa] text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
               {spotlight.category}
             </span>
-            <span className="text-xs font-bold text-[#e040a0] hidden sm:inline">
+            <span className="text-xs font-bold text-[#e040a0] dark:text-[#f25cb8] hidden sm:inline">
               HerVoice Leader Series
             </span>
           </div>
@@ -96,7 +96,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             <button
               onClick={handleDownloadBrief}
               title="Download A4 Brief"
-              className="px-2.5 py-1.5 rounded-full bg-[#fce8f5] hover:bg-[#e040a0] text-[#e040a0] hover:text-white text-xs font-bold transition-all flex items-center gap-1 border border-pink-200 shadow-sm"
+              className="px-2.5 py-1.5 rounded-full bg-[#fce8f5] dark:bg-[#341832] hover:bg-[#e040a0] text-[#e040a0] dark:text-[#f25cb8] hover:text-white text-xs font-bold transition-all flex items-center gap-1 border border-pink-200 dark:border-pink-900 shadow-sm"
             >
               <span className="material-symbols-outlined text-base">download</span>
               <span className="hidden sm:inline">A4 Brief</span>
@@ -106,7 +106,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             <button
               onClick={() => handleNavigate(prevSpotlight)}
               title={`Previous: ${prevSpotlight.name}`}
-              className="px-2.5 py-1.5 rounded-full bg-[#fcf7fc] hover:bg-[#fce8f5] text-[#2e1a28] hover:text-[#e040a0] text-xs font-bold transition-colors flex items-center gap-1 border border-[#f2e8f2]"
+              className="px-2.5 py-1.5 rounded-full bg-[#fcf7fc] dark:bg-[#281427] hover:bg-[#fce8f5] dark:hover:bg-[#3d223a] text-[#2e1a28] dark:text-[#f8f0f7] hover:text-[#e040a0] text-xs font-bold transition-colors flex items-center gap-1 border border-[#f2e8f2] dark:border-[#381f35]"
             >
               <span className="material-symbols-outlined text-base">arrow_back</span>
               <span className="hidden md:inline">Prev</span>
@@ -115,7 +115,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             <button
               onClick={() => handleNavigate(nextSpotlight)}
               title={`Next: ${nextSpotlight.name}`}
-              className="px-2.5 py-1.5 rounded-full bg-[#fcf7fc] hover:bg-[#fce8f5] text-[#2e1a28] hover:text-[#e040a0] text-xs font-bold transition-colors flex items-center gap-1 border border-[#f2e8f2]"
+              className="px-2.5 py-1.5 rounded-full bg-[#fcf7fc] dark:bg-[#281427] hover:bg-[#fce8f5] dark:hover:bg-[#3d223a] text-[#2e1a28] dark:text-[#f8f0f7] hover:text-[#e040a0] text-xs font-bold transition-colors flex items-center gap-1 border border-[#f2e8f2] dark:border-[#381f35]"
             >
               <span className="hidden md:inline">Next</span>
               <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -125,7 +125,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             <button
               onClick={onClose}
               aria-label="Close Story"
-              className="w-9 h-9 rounded-full bg-[#fce8f5] hover:bg-[#e040a0] hover:text-white flex items-center justify-center text-[#e040a0] font-bold transition-colors ml-1 border border-pink-200 shadow-sm"
+              className="w-9 h-9 rounded-full bg-[#fce8f5] dark:bg-[#341832] hover:bg-[#e040a0] hover:text-white flex items-center justify-center text-[#e040a0] dark:text-[#f25cb8] font-bold transition-colors ml-1 border border-pink-200 dark:border-pink-900 shadow-sm"
             >
               <span className="material-symbols-outlined text-xl">close</span>
             </button>
@@ -138,17 +138,17 @@ export const StoryModal: React.FC<StoryModalProps> = ({
           {/* Header Media stage with full picture visibility */}
           <div className="relative min-h-[300px] sm:min-h-[380px] w-full overflow-hidden bg-[#1f121d] shrink-0 flex items-center justify-center p-4">
             {isPlayingVideo ? (
-              <div className="w-full h-full bg-[#f0e5ff] flex flex-col items-center justify-center p-6 text-center text-[#2e1a28] relative rounded-2xl">
+              <div className="w-full h-full bg-[#f0e5ff] dark:bg-[#281427] flex flex-col items-center justify-center p-6 text-center text-[#2e1a28] dark:text-[#f8f0f7] relative rounded-2xl">
                 <div className="w-14 h-14 rounded-full bg-[#e040a0] text-white flex items-center justify-center animate-pulse mb-3 shadow-md">
                   <span className="material-symbols-outlined text-3xl">play_circle</span>
                 </div>
                 <h3 className="text-xl font-black">Official Keynote & Interview</h3>
-                <p className="text-xs text-[#604868] max-w-md mt-1 font-medium">
+                <p className="text-xs text-[#604868] dark:text-[#d2b8cf] max-w-md mt-1 font-medium">
                   {spotlight.name} — Speeches, Court Rulings & Leadership Conversations.
                 </p>
                 <button
                   onClick={() => setIsPlayingVideo(false)}
-                  className="mt-4 px-5 py-2 bg-white text-[#7c52aa] hover:bg-purple-50 text-xs font-bold rounded-full shadow-sm border border-[#7c52aa]/30"
+                  className="mt-4 px-5 py-2 bg-white dark:bg-[#1a0c1a] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-purple-50 text-xs font-bold rounded-full shadow-sm border border-[#7c52aa]/30"
                 >
                   Return to Text Story
                 </button>
@@ -202,23 +202,23 @@ export const StoryModal: React.FC<StoryModalProps> = ({
           </div>
 
           {/* Body Content */}
-          <div className="px-5 sm:px-8 space-y-6 text-[#2e1a28]">
+          <div className="px-5 sm:px-8 space-y-6 text-[#2e1a28] dark:text-[#f8f0f7]">
             
             {/* Header Action Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-3 p-4 bg-[#fce8f5] rounded-2xl border border-pink-100">
+            <div className="flex flex-wrap items-center justify-between gap-3 p-4 bg-[#fce8f5] dark:bg-[#2a1328] rounded-2xl border border-pink-100 dark:border-[#381f35]">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#e040a0] text-white flex items-center justify-center font-bold shrink-0">
                   <span className="material-symbols-outlined text-xl">verified</span>
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold uppercase text-[#7c52aa]">VERIFIED BOTSWANA PROFILE</p>
-                  <p className="text-sm font-bold text-[#2e1a28]">{spotlight.name} {spotlight.country ? `(${spotlight.country})` : '(Botswana)'}</p>
+                  <p className="text-[10px] font-bold uppercase text-[#7c52aa] dark:text-[#b08cc9]">VERIFIED BOTSWANA PROFILE</p>
+                  <p className="text-sm font-bold text-[#2e1a28] dark:text-[#f8f0f7]">{spotlight.name} {spotlight.country ? `(${spotlight.country})` : '(Botswana)'}</p>
                 </div>
               </div>
 
               <button
                 onClick={() => setIsPlayingVideo(!isPlayingVideo)}
-                className="px-4 py-2 bg-[#e040a0] hover:bg-[#c82f8c] text-white text-xs font-bold rounded-full shadow-md shadow-pink-500/20 transition-all bouncy-hover flex items-center gap-1.5"
+                className="px-4 py-2 bg-[#e040a0] dark:bg-[#f25cb8] hover:bg-[#c82f8c] dark:hover:bg-[#e040a0] text-white text-xs font-bold rounded-full shadow-md shadow-pink-500/20 transition-all bouncy-hover flex items-center gap-1.5"
               >
                 <span className="material-symbols-outlined text-base">
                   {isPlayingVideo ? 'description' : 'play_circle'}
@@ -228,33 +228,33 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             </div>
 
             {/* Quote */}
-            <blockquote className="p-4 bg-[#fcf7fc] border-l-4 border-[#e040a0] rounded-r-2xl italic text-sm text-[#2e1a28] font-semibold leading-relaxed shadow-sm">
+            <blockquote className="p-4 bg-[#fcf7fc] dark:bg-[#281427] border-l-4 border-[#e040a0] dark:border-[#f25cb8] rounded-r-2xl italic text-sm text-[#2e1a28] dark:text-[#f8f0f7] font-semibold leading-relaxed shadow-sm">
               "{spotlight.quoteOrHeadline}"
             </blockquote>
 
             {/* Full Story */}
-            <div className="space-y-3 text-xs sm:text-sm leading-relaxed text-[#604868]">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-[#7c52aa] flex items-center gap-1.5">
+            <div className="space-y-3 text-xs sm:text-sm leading-relaxed text-[#604868] dark:text-[#d2b8cf]">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-[#7c52aa] dark:text-[#b08cc9] flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-base">menu_book</span>
                 <span>BIOGRAPHY & HISTORIC CONTRIBUTION</span>
               </h2>
-              <div className="whitespace-pre-line font-medium text-[#2e1a28] space-y-3 leading-relaxed">
+              <div className="whitespace-pre-line font-medium text-[#2e1a28] dark:text-[#f8f0f7] space-y-3 leading-relaxed">
                 {spotlight.fullStory || spotlight.description}
               </div>
             </div>
 
             {/* Achievements & Highlights */}
             {spotlight.achievements && spotlight.achievements.length > 0 && (
-              <div className="p-5 bg-[#f0e5ff] rounded-2xl border border-purple-100 space-y-3">
-                <h3 className="text-[10px] font-bold uppercase tracking-wider text-[#7c52aa] flex items-center gap-1.5">
+              <div className="p-5 bg-[#f0e5ff] dark:bg-[#26132a] rounded-2xl border border-purple-100 dark:border-[#381f35] space-y-3">
+                <h3 className="text-[10px] font-bold uppercase tracking-wider text-[#7c52aa] dark:text-[#b08cc9] flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-base">workspace_premium</span>
                   <span>Impact & Milestones</span>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                   {spotlight.achievements.map((ach, idx) => (
-                    <div key={idx} className="p-3 bg-white rounded-xl flex items-center gap-2 border border-purple-100 shadow-sm">
-                      <span className="text-base text-[#e040a0]">✓</span>
-                      <span className="font-semibold text-[#2e1a28]">{ach}</span>
+                    <div key={idx} className="p-3 bg-white dark:bg-[#1a0c1a] rounded-xl flex items-center gap-2 border border-purple-100 dark:border-[#381f35] shadow-sm">
+                      <span className="text-base text-[#e040a0] dark:text-[#f25cb8]">✓</span>
+                      <span className="font-semibold text-[#2e1a28] dark:text-[#f8f0f7]">{ach}</span>
                     </div>
                   ))}
                 </div>
@@ -262,12 +262,12 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             )}
 
             {/* Official Source Citation Box */}
-            <div className="p-4 bg-[#fcf7fc] rounded-2xl border border-[#f2e8f2] space-y-1.5">
-              <div className="flex items-center gap-1.5 text-xs font-bold text-[#7c52aa]">
-                <span className="material-symbols-outlined text-base text-[#e040a0]">verified_user</span>
+            <div className="p-4 bg-[#fcf7fc] dark:bg-[#281427] rounded-2xl border border-[#f2e8f2] dark:border-[#381f35] space-y-1.5">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-[#7c52aa] dark:text-[#b08cc9]">
+                <span className="material-symbols-outlined text-base text-[#e040a0] dark:text-[#f25cb8]">verified_user</span>
                 <span>Official Source Citation</span>
               </div>
-              <p className="text-xs text-[#604868] font-mono leading-normal">
+              <p className="text-xs text-[#604868] dark:text-[#d2b8cf] font-mono leading-normal">
                 {spotlight.officialSource || 'Official High Court & Government Records of the Republic of Botswana.'}
               </p>
               {spotlight.sourceUrl && (
@@ -275,7 +275,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
                   href={spotlight.sourceUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] font-bold text-[#e040a0] hover:underline pt-1"
+                  className="inline-flex items-center gap-1 text-[11px] font-bold text-[#e040a0] dark:text-[#f25cb8] hover:underline pt-1"
                 >
                   <span>View Official Records</span>
                   <span className="material-symbols-outlined text-xs">open_in_new</span>
@@ -284,11 +284,11 @@ export const StoryModal: React.FC<StoryModalProps> = ({
             </div>
 
             {/* Bottom Controls & Easy Exit Bar */}
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-[#f2e8f2]">
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-[#f2e8f2] dark:border-[#381f35]">
               <div className="flex items-center gap-3 w-full sm:w-auto">
                 <button
                   onClick={scrollToTop}
-                  className="text-xs font-bold text-[#7c52aa] hover:text-[#e040a0] flex items-center gap-1 transition-colors px-2 py-1"
+                  className="text-xs font-bold text-[#7c52aa] dark:text-[#b08cc9] hover:text-[#e040a0] flex items-center gap-1 transition-colors px-2 py-1"
                 >
                   <span className="material-symbols-outlined text-base">arrow_upward</span>
                   <span>Scroll to Top</span>
@@ -296,7 +296,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
 
                 <button
                   onClick={handleDownloadBrief}
-                  className="px-3.5 py-2 bg-[#f0e5ff] text-[#7c52aa] hover:bg-[#e040a0] hover:text-white font-bold rounded-full text-xs transition-all flex items-center gap-1.5"
+                  className="px-3.5 py-2 bg-[#f0e5ff] dark:bg-[#2a1328] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-[#e040a0] hover:text-white font-bold rounded-full text-xs transition-all flex items-center gap-1.5"
                 >
                   <span className="material-symbols-outlined text-base">download</span>
                   <span>Download A4 Brief</span>
@@ -306,7 +306,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
               <div className="flex items-center gap-2 w-full sm:w-auto">
                 <button
                   onClick={() => handleNavigate(nextSpotlight)}
-                  className="flex-1 sm:flex-none px-4 py-2.5 bg-[#fcf7fc] text-[#2e1a28] hover:bg-[#fce8f5] hover:text-[#e040a0] font-bold rounded-full text-xs transition-all flex items-center justify-center gap-1 border border-[#f2e8f2]"
+                  className="flex-1 sm:flex-none px-4 py-2.5 bg-[#fcf7fc] dark:bg-[#281427] text-[#2e1a28] dark:text-[#f8f0f7] hover:bg-[#fce8f5] hover:text-[#e040a0] font-bold rounded-full text-xs transition-all flex items-center justify-center gap-1 border border-[#f2e8f2] dark:border-[#381f35]"
                 >
                   <span>Next ({nextSpotlight.name})</span>
                   <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -314,7 +314,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
 
                 <button
                   onClick={onClose}
-                  className="flex-1 sm:flex-none px-6 py-2.5 bg-[#e040a0] text-white hover:bg-[#c82f8c] font-bold rounded-full text-xs transition-all flex items-center justify-center gap-1.5 shadow-md"
+                  className="flex-1 sm:flex-none px-6 py-2.5 bg-[#e040a0] dark:bg-[#f25cb8] text-white hover:bg-[#c82f8c] font-bold rounded-full text-xs transition-all flex items-center justify-center gap-1.5 shadow-md"
                 >
                   <span className="material-symbols-outlined text-base">close</span>
                   <span>Exit Story</span>

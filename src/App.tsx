@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TabType, Spotlight, ResourceAsset, RightPillar, DreamGoal } from './types';
 import { INITIAL_GOALS } from './data/mockData';
 
@@ -24,6 +24,29 @@ import { BriefPage } from './pages/BriefPage';
 export function App() {
   const [activeTab, setActiveTab] = useState<TabType>('home');
 
+  // Dark Mode persistent state
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    const saved = localStorage.getItem('hervoice_theme');
+    if (saved !== null) {
+      return saved === 'dark';
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('hervoice_theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('hervoice_theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
+
   // Modals state
   const [isJoinUsOpen, setIsJoinUsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -43,18 +66,19 @@ export function App() {
   };
 
   const handleSelectSpotlightFromSearch = (spotlightId: string) => {
-    // Navigate to spotlights and open story if found
     setActiveTab('spotlights');
   };
 
   return (
-    <div className="min-h-screen bg-[#fcf7fc] text-[#2e1a28] flex flex-col font-['DM_Sans',sans-serif] selection:bg-[#e040a0] selection:text-white">
+    <div className="min-h-screen bg-[#fcf7fc] dark:bg-[#130a12] text-[#2e1a28] dark:text-[#f8f0f7] flex flex-col font-['DM_Sans',sans-serif] selection:bg-[#e040a0] selection:text-white transition-colors duration-200">
       {/* Top Header Navigation */}
       <Header
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         onOpenJoinUs={() => setIsJoinUsOpen(true)}
         onOpenSearch={() => setIsSearchOpen(true)}
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={toggleDarkMode}
       />
 
       {/* Main Content Area */}

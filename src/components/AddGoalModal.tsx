@@ -55,78 +55,78 @@ export const AddGoalModal: React.FC<AddGoalModalProps> = ({ isOpen, onClose, onA
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-white rounded-3xl max-w-lg w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-[#f2e8f2] relative text-[#2e1a28] flex flex-col"
+        className="bg-white dark:bg-[#1a0c1a] rounded-3xl max-w-lg w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-[#f2e8f2] dark:border-[#381f35] relative text-[#2e1a28] dark:text-[#f8f0f7] flex flex-col"
       >
-        <div className="bg-[#fce8f5] p-5 sm:p-6 text-[#2e1a28] text-center relative border-b border-pink-100 shrink-0">
+        <div className="bg-[#fce8f5] dark:bg-[#2c152a] p-5 sm:p-6 text-[#2e1a28] dark:text-[#f8f0f7] text-center relative border-b border-pink-100 dark:border-[#381f35] shrink-0">
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white hover:bg-pink-100 flex items-center justify-center text-[#2e1a28] font-bold transition-colors border border-pink-200 shadow-sm"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white dark:bg-[#1a0c1a] hover:bg-pink-100 dark:hover:bg-pink-950 flex items-center justify-center text-[#2e1a28] dark:text-[#f8f0f7] font-bold transition-colors border border-pink-200 dark:border-pink-900 shadow-sm"
           >
             <span className="material-symbols-outlined text-xl">close</span>
           </button>
           <div className="w-12 h-12 rounded-2xl bg-[#e040a0] text-white mx-auto flex items-center justify-center shadow-md mb-2">
             <span className="material-symbols-outlined text-2xl font-bold">add_reaction</span>
           </div>
-          <h2 className="text-2xl font-black text-[#2e1a28]">Pin Your Dream Card</h2>
-          <p className="text-xs text-[#604868] mt-1 font-medium">Declare your aspirations to the HerVoice community canvas</p>
+          <h2 className="text-2xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Pin Your Dream Card</h2>
+          <p className="text-xs text-[#604868] dark:text-[#d2b8cf] mt-1 font-medium">Declare your aspirations to the HerVoice community canvas</p>
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4 flex-1">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] mb-1">GOAL / VISION TITLE</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] dark:text-[#b08cc9] mb-1">GOAL / VISION TITLE</label>
             <input
               type="text"
               required
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. Launch a Tech Club in Francistown"
-              className="w-full px-4 py-3 bg-[#fcf7fc] text-[#2e1a28] rounded-2xl border border-pink-200 focus:outline-none focus:border-[#e040a0] text-sm font-medium"
+              className="w-full px-4 py-3 bg-[#fcf7fc] dark:bg-[#281427] text-[#2e1a28] dark:text-[#f8f0f7] rounded-2xl border border-pink-200 dark:border-[#381f35] focus:outline-none focus:border-[#e040a0] text-sm font-medium"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] mb-1">CATEGORY</label>
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] dark:text-[#b08cc9] mb-1">CATEGORY</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value as any)}
-                className="w-full px-3 py-3 bg-[#fcf7fc] text-[#2e1a28] rounded-2xl border border-pink-200 focus:outline-none focus:border-[#e040a0] text-xs font-bold"
+                className="w-full px-3 py-3 bg-[#fcf7fc] dark:bg-[#281427] text-[#2e1a28] dark:text-[#f8f0f7] rounded-2xl border border-pink-200 dark:border-[#381f35] focus:outline-none focus:border-[#e040a0] text-xs font-bold"
               >
-                <option value="Education">🎓 Education</option>
-                <option value="Leadership">👑 Leadership</option>
-                <option value="Creative Arts">🎨 Creative Arts</option>
+                <option value="Education" className="dark:bg-[#1a0c1a]">🎓 Education</option>
+                <option value="Leadership" className="dark:bg-[#1a0c1a]">👑 Leadership</option>
+                <option value="Creative Arts" className="dark:bg-[#1a0c1a]">🎨 Creative Arts</option>
               </select>
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] mb-1">TIMELINE</label>
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] dark:text-[#b08cc9] mb-1">TIMELINE</label>
               <input
                 type="text"
                 value={targetDate}
                 onChange={(e) => setTargetDate(e.target.value)}
                 placeholder="e.g. Dec 2025"
-                className="w-full px-4 py-3 bg-[#fcf7fc] text-[#2e1a28] rounded-2xl border border-pink-200 focus:outline-none focus:border-[#e040a0] text-xs font-medium"
+                className="w-full px-4 py-3 bg-[#fcf7fc] dark:bg-[#281427] text-[#2e1a28] dark:text-[#f8f0f7] rounded-2xl border border-pink-200 dark:border-[#381f35] focus:outline-none focus:border-[#e040a0] text-xs font-medium"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] mb-1">NOTES & INSPIRATION</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] dark:text-[#b08cc9] mb-1">NOTES & INSPIRATION</label>
             <textarea
               required
               rows={3}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Why does this dream matter to you? How will you achieve it?"
-              className="w-full px-4 py-3 bg-[#fcf7fc] text-[#2e1a28] rounded-2xl border border-pink-200 focus:outline-none focus:border-[#e040a0] text-xs font-medium"
+              className="w-full px-4 py-3 bg-[#fcf7fc] dark:bg-[#281427] text-[#2e1a28] dark:text-[#f8f0f7] rounded-2xl border border-pink-200 dark:border-[#381f35] focus:outline-none focus:border-[#e040a0] text-xs font-medium"
             />
           </div>
 
           <div className="flex items-center gap-2 pt-2">
             <button
               type="submit"
-              className="flex-1 py-3.5 bg-[#e040a0] text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md shadow-pink-500/20 hover:bg-[#c82f8c] transition-all bouncy-hover flex items-center justify-center gap-2"
+              className="flex-1 py-3.5 bg-[#e040a0] dark:bg-[#f25cb8] text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md shadow-pink-500/20 hover:bg-[#c82f8c] transition-all bouncy-hover flex items-center justify-center gap-2"
             >
               <span>Pin Goal to Board</span>
               <span className="material-symbols-outlined text-lg">push_pin</span>
@@ -135,7 +135,7 @@ export const AddGoalModal: React.FC<AddGoalModalProps> = ({ isOpen, onClose, onA
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-3.5 bg-[#f0e5ff] text-[#7c52aa] hover:bg-[#e040a0] hover:text-white font-bold text-xs rounded-full transition-all flex items-center gap-1"
+              className="px-4 py-3.5 bg-[#f0e5ff] dark:bg-[#2c152a] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-[#e040a0] hover:text-white font-bold text-xs rounded-full transition-all flex items-center gap-1"
             >
               <span className="material-symbols-outlined text-base">close</span>
               <span className="hidden sm:inline">Cancel</span>

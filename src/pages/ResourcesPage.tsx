@@ -21,10 +21,10 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onOpenResourceModa
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div>
-            <h1 className="text-4xl sm:text-5xl font-black text-[#2e1a28]">
-              Resources & <span className="text-[#e040a0]">Assets</span>
+            <h1 className="text-4xl sm:text-5xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">
+              Resources & <span className="text-[#e040a0] dark:text-[#f25cb8]">Assets</span>
             </h1>
-            <p className="text-xs sm:text-sm text-[#604868] mt-2 max-w-2xl font-medium">
+            <p className="text-xs sm:text-sm text-[#604868] dark:text-[#d2b8cf] mt-2 max-w-2xl font-medium">
               Free, open-license design assets, toolkits, and guides crafted to empower young women leaders across Botswana.
             </p>
           </div>
@@ -38,8 +38,8 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onOpenResourceModa
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-xs font-bold transition-all ${
                 activeCategory === cat
-                  ? 'bg-[#e040a0] text-white shadow-md shadow-pink-500/20'
-                  : 'bg-white text-[#604868] border border-[#f2e8f2] hover:bg-[#fce8f5] hover:text-[#e040a0]'
+                  ? 'bg-[#e040a0] dark:bg-[#f25cb8] text-white shadow-md shadow-pink-500/20'
+                  : 'bg-white dark:bg-[#281427] text-[#604868] dark:text-[#d2b8cf] border border-[#f2e8f2] dark:border-[#381f35] hover:bg-[#fce8f5] dark:hover:bg-[#3a1a38] hover:text-[#e040a0] dark:hover:text-[#f25cb8]'
               }`}
             >
               {cat}
@@ -55,12 +55,12 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onOpenResourceModa
             <div
               key={asset.id}
               onClick={() => onOpenResourceModal(asset)}
-              className={`bg-white rounded-3xl border border-[#f2e8f2] overflow-hidden hover:shadow-xl transition-all cursor-pointer group flex flex-col justify-between ${
+              className={`bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer group flex flex-col justify-between ${
                 asset.wide ? 'sm:col-span-2' : ''
               }`}
             >
               {/* Media Preview Container */}
-              <div className="relative overflow-hidden h-64 bg-[#fcf7fc] flex items-center justify-center">
+              <div className="relative overflow-hidden h-64 bg-[#fcf7fc] dark:bg-[#281427] flex items-center justify-center">
                 <img
                   src={asset.image}
                   alt={asset.imageAlt}
@@ -80,7 +80,7 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onOpenResourceModa
 
                 {/* Quick Action overlay */}
                 <div className="absolute bottom-3 right-3">
-                  <span className="w-10 h-10 rounded-full bg-[#e040a0] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <span className="w-10 h-10 rounded-full bg-[#e040a0] dark:bg-[#f25cb8] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-lg">download</span>
                   </span>
                 </div>
@@ -89,14 +89,14 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onOpenResourceModa
               {/* Bottom Metadata */}
               <div className="p-6 space-y-2">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-[#2e1a28] group-hover:text-[#e040a0] transition-colors">{asset.title}</h3>
-                  <span className="text-[10px] font-bold text-[#7c52aa] uppercase bg-[#f0e5ff] px-2.5 py-1 rounded-full">{asset.format}</span>
+                  <h3 className="text-lg font-bold text-[#2e1a28] dark:text-[#f8f0f7] group-hover:text-[#e040a0] dark:group-hover:text-[#f25cb8] transition-colors">{asset.title}</h3>
+                  <span className="text-[10px] font-bold text-[#7c52aa] dark:text-[#b08cc9] uppercase bg-[#f0e5ff] dark:bg-[#2b172a] px-2.5 py-1 rounded-full">{asset.format}</span>
                 </div>
-                <p className="text-xs text-[#604868] line-clamp-2 leading-relaxed">
+                <p className="text-xs text-[#604868] dark:text-[#d2b8cf] line-clamp-2 leading-relaxed">
                   {asset.description}
                 </p>
 
-                <div className="pt-3 border-t border-[#f2e8f2] flex items-center justify-between text-xs font-bold text-[#e040a0]">
+                <div className="pt-3 border-t border-[#f2e8f2] dark:border-[#381f35] flex items-center justify-between text-xs font-bold text-[#e040a0] dark:text-[#f25cb8]">
                   <span>Preview & Download</span>
                   <span className="material-symbols-outlined text-base">arrow_forward</span>
                 </div>
