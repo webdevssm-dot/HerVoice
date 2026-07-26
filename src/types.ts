@@ -1,9 +1,9 @@
-export type TabType = 'home' | 'rights' | 'spotlights' | 'dream-board' | 'resources';
+export type TabType = 'home' | 'rights' | 'spotlights' | 'dream-board' | 'resources' | 'brief';
 
 export interface Spotlight {
   id: string;
   name: string;
-  category: 'Science' | 'Business' | 'Sports' | 'Leadership';
+  category: 'Science' | 'Business' | 'Sports' | 'Leadership' | 'Creative Arts';
   quoteOrHeadline: string;
   description: string;
   fullStory?: string;
@@ -12,12 +12,15 @@ export interface Spotlight {
   featured?: boolean;
   country?: string;
   subCategory?: string;
+  officialSource?: string;
+  sourceUrl?: string;
+  achievements?: string[];
 }
 
 export interface ResourceAsset {
   id: string;
   title: string;
-  type: 'Illustration' | 'Template' | 'Icon Set' | 'Photo' | 'Sketches' | 'Photos';
+  type: 'Illustration' | 'Template' | 'Icon Set' | 'Photo' | 'Sketches' | 'Photos' | 'Guidebook' | 'Handbook' | 'Directory' | 'Toolkit';
   format: string;
   image: string;
   imageAlt: string;
@@ -26,6 +29,9 @@ export interface ResourceAsset {
   itemCount?: string;
   downloadUrl?: string;
   description?: string;
+  officialPublisher?: string;
+  citation?: string;
+  sourceUrl?: string;
 }
 
 export interface DreamGoal {
@@ -57,4 +63,7 @@ export interface RightPillar {
   colorClass: 'primary' | 'secondary' | 'tertiary';
   points: string[];
   fullDetails: string;
+  legalReference?: string;
+  officialCitation?: string;
+  sourceUrl?: string;
 }

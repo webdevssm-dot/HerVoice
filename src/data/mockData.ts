@@ -1,152 +1,207 @@
 import { ResourceAsset, Spotlight, DreamGoal, QuizQuestion, RightPillar } from '../types';
+import unityDowImg from '../assets/images/unity_dow_portrait_1785073982568.jpg';
+import lesegoChomboImg from '../assets/images/lesego_chombo_portrait_1785073995464.jpg';
+import kgosiMosadiImg from '../assets/images/kgosi_mosadi_seboko_1785073791422.jpg';
+import bogoloKenewendoImg from '../assets/images/bogolo_kenewendo_portrait_1785074006372.jpg';
+import amantleMontshoImg from '../assets/images/amantle_montsho_portrait_1785074019835.jpg';
+import drMatshidisoImg from '../assets/images/matshidiso_moeti_portrait_1785074033897.jpg';
+import mpuleKwelagobeImg from '../assets/images/mpule_kwelagobe_portrait_1785074044601.jpg';
 
 export const INITIAL_RESOURCES: ResourceAsset[] = [
   {
     id: 'res-1',
-    title: 'Unity & Support Pack',
-    type: 'Illustration',
-    format: 'High-res PNG & SVG',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCkIc6lU5qqCDLNHlsLcAMY7S-jDie09-OBCIb1-5YPYyiP0amKVLsdczW0yN2Qsiz0mJ4dLJoGqIhxCXlU1-4ZcJb4F_h1wtRd6LPakZ3Zw8V6wSkgjqxxO5j0gtCsvzhVtdjzAZBy9N9UAFtedArVtTWSjVNaEFs22Z5ntshWK-Dxi6Kdvubbuvo6cVYv6DtVWxphs9fzbbxv1ThBUX-Ga0bGb_N9Gyu7Xq_pOwoEKzetM11EUcDFbGtnonBR1S2TnmYjRsZmJWfh',
-    imageAlt: 'Vibrant illustration of three diverse women standing together in a playful pop-art aesthetic.',
-    description: 'A cheerful, vector-based illustration collection showcasing sisterhood, solidarity, and empowerment for HerVoice creators.'
+    title: 'Emang Basadi Legal Rights Guide',
+    type: 'Guidebook',
+    format: 'PDF Booklet',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600',
+    imageAlt: 'Legal booklet for women rights in Botswana',
+    description: 'Comprehensive legal guidebook published by Emang Basadi Women\'s Association covering domestic violence laws, maintenance claims, property rights, and legal aid in Botswana.',
+    officialPublisher: 'Emang Basadi Women\'s Association Botswana',
+    sourceUrl: 'https://en.wikipedia.org/wiki/Emang_Basadi_Women%27s_Association'
   },
   {
     id: 'res-2',
-    title: 'Brand Pitch Deck',
+    title: 'CEDA & LEA Business Pitch Kit',
     type: 'Template',
-    format: 'Keynote / PowerPoint',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCc6UO2jcIpXkF24ci_OiEzcMfSbPxN_40TM6yWzgUBELW7bmrEnYczXQCTwJeXLkuw7qPTC4XSg7bMFWUhIG8tdrP5zSzKA0IlXVn3u7WLF5zdjkBRo9RkE6yBazfxVOzjM2K7abZKJDFeN7qOkYeu7LhxR5mwMe5orZcbI6xb55l4z1ms-5hFahvFQHNsmrMC2L9t-rIkLmdDyZQXbz9Bj-WXbWz6QFTunaa7apJdkKiTaT6kqzdjw9w1Sjg4vKefCDv9HvkhzFZL',
-    imageAlt: 'Modern professional presentation template layout displayed on a tablet screen.',
-    description: 'A complete 25-slide presentation template styled with HerVoice typography and candy color accents for pitching non-profit initiatives.'
+    format: 'PowerPoint / PDF',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
+    imageAlt: 'Business plan presentation template for CEDA funding',
+    description: 'Complete presentation pitch template designed to meet the funding guidelines of CEDA Botswana and LEA for young women launching small businesses.',
+    officialPublisher: 'Citizen Entrepreneurial Development Agency (CEDA Botswana)',
+    sourceUrl: 'https://www.ceda.org.bw'
   },
   {
     id: 'res-3',
-    title: 'Universal Symbols Pro',
-    type: 'Icon Set',
-    format: '500+ Vectorized Icons',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDJVU9F_BBu2Dll51fujt97S-BZsI19wOH2gPv17LHrN-iJOyPqJ-5K72m0oFDexiF444OeqoqqWlqOXiZfFZxLE0xDyZUhJZq26t0u6ISiJgv36NC-MfeydzjuJJLBhQgAVeNEmiQbg6CV8wMpo4Yg1dD5UEPniFgS_0vvbkQcR-YRpNHsJMKQS54JbPmLwlO5jgUjUROk4LAlLF77xxGEIkmksjqbsAl7k5gqbSkAhE05ZsIItPJ6NVah018RZhhDY_lWn7Zxqc_P',
-    imageAlt: 'Large collection of minimalist icons designed with rounded edges and soft pastel colors.',
+    title: 'Youth Health & SRHR Toolkit',
+    type: 'Handbook',
+    format: 'PDF / Digital Guide',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600',
+    imageAlt: 'Youth health and wellness guide for young women in Botswana',
     wide: true,
     isNew: true,
-    itemCount: '500+ Icons',
-    description: 'Extensive icon library covering education, leadership, health, tech, and community building in SVG and Figma component formats.'
+    itemCount: 'Official Guide',
+    description: 'Health and reproductive rights guide created in collaboration with BOFWA (Botswana Family Welfare Association) and Ministry of Health.',
+    officialPublisher: 'Botswana Family Welfare Association (BOFWA) & Ministry of Health',
+    sourceUrl: 'https://www.bofwa.org.bw'
   },
   {
     id: 'res-4',
-    title: 'Creative Workspace',
-    type: 'Photo',
-    format: 'RAW / JPEG',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDRXDU3WjVNqhr4gJBxkxb9y_pKKSS0vXjQ2GezAXrXVVR1M-mqI9Jt76YJaLs1SC-XC9qMaQvGlonFnP5FP3vcqKNRDqPvn6JyszygXRfGP1X3_yaPrDWjryLk--HKgqUJfMbzYxHMRfLAaD9IVeXhvNf4XTlxAJ9wC6AYiGsB4VMv5vVPqLKUKnZSJixY62RizJQbex5lUI8OtE7_r390VWWJhOqVPDQdDpuwJ-syp5N2qb-vuxn50TdXABgKy2Vf1JLE1lUOrgtn',
-    imageAlt: 'High quality photograph of a sun-drenched workspace with laptop and stationery.',
-    description: 'High-resolution stock photography collection featuring productive female modern work environments.'
+    title: 'Anti-GBV Helpline Directory',
+    type: 'Directory',
+    format: 'Print / Digital Poster',
+    image: 'https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&q=80&w=600',
+    imageAlt: 'Emergency contacts and helpline list for Botswana',
+    description: 'Emergency helpline contact directory for Childline Botswana (116), Police GBV Helpline (0800 600 144), BONELA, and legal aid clinics across Gaborone, Francistown, and Maun.',
+    officialPublisher: 'Botswana Police Service & Childline Botswana',
+    sourceUrl: 'https://www.gov.bw'
   },
   {
     id: 'res-5',
-    title: 'Whimsical Doodles',
-    type: 'Sketches',
-    format: 'Vector AI / PDF',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBOePPYwks0eSHDEA5ff5aqIDUJg5T9fJ7X38HMU5o_iIGvpyod_qjUWLdZiEmk3l113lRYMuvZ-xDQqkSDihYYvNf9W7vo5U1PNCy_yBEOcZwGwgSpQ3PI_q5vAOlZIEIXyHMkAYH7vfFELYOtRt-5l22-jcbUWjq7SGTJjpTIHGeE95h9P6_-_0skIlQ1_y5etnS5PmsjJtuuZBhIDp1701hHqYnQj61clEqHmYWc_JT1K5dEbDpIinTPIu20VaaeRWg_y5Dpj1rM',
-    imageAlt: 'Collection of hand-drawn sketches and doodles of clouds, stars, and speech bubbles.',
-    description: 'Playful organic hand-drawn decorative elements to spice up social media graphics, banners, and vision boards.'
-  },
-  {
-    id: 'res-6',
-    title: 'Social Media Kit',
-    type: 'Template',
-    format: 'Canva Editable',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDn9HyI7r02S-BqCR9e78KAAhBrPlPAbLtWsW4lM6PxPhRM_QuY2d-gj0SIGpRkHfmK_RtG6cWPFWa88-2hqxSSE0Q8rNeeWoGYQ5SeWu_rKPiqnvEYqlKIf9iuRjlWeiOhQCw6SqkLXCsYOvLQWenG1wEWNw8BzmQ8fcWAqrgIsVxUs19FrNbjNGW45OA_wgCXCc0GICgYiHzhVaWwIxcmdhBrDhjvx2vmhvdwy8iF_PIjgyMM38n9c7xBJKpqJsiswVWh1mz4__Ku',
-    imageAlt: 'Digital calendar grid with mini icons for social media scheduling.',
-    description: 'Pre-designed Instagram & TikTok story, reel cover, and post templates ready for quick content creators.'
-  },
-  {
-    id: 'res-7',
-    title: 'Leadership Series',
-    type: 'Photos',
-    format: 'High Res Gallery',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAF1wLDaYLUEd3LJ3LcA1F6PQn1PBiGqIdWhn-_FIBK62DYUud2YLLg4KZJAhOXZ0zFv8hodTNWhRdjEEGOn1uGKZs1XT8thzl1Y_vkYAlzkFJ-2-PEJLkH33jE6l_GzuODYfpoqRpvriqyoie1rtBXxP3yNp9stR6hIZjv4-XCcj4obASn8USzsw7BIBCOvgGqFYqrqz3Zfy2pDLtGJdqDjxp8Zzbe5k3WWncjpH4k5bkXmwit9oeh98Ref9QDFV3i8Le2hpW8loXy',
-    imageAlt: 'Series of stock photos of women in conference and leadership roles.',
-    description: 'Curated editorial gallery celebrating women in governance, STEM, legal advocacy, and grassroots movements.'
+    title: 'Botswana Innovation Hub STEM Guide',
+    type: 'Toolkit',
+    format: 'PDF Roadmap',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600',
+    imageAlt: 'Young women participating in STEM and technology workshop',
+    description: 'Career roadmap for young Batswana women entering computer science, environmental engineering, and digital innovation, supported by BIH and UB mentors.',
+    officialPublisher: 'Botswana Digital & Innovation Hub (BDIH) & University of Botswana',
+    sourceUrl: 'https://www.bih.co.bw'
   }
 ];
 
 export const FEATURED_SPOTLIGHT: Spotlight = {
   id: 'spotlight-featured',
-  name: 'Mmakgotla Ketsile',
+  name: 'Hon. Unity Dow',
   category: 'Leadership',
-  subCategory: 'Leadership & Innovation',
-  quoteOrHeadline: 'Pioneering the tech landscape in Gaborone',
-  description: 'Pioneering the tech landscape in Gaborone, Mmakgotla has founded three successful social enterprises dedicated to bridging the digital divide for young girls across Southern Africa. Her story is one of resilience, vision, and the power of local mentorship.',
-  fullStory: `Mmakgotla Ketsile grew up in Gaborone with an insatiable curiosity for science and technology. Seeing the stark digital gap between urban centers and rural villages, she founded "TechSisters Botswana", an initiative that has trained over 4,000 young women in web development, robotics, and digital literacy.
+  subCategory: 'Human Rights & Jurisprudence',
+  quoteOrHeadline: 'If a law discriminates against a woman, it discriminates against the future of the nation.',
+  description: 'First female High Court Judge in Botswana, acclaimed author, human rights attorney, and lead plaintiff in the historic 1992 Unity Dow citizenship case.',
+  fullStory: `Unity Dow made history in Botswana as the lead plaintiff in the landmark 1992 case Attorney General of Botswana v. Unity Dow [1992] BLR 119 (CA). At the time, Botswana's Citizenship Act denied Batswana mothers married to non-citizens the right to pass Botswana citizenship to their children. Dow challenged the law as discriminatory under Section 3 and Section 15 of the Constitution of Botswana and won a historic victory in the Court of Appeal, establishing gender equality in Batswana nationality law.
 
-"When you teach a young woman to code, you aren't just teaching her syntax—you are handing her the key to shape her own destiny," says Mmakgotla.
+Appointed as Botswana's first female High Court Judge in 1997, she later served as Minister of Education and Skills Development, Minister of Foreign Affairs and International Cooperation, and member of international human rights missions for the United Nations and the International Commission of Jurists. She is also an acclaimed novelist whose works, including 'Far and Beyon' and 'Juggling Truths', illuminate African youth and women's experiences.
 
-Today, her social enterprises collaborate with schools across Southern Africa, providing hardware labs, internet connectivity, and mentorship networks that match teenage girls with women leaders in STEM.`,
-  image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUVhzm72td4TnMsBtDlZCs3Yb7ue6bxjjOtUpWNIMW7HjHFknqZ-d_3OQHAjJ3Ymnmh2aitnWhBgoEKdXvCo46z1IJxaZ4f9nSRLW7FyH_E4gEHvx_6N0OhTiV4pFTxFNwdYlZ751XzGdGeXGSIzTXYvRg2VqoDBp0xU2X-ik7awQOJ__rjPxQY-hdo2_rvPt07ZAOFKv7A0-qks92YxuvPCpQ8tY43Gfa46B7U9DJBoxMQBe8X6jwq4rYbiE4s2TrrezDfCWQXhYY',
-  imageAlt: 'Portrait of Mmakgotla Ketsile standing confidently against a sunset skyline in Gaborone.',
+"When women claim their constitutional rights, they build a more resilient democracy for every generation," says Unity Dow.`,
+  image: unityDowImg,
+  imageAlt: 'Hon. Unity Dow - Pioneer Human Rights Attorney and High Court Judge of Botswana',
   featured: true,
-  country: 'Botswana'
+  country: 'Botswana',
+  officialSource: 'Court of Appeal of Botswana, Attorney General v. Unity Dow [1992] BLR 119 (CA); Laws of Botswana (Cap 01:01).',
+  sourceUrl: 'https://en.wikipedia.org/wiki/Unity_Dow',
+  achievements: [
+    'Lead Plaintiff in Landmark 1992 Citizenship Case',
+    "Botswana's First Female High Court Judge (1997)",
+    'Former Minister of Foreign Affairs & International Cooperation',
+    'International Human Rights Commissioner (UN & ICJ)'
+  ]
 };
 
 export const SPOTLIGHTS_LIST: Spotlight[] = [
   {
     id: 'spotlight-1',
-    name: 'Dr. Elena Rodriguez',
-    category: 'Science',
-    quoteOrHeadline: '"Innovation isn\'t just about discovery; it\'s about the doors we open for others to follow."',
-    description: 'Leading pioneering research in renewable bio-materials and mentoring young women across global research institutes.',
-    fullStory: 'Dr. Elena Rodriguez leads a groundbreaking lab focused on sustainable polymers derived from indigenous plant species. Beyond her 15 patents, she dedicates 30% of her time to running science bootcamps for girls in underrepresented communities.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAcaJ-9RtP4xwBiavrveoOa3_YKm1whOy7BWtuDeGqhKLaLr-XjuaLdYTWgS0mVXvqyW8G5cGpHmu1R55z9TCp89oMCCKDcLOD0jYmpQxWXfuJtGRVRFfWKdnXqGcjVnJoUVxqWj5gsT0cKDYzQqExZYaZdGCdUjgoa9gOkO_mnVkleQImwytC-lFS18Z3lw7XFuLEHStaRRhLFeGVhmcjG_OGNBHxt7qC6SpMTiZew-tyUF1CD21_yKAvYmMLbZ8ub0F5o3cnG3oIF',
-    imageAlt: 'Dr. Elena Rodriguez conducting lab experiments with vibrant liquids.'
+    name: 'Lesego Chombo',
+    category: 'Leadership',
+    quoteOrHeadline: 'Empowerment begins when a young woman realizes her education and voice can uplift whole communities.',
+    description: 'Miss World Africa 2024, Miss Botswana 2022, practicing Attorney at Law, and founder of The Genesis Project for underprivileged children and single mothers.',
+    fullStory: 'Lesego Chombo graduated with a Bachelor of Laws (LL.B) from the University of Botswana and practices as an attorney of the High Court of Botswana. Crowned Miss Botswana 2022 and Miss World Africa 2024 (placing in the top 4 at Miss World), she launched The Genesis Project to provide developmental tools, entrepreneurship workshops, and legal guidance for single mothers and children across rural Botswana.',
+    image: lesegoChomboImg,
+    imageAlt: 'Lesego Chombo - Attorney at Law and Miss World Africa 2024 from Botswana',
+    officialSource: 'High Court of Botswana Roll of Legal Practitioners; Miss World Organization 2024 Official Archives; The Genesis Project Botswana.',
+    sourceUrl: 'https://en.wikipedia.org/wiki/Miss_World_2023',
+    achievements: [
+      'Miss World Africa 2024 & Top 4 Finalist',
+      'Attorney of the High Court of Botswana (LL.B, University of Botswana)',
+      'Founder of The Genesis Project for Rural Families',
+      'Miss Botswana 2022 Titleholder'
+    ]
   },
   {
     id: 'spotlight-2',
-    name: 'Maya Chen',
-    category: 'Sports',
-    quoteOrHeadline: 'Breaking world records and glass ceilings simultaneously on the global track stage.',
-    description: 'Olympic sprinter and champion for equal funding in women athletics across national sports federations.',
-    fullStory: 'Maya Chen broke the national 200m track record while balancing a degree in sports management. She launched the "RunHer" foundation, which provides athletic gear and nutrition coaching to aspiring female runners.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBS6C-8Vd3Poj5WKN8JKej2lMbNqJ9K_zjrLXMSWuJrULdhSjb-jVsem9OH0_yxwKTsaRamhnOWV46eJdQrK6SeKdkFPeLXm9VkijGxa7jaVE_fbJ6xS1kJfFHI9pSGiaKL3wJSKecgAQWJv6wexzHjJTha98N_Dpsw2hLajMAIqFaPn0hmnI4CftqTocb72LXUITHAOMaI4XmjFhZPibEyCUKviO_fA6XnIiqxmCgRgb_g3k0UvnoQzcjVTFlDeupvLcW2kYABj_4R',
-    imageAlt: 'Maya Chen sprinting on a sunlit track field.'
+    name: 'Kgosi Mosadi Seboko',
+    category: 'Leadership',
+    quoteOrHeadline: 'Customary governance must honor human dignity and champion the full participation of women.',
+    description: 'First female Paramount Chief (Kgosi) in Botswana history, leading the Balete nation and breaking traditional gender barriers in customary law.',
+    fullStory: 'In 2002, Kgosi Mosadi Seboko made history as the first woman installed as a Paramount Chief in Botswana, succeeding her brother to lead the Balete people of Ramotswa. Sitting in the Ntlo ya Dikgosi (House of Chiefs of Botswana), she has used her traditional authority to fight gender-based violence, defend girls\' education rights, and modernize customary inheritance frameworks.',
+    image: kgosiMosadiImg,
+    imageAlt: 'Kgosi Mosadi Seboko - First Female Paramount Chief in Botswana',
+    officialSource: 'Ntlo ya Dikgosi (House of Chiefs of Botswana); Tribal Administration Records of Ramotswa, Republic of Botswana.',
+    sourceUrl: 'https://en.wikipedia.org/wiki/Mosadi_Seboko',
+    achievements: [
+      'First Female Paramount Chief in Botswana History (2002)',
+      'Leader of the Balete Nation (Ramotswa)',
+      'Member of Ntlo ya Dikgosi (House of Chiefs)',
+      'National Champion Against Gender-Based Violence'
+    ]
   },
   {
     id: 'spotlight-3',
-    name: 'Sarah Al-Farsi',
+    name: 'Bogolo Kenewendo',
     category: 'Business',
-    quoteOrHeadline: 'Redefining sustainable fashion and circular economy for the next generation of retailers.',
-    description: 'Founder of a zero-waste textile startup empowering artisanal craftswomen with fair wages.',
-    fullStory: 'Sarah Al-Farsi built a sustainable fashion enterprise that recycles ocean plastics into high-end durable textiles. Her supply chain connects over 500 female artisans directly to global consumer markets.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDqDaO9e3NNh3QcieZ26pqhnE5TU5IttvgxZG_hrT41UslRuQSq07bkviotFo1oGZHV8lkPVxVQTN5iQK1E72ho2Lu4Y-VUqerrMQaJwG-PS84MAngr774sdbIUhe08vDjXWEb_MMPxE3ZRYICNMYX-RG8jexRjFNBHcaHB1E4nTlT-X3l0ZFftKmJVUV3GK5XsqctnwCpB7uLrpLs44Mn-YiFsamyuro1YVs-uL9UmKxjTFqI5zxCTra-e9Ale8CGsnnEhMzz34zjd',
-    imageAlt: 'Sarah Al-Farsi smiling in her modern eco-friendly office.'
+    quoteOrHeadline: 'Economic policies must create active opportunities for young women entrepreneurs to lead.',
+    description: 'Economist, former Minister of Investment, Trade and Industry of Botswana, and global advisor on climate finance and digital economies.',
+    fullStory: 'Appointed to Botswana\'s Cabinet at age 29, Bogolo Kenewendo served as Minister of Investment, Trade and Industry, becoming one of Africa\'s youngest cabinet ministers. An alumna of the University of Botswana and the University of Sussex (MSc International Economics), she introduced key trade digitalization initiatives, youth enterprise funds, and currently advises the United Nations and global climate institutions.',
+    image: bogoloKenewendoImg,
+    imageAlt: 'Bogolo Kenewendo - Economist and Former Minister of Investment, Trade and Industry of Botswana',
+    officialSource: 'Ministry of Investment, Trade and Industry (MITI Botswana); United Nations High-Level Advisory Board on Economic Affairs.',
+    sourceUrl: 'https://en.wikipedia.org/wiki/Bogolo_Kenewendo',
+    achievements: [
+      'Minister of Investment, Trade & Industry at Age 29',
+      'MSc International Economics (University of Sussex)',
+      'UN High-Level Climate Champion Special Advisor',
+      'Founder of Kenewendo Advisory'
+    ]
   },
   {
     id: 'spotlight-4',
-    name: 'Justice Amara Okafor',
-    category: 'Leadership',
-    quoteOrHeadline: 'A tireless advocate for human rights and equitable legislation across the continent.',
-    description: 'Human rights legal scholar drafting landmark gender equality bills and pro-bono defense funds.',
-    fullStory: 'Justice Amara Okafor has spent two decades fighting discrimination in employment, property rights, and education. Her landmark legal cases set precedent across regional constitutional courts.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAp2bWf0zMw1qPYn6xCNr21kmNo-79UXvu2WQGltynfcW1MtkH0P_OriNgqAy4H445ikQeKUY933yElgh69pCspBfdbJcm68TkKsbAhT8NfXyI-zA_OnNivu9-UsNF7r5lRSOtGwQzot1u9uVHkS9Z90mx1MJztGCDnDPJi8JXhRDUSRtgh7wyuE74ql94mtj-wgAZr8hMoIkz3frJD-hM3CPQjXrQYuXUWosgCKXffD-C9iF-dXHkLfdb60Tnhojc-ieSp-YM8YD3T',
-    imageAlt: 'Justice Amara Okafor speaking passionately at a leadership forum.'
+    name: 'Amantle Montsho',
+    category: 'Sports',
+    quoteOrHeadline: 'When you run for Botswana, you carry the pride and dreams of every young girl watching from home.',
+    description: '2011 World Athletics 400m Champion, 2x Commonwealth Gold Medalist, and Botswana\'s pioneer female Olympic athletics finalist.',
+    fullStory: 'Hailing from Maun, Amantle Montsho became a national sports legend when she won Botswana\'s first-ever World Athletics Championship Gold Medal in Daegu 2011, winning the women\'s 400 metres in 49.56 seconds. A multi-time African Champion and 3-time Olympian, she continues to mentor young female track athletes across Botswana.',
+    image: amantleMontshoImg,
+    imageAlt: 'Amantle Montsho - World Champion Track Athlete from Botswana',
+    officialSource: 'World Athletics Championships Daegu 2011 Official Records; Botswana National Olympic Committee (BNOC).',
+    sourceUrl: 'https://en.wikipedia.org/wiki/Amantle_Montsho',
+    achievements: [
+      "2011 World Athletics 400m Gold Medalist (49.56s)",
+      "Botswana's First World Track Gold Medalist",
+      '2x Commonwealth Games Gold Medalist (2010, 2018)',
+      '3x African Athletics Champion (2008, 2010, 2012)'
+    ]
   },
   {
     id: 'spotlight-5',
-    name: 'Li Wei',
+    name: 'Dr. Matshidiso Moeti',
     category: 'Science',
-    quoteOrHeadline: 'Architecting ethical AI frameworks that prioritize human dignity and inclusivity.',
-    description: 'AI ethics scholar and software engineer developing bias detection algorithms for machine learning.',
-    fullStory: 'Li Wei leads an international AI ethics coalition ensuring machine learning models do not perpetuate historical gender or racial biases. She regularly advises international policy groups.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD2PGYtTwNpgBIPsMKZAfPEtjhaWYF9zdH3FV20LlIbldPqKcyBqkU0__dFIU9FQr2CxZvV9Mu7QxJIHYGfkzLVVUcx-fNbhMSLnSlcNbfa1e9ZQo29XiQtY5a_AIUT5HOU8hFg8iA03JOIOE2MBOtk_wDGiL1Ft5Sy79Zs7-PyNfTW9TiETtDmCcl8FfmI1tbVHW8GUP2FEl6RJ_NQZVQQ4yadIbxvQPTn3X1ipbMJyxAqWhMSRhQaztzUS20rKcxmPhVlMWadREw0',
-    imageAlt: 'Li Wei interacting with glowing futuristic digital interfaces.'
+    quoteOrHeadline: 'Public health is built on health equity—ensuring no woman or child is left behind in care.',
+    description: 'Renowned Motswana physician, former WHO Regional Director for Africa, and international global health leader.',
+    fullStory: 'Dr. Matshidiso Moeti earned her medical degree (MBBS) at the University of London and dedicated over 35 years to international public health. As the first woman elected WHO Regional Director for Africa (serving from 2015 to 2025), she spearheaded major continental health initiatives, wild polio eradication, and emergency response systems across 47 African member states.',
+    image: drMatshidisoImg,
+    imageAlt: 'Dr. Matshidiso Moeti - Motswana Physician and WHO Regional Director for Africa',
+    officialSource: 'World Health Organization (WHO) Regional Office for Africa; Royal Free Hospital School of Medicine, University of London.',
+    sourceUrl: 'https://en.wikipedia.org/wiki/Matshidiso_Moeti',
+    achievements: [
+      'First Woman WHO Regional Director for Africa (2015–2025)',
+      'Led Continental Wild Polio Certification in Africa (2020)',
+      'Doctor of Medicine (MBBS, University of London)',
+      'Honorary Doctorate of Laws from University of Botswana'
+    ]
   },
   {
     id: 'spotlight-6',
-    name: 'Klara Jensen',
-    category: 'Sports',
-    quoteOrHeadline: 'Defying limits in the pool and advocating for accessible sports facilities globally.',
-    description: 'Paralympic swimmer and universal design activist building inclusive aquatic centers.',
-    fullStory: 'After winning gold in swimming, Klara dedicated her platform to auditing public recreation facilities, ensuring young girls with disabilities have equal access to coaching and competitive sports.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBY4pK3evIPKR25qPefu4fFxxLmMPi8dlPPxlPd1PCzmgl_0_5RK5FLjcivMsuvalmiGVQh_f5M8loXY_q0kzcRd7mSmQfH_HaUOQmmrxnF6bEdjuz52qK8utXrGzZwcqQOXWlujZ19Y700zz3jgU3900sO0WPqeUsGY2bKPJ8Tk3eWLNUWgju23C21amIFwNzYDy1sQ8lDjnJY9jhnpwB1ooua55je3UXa5nF9SQ4wpaEFcOqe-fRbCvmnIEbSBOc8GbIOSM7g0HU_',
-    imageAlt: 'Klara Jensen mid-stroke in a crystal clear swimming pool.'
+    name: 'Mpule Kwelagobe',
+    category: 'Creative Arts',
+    quoteOrHeadline: 'Using global platforms to champion reproductive health, youth advocacy, and human dignity.',
+    description: 'Miss Universe 1999, UNFPA Goodwill Ambassador, and advocate for youth health rights and sustainable agriculture in Botswana.',
+    fullStory: 'Born in Gaborone, Mpule Kwelagobe gained global prominence when she was crowned Miss Universe in 1999—the first Black African woman to win the title. She used her platform as a United Nations Population Fund (UNFPA) Goodwill Ambassador to lead youth HIV/AIDS prevention, reproductive health education, and sustainable development initiatives in Botswana and internationally.',
+    image: mpuleKwelagobeImg,
+    imageAlt: 'Mpule Kwelagobe - Miss Universe 1999 and UN Goodwill Ambassador from Botswana',
+    officialSource: 'United Nations Population Fund (UNFPA); Miss Universe 1999 Official Archives; MPULE Institute for Global Development.',
+    sourceUrl: 'https://en.wikipedia.org/wiki/Mpule_Kwelagobe',
+    achievements: [
+      'Miss Universe 1999 (First Black African Winner)',
+      'UNFPA Goodwill Ambassador for Youth & SRHR',
+      'Founder of the MPULE Institute for Sustainable Agriculture',
+      'World Economic Forum Young Global Leader'
+    ]
   }
 ];
 
@@ -154,46 +209,46 @@ export const INITIAL_GOALS: DreamGoal[] = [
   {
     id: 'goal-1',
     category: 'Education',
-    title: "Master's in Data Science",
-    description: 'Apply for the 2025 international scholarship program. Focus on ethical AI and gender data gap studies.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDAU4dvGRU2DBc-EAEvbIRb7dhWUydOXHj3CL2MO5KEJS_sMTQnAgV14hQL8F5odWHLyZ7-GbsnnPPc9M1yn2URVTyr4Ctbgfju9ddjatyjG8njGKPFtv-JQPA35cBj7v0x0QWW73Y1655Ni_IXePeJiXQD0dEOS7rR99zZlepOsxDybrNgft3J1i6e_BOB7wZCryB08BEtP3TQzkxPor9SURCHs7xECjzM78GuK2yaImdHNc0VFRuQgsNVBLF_d9aMW6KFUkSDdKVM',
-    imageAlt: 'Group of young women studying together in a modern library.',
-    targetDate: 'Dec 2025',
+    title: 'LL.B Law Degree at University of Botswana',
+    description: 'Study law at UB Gaborone, specializing in constitutional human rights and advocating for women\'s legal protection across Botswana.',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600',
+    imageAlt: 'Students studying at University of Botswana',
+    targetDate: 'Nov 2026',
     rotation: -1
   },
   {
     id: 'goal-2',
     category: 'Leadership',
-    title: 'Lead the Tech Summit',
-    description: 'Speak on the main stage about women in executive roles and mentor 5 junior developers.',
+    title: 'Apply for CEDA Youth Enterprise Grant',
+    description: 'Submit business plan to CEDA Botswana for a sustainable agri-tech startup in Francistown.',
     rotation: 2,
-    contributors: ['+5', 'MB']
+    contributors: ['CEDA', 'LEA']
   },
   {
     id: 'goal-3',
     category: 'Creative Arts',
-    title: 'Publish First Graphic Novel',
-    description: 'A story about a young girl who discovers she can talk to code, empowering her community through tech.',
+    title: 'Launch Maun Secondary Girls Code Club',
+    description: 'Establish a weekly digital skills and web development club for high school girls in Maun.',
     rotation: -2,
     hasIllustrationPlaceholder: true
   },
   {
     id: 'goal-4',
     category: 'Education',
-    title: 'Learn Public Speaking',
-    description: 'Master stage presence, storytelling, and legislative testimony.',
+    title: 'Volunteer with Childline Botswana',
+    description: 'Complete community peer advocacy training with Childline Botswana (Toll-Free 116) to mentor junior secondary students.',
     rotation: 1,
     completedTasks: [
-      { id: 't1', text: 'Register for Toastmasters', done: true },
-      { id: 't2', text: 'Record 5-minute pitch', done: false },
-      { id: 't3', text: 'Final Presentation', done: false }
+      { id: 't1', text: 'Register for Childline Advocate Training', done: true },
+      { id: 't2', text: 'Complete Youth Mentorship Workshop', done: true },
+      { id: 't3', text: 'Host School Rights Awareness Session', done: false }
     ]
   },
   {
     id: 'goal-5',
     category: 'Leadership',
-    title: 'Board Membership',
-    description: 'Secure a position on a non-profit board by Q4 to drive social impact for underprivileged girls.',
+    title: 'Join Young Women Legal Clinic Network',
+    description: 'Collaborate with Emang Basadi to offer pro-bono legal awareness workshops for rural communities in Botswana.',
     rotation: -1
   }
 ];
@@ -201,68 +256,81 @@ export const INITIAL_GOALS: DreamGoal[] = [
 export const RIGHT_PILLARS: RightPillar[] = [
   {
     id: 'edu',
-    title: 'Education',
-    description: 'You have the right to learn, grow, and pursue any career path you choose without discrimination or barriers.',
+    title: 'Education & Re-Entry',
+    description: 'The Ministry of Basic Education guarantees free basic education and enforces the School Re-entry Policy for young mothers in Botswana.',
     icon: 'school',
     colorClass: 'primary',
-    points: ['Access to safe learning', 'Equal scholarships'],
-    fullDetails: 'Every girl and young woman is entitled to accessible, quality, and safe education free from harassment or financial discrimination. This includes STEM opportunities, leadership training, and institutional support.'
+    points: ['School Re-entry Policy for Young Mothers', 'DTEF Tertiary Sponsorship Access'],
+    fullDetails: 'Botswana\'s Ministry of Basic Education enforces a progressive School Re-entry Policy allowing young mothers to return to secondary school post-childbirth without penalty or administrative barriers. State-sponsored tertiary funding (DTEF) is available to qualifying Batswana youth for university and technical studies.',
+    legalReference: 'Ministry of Basic Education Policy Circular No. 2 of 1999 (School Re-entry Policy for Adolescent Mothers); DTEF Tertiary Sponsorship Guidelines.',
+    officialCitation: 'Republic of Botswana Education Act (Cap 58:01).',
+    sourceUrl: 'https://www.gov.bw/ministries/ministry-basic-education'
   },
   {
     id: 'eq',
-    title: 'Equality',
-    description: 'Treating everyone with the same respect and providing the same opportunities, regardless of gender or background.',
+    title: 'Gender Equality & Citizenship',
+    description: 'The Constitution of Botswana and landmark judicial rulings protect women against gender discrimination and marital inequality.',
     icon: 'balance',
     colorClass: 'secondary',
-    points: ['Fair pay & leadership', 'Zero-bias treatment'],
-    fullDetails: 'Constitutional and international rights guarantee equal pay for equal work, non-discriminatory hiring practices, and equal representation in boardrooms and government bodies.'
+    points: ['Citizenship Act Amendment (Unity Dow Rule)', 'Abolition of Marital Power Act (2004)'],
+    fullDetails: 'Under the Abolition of Marital Power Act of 2004, married women in Botswana possess full legal capacity to hold property, sign contracts, and act as equal financial decision-makers. Following the landmark 1992 Unity Dow Court of Appeal ruling, Batswana mothers have equal constitutional rights to pass citizenship to their children.',
+    legalReference: 'Constitution of Botswana (Cap 01:01), Sections 3 & 15; Attorney General v. Unity Dow [1992] BLR 119 (CA).',
+    officialCitation: 'Abolition of Marital Power Act No. 34 of 2004, Laws of Botswana.',
+    sourceUrl: 'https://en.wikipedia.org/wiki/Unity_Dow'
   },
   {
     id: 'safe',
-    title: 'Safety',
-    description: 'The right to live free from violence and harassment in your home, workplace, and public spaces.',
+    title: 'Safety & Anti-GBV Protections',
+    description: 'The Domestic Violence Act (2008) and Botswana Police Service GBV Unit provide legal protection and emergency hotlines.',
     icon: 'shield_with_heart',
     colorClass: 'tertiary',
-    points: ['Bodily autonomy', 'Crisis support access'],
-    fullDetails: 'You have absolute ownership over your body and well-being. Protections include strict legal enforcement against domestic abuse, workplace harassment, and universal access to emergency hotlines.'
+    points: ['Domestic Violence Court Protection Orders', 'Childline Botswana 116 & Police 0800 600 144'],
+    fullDetails: 'The Domestic Violence Act (2008) enables victims to obtain urgent interim protection orders from magistrate courts in Botswana. Free 24/7 assistance is accessible via Childline Botswana (Toll-Free 116) and the Police GBV Helpline (0800 600 144).',
+    legalReference: 'Domestic Violence Act No. 10 of 2008, Laws of Botswana; Penal Code (Cap 08:01).',
+    officialCitation: 'Botswana Police Service GBV Hotline 0800 600 144 & Childline Botswana Toll-Free 116.',
+    sourceUrl: 'https://www.gov.bw'
   },
   {
     id: 'exp',
-    title: 'Expression',
-    description: 'Your voice matters. You have the right to speak up, share your ideas, and protest peacefully for change.',
+    title: 'Employment & Economic Rights',
+    description: 'The Employment Act of Botswana protects female workers against discrimination and mandates paid maternity leave.',
     icon: 'campaign',
     colorClass: 'primary',
-    points: ['Free speech & media', 'Creative freedom'],
-    fullDetails: 'Freedom of expression protects peaceful assembly, digital publishing, artistic creation, and political advocacy without fear of censorship or retaliation.'
+    points: ['12 Weeks Paid Maternity Leave', 'Prohibition of Workplace Sexual Harassment'],
+    fullDetails: 'Botswana\'s Employment Act (Cap 47:01) entitles female employees to 12 weeks of paid maternity leave (6 weeks prior and 6 weeks after birth) and protects workers from unfair dismissal due to pregnancy or gender.',
+    legalReference: 'Employment Act (Cap 47:01), Part X (Maternity Protection, Sections 113–116).',
+    officialCitation: 'Laws of Botswana, Employment Regulations & Equal Pay Mandate.',
+    sourceUrl: 'https://www.gov.bw'
   }
 ];
 
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 1,
-    question: 'Does a student have the right to wear a religious headscarf in a public school?',
+    question: 'Under Botswana\'s Citizenship Act, do Batswana mothers married to non-citizens have equal constitutional rights to pass Botswana citizenship to their children?',
     options: [
-      { text: "Yes, it's protected expression.", isCorrect: true },
-      { text: "No, it's not allowed.", isCorrect: false }
+      { text: 'Yes, established by the historic Unity Dow Court of Appeal ruling.', isCorrect: true },
+      { text: 'No, citizenship can only be passed down through the father.', isCorrect: false }
     ],
-    explanation: 'Freedom of religion and expression protects symbolic attire in public educational institutions under international human rights frameworks.'
+    explanation: 'The landmark 1992 Unity Dow case established that Section 3 of the Constitution of Botswana protects women from gender discrimination in nationality laws.'
   },
   {
     id: 2,
-    question: 'Are employers legally allowed to ask about pregnancy plans during job interviews?',
+    question: 'What is the policy of Botswana\'s Ministry of Basic Education regarding teenage mothers returning to school?',
     options: [
-      { text: 'Yes, for scheduling purposes.', isCorrect: false },
-      { text: 'No, it is illegal gender bias.', isCorrect: true }
+      { text: 'Young mothers have an official legal right to return and complete secondary school.', isCorrect: true },
+      { text: 'Teenage mothers are permanently prohibited from attending state schools.', isCorrect: false }
     ],
-    explanation: 'Inquiries into family planning or marital status are strictly prohibited under employment non-discrimination laws.'
+    explanation: 'Botswana\'s School Re-entry Policy actively enables adolescent mothers to resume their secondary education without academic penalty.'
   },
   {
     id: 3,
-    question: 'Do young women have a constitutional right to equal pay for work of equal value?',
+    question: 'Which law in Botswana abolished male marital legal dominance, granting married women equal property and contractual rights?',
     options: [
-      { text: 'Yes, mandated by law.', isCorrect: true },
-      { text: 'No, employers decide.', isCorrect: false }
+      { text: 'The Abolition of Marital Power Act of 2004', isCorrect: true },
+      { text: 'The Companies Act of 1995', isCorrect: false }
     ],
-    explanation: 'Equal remuneration laws mandate equal compensation regardless of gender for substantially similar work.'
+    explanation: 'Enacted in 2004, the Abolition of Marital Power Act repealed traditional male legal supremacy in civil marriages, establishing full legal equality.'
   }
 ];
+

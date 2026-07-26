@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { RightPillar } from '../types';
+import { downloadA4Brief } from '../utils/downloadA4Brief';
 
 interface RightsDetailModalProps {
   pillar: RightPillar | null;
@@ -7,28 +8,71 @@ interface RightsDetailModalProps {
 }
 
 export const RightsDetailModal: React.FC<RightsDetailModalProps> = ({ pillar, onClose }) => {
+  // Close modal on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   if (!pillar) return null;
 
+  const handleDownloadBrief = () => {
+    downloadA4Brief({
+      title: `${pillar.title} - Rights & Legal Framework Brief`,
+      subtitle: pillar.description,
+      category: 'Legal Rights',
+      publisherOrCountry: 'Republic of Botswana',
+      bodyText: `${pillar.description}\n\n${pillar.fullDetails}`,
+      highlights: pillar.points,
+      officialCitation: `${pillar.legalReference || ''} ${pillar.officialCitation || ''}`,
+      sourceUrl: pillar.sourceUrl
+    });
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">
-      <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-[#f2e8f2] flex flex-col relative text-[#2e1a28]">
-        <div className="bg-[#fce8f5] p-6 text-[#2e1a28] relative border-b border-pink-100">
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white hover:bg-pink-50 flex items-center justify-center text-[#2e1a28] transition-colors border border-pink-200 shadow-sm"
-          >
-            <span className="material-symbols-outlined text-xl">close</span>
-          </button>
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/60 backdrop-blur-sm animate-fadeIn"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl border border-[#f2e8f2] flex flex-col relative text-[#2e1a28]"
+      >
+        {/* Sticky Top Header Bar */}
+        <div className="bg-[#fce8f5] p-5 text-[#2e1a28] relative border-b border-pink-100 flex items-center justify-between gap-2 shrink-0">
           <div className="flex items-center gap-3">
-            <span className="material-symbols-outlined text-3xl p-2.5 bg-[#e040a0] text-white rounded-2xl shadow-md">{pillar.icon}</span>
+            <span className="material-symbols-outlined text-3xl p-2.5 bg-[#e040a0] text-white rounded-2xl shadow-md shrink-0">{pillar.icon}</span>
             <div>
               <p className="text-[10px] font-bold uppercase tracking-wider text-[#7c52aa]">RIGHTS & PROTECTION</p>
-              <h2 className="text-2xl font-black text-[#2e1a28]">{pillar.title} Rights</h2>
+              <h2 className="text-xl sm:text-2xl font-black text-[#2e1a28]">{pillar.title} Rights</h2>
             </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleDownloadBrief}
+              title="Download A4 Brief"
+              className="px-3 py-1.5 bg-white text-[#e040a0] hover:bg-[#e040a0] hover:text-white rounded-full text-xs font-bold transition-all border border-pink-200 shadow-sm flex items-center gap-1 shrink-0"
+            >
+              <span className="material-symbols-outlined text-base">download</span>
+              <span className="hidden sm:inline">A4 Brief</span>
+            </button>
+
+            <button
+              onClick={onClose}
+              aria-label="Close Modal"
+              className="w-9 h-9 rounded-full bg-white hover:bg-pink-100 flex items-center justify-center text-[#2e1a28] font-bold transition-colors border border-pink-200 shadow-sm shrink-0"
+            >
+              <span className="material-symbols-outlined text-xl">close</span>
+            </button>
           </div>
         </div>
 
-        <div className="p-6 overflow-y-auto space-y-6 text-[#2e1a28]">
+        {/* Scrollable Modal Body */}
+        <div className="p-6 overflow-y-auto space-y-6 text-[#2e1a28] flex-1">
           <p className="text-base font-semibold leading-relaxed text-[#2e1a28]">
             {pillar.description}
           </p>
@@ -55,6 +99,37 @@ export const RightsDetailModal: React.FC<RightsDetailModalProps> = ({ pillar, on
             </p>
           </div>
 
+          {/* Official Citation / Legal Reference Box */}
+          <div className="p-4 bg-[#fcf7fc] border border-[#f2e8f2] rounded-2xl space-y-2 text-xs">
+            <div className="flex items-center justify-between gap-2 font-bold text-[#7c52aa]">
+              <div className="flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-base text-[#e040a0]">menu_book</span>
+                <span>Official Legal References & Statutes</span>
+              </div>
+              {pillar.sourceUrl && (
+                <a
+                  href={pillar.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2.5 py-1 bg-[#f0e5ff] hover:bg-[#e040a0] hover:text-white text-[#7c52aa] text-[10px] font-bold rounded-lg transition-all flex items-center gap-1"
+                >
+                  <span>Official Portal</span>
+                  <span className="material-symbols-outlined text-xs">open_in_new</span>
+                </a>
+              )}
+            </div>
+            {pillar.legalReference && (
+              <p className="text-[#2e1a28] font-semibold text-[11px] leading-relaxed">
+                <span className="text-[#7c52aa]">Statute/Policy:</span> {pillar.legalReference}
+              </p>
+            )}
+            {pillar.officialCitation && (
+              <p className="text-[#604868] font-mono text-[10px]">
+                <span className="font-bold text-[#2e1a28]">Citation:</span> {pillar.officialCitation}
+              </p>
+            )}
+          </div>
+
           <div className="p-4 bg-[#fce8f5] border border-pink-100 rounded-2xl flex items-center gap-3 text-xs text-[#2e1a28]">
             <span className="material-symbols-outlined text-2xl text-[#e040a0] shrink-0">gavel</span>
             <div>
@@ -64,12 +139,22 @@ export const RightsDetailModal: React.FC<RightsDetailModalProps> = ({ pillar, on
           </div>
         </div>
 
-        <div className="p-4 bg-[#fcf7fc] border-t border-[#f2e8f2] flex justify-end">
+        {/* Sticky Bottom Footer Exit Bar */}
+        <div className="p-4 bg-[#fcf7fc] border-t border-[#f2e8f2] flex items-center justify-between gap-3 shrink-0">
+          <button
+            onClick={handleDownloadBrief}
+            className="px-4 py-2 bg-[#f0e5ff] text-[#7c52aa] hover:bg-[#e040a0] hover:text-white text-xs font-bold rounded-full transition-all flex items-center gap-1.5"
+          >
+            <span className="material-symbols-outlined text-base">download</span>
+            <span>Download A4 Brief</span>
+          </button>
+
           <button
             onClick={onClose}
-            className="px-6 py-2 bg-[#e040a0] text-white text-xs font-bold rounded-full hover:bg-[#c82f8c] transition-colors shadow-md"
+            className="px-6 py-2.5 bg-[#e040a0] text-white text-xs font-bold rounded-full hover:bg-[#c82f8c] transition-colors shadow-md flex items-center gap-1.5"
           >
-            Got It
+            <span className="material-symbols-outlined text-base">close</span>
+            <span>Exit Modal</span>
           </button>
         </div>
       </div>

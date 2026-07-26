@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SPOTLIGHTS_LIST, INITIAL_RESOURCES, RIGHT_PILLARS, FEATURED_SPOTLIGHT } from '../data/mockData';
 import { TabType } from '../types';
 
@@ -16,6 +16,16 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   onSelectSpotlight
 }) => {
   const [query, setQuery] = useState('');
+
+  // Close modal on Escape key press
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -59,10 +69,16 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4 bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-[#f2e8f2] overflow-hidden relative animate-fadeIn text-[#2e1a28]">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-start justify-center pt-12 sm:pt-20 px-3 sm:px-4 bg-black/60 backdrop-blur-sm animate-fadeIn"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-[#f2e8f2] overflow-hidden relative text-[#2e1a28] flex flex-col max-h-[85vh]"
+      >
         {/* Search Header */}
-        <div className="p-4 border-b border-[#f2e8f2] bg-[#fcf7fc] flex items-center gap-3">
+        <div className="p-4 border-b border-[#f2e8f2] bg-[#fcf7fc] flex items-center gap-3 shrink-0">
           <span className="material-symbols-outlined text-[#e040a0] text-2xl ml-2">search</span>
           <input
             type="text"
@@ -82,9 +98,10 @@ export const SearchModal: React.FC<SearchModalProps> = ({
           )}
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-white hover:bg-pink-50 flex items-center justify-center text-[#2e1a28] font-bold transition-colors border border-pink-200 shadow-sm"
+            aria-label="Close search"
+            className="w-9 h-9 rounded-full bg-white hover:bg-pink-100 flex items-center justify-center text-[#2e1a28] font-bold transition-colors border border-pink-200 shadow-sm shrink-0"
           >
-            <span className="material-symbols-outlined text-lg">close</span>
+            <span className="material-symbols-outlined text-xl">close</span>
           </button>
         </div>
 
@@ -206,6 +223,21 @@ export const SearchModal: React.FC<SearchModalProps> = ({
               )}
             </div>
           )}
+        </div>
+
+        {/* Bottom Exit Bar */}
+        <div className="p-3.5 bg-[#fcf7fc] border-t border-[#f2e8f2] flex items-center justify-between shrink-0">
+          <span className="text-[11px] text-[#604868] font-medium px-2">
+            Press <kbd className="px-1.5 py-0.5 bg-white border rounded text-[10px] font-mono">Esc</kbd> or click outside to exit
+          </span>
+
+          <button
+            onClick={onClose}
+            className="px-5 py-2 bg-[#e040a0] text-white text-xs font-bold rounded-full hover:bg-[#c82f8c] transition-colors shadow-sm flex items-center gap-1"
+          >
+            <span className="material-symbols-outlined text-base">close</span>
+            <span>Close Search</span>
+          </button>
         </div>
       </div>
     </div>

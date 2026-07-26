@@ -19,6 +19,7 @@ import { RightsPage } from './pages/RightsPage';
 import { SpotlightsPage } from './pages/SpotlightsPage';
 import { DreamBoardPage } from './pages/DreamBoardPage';
 import { ResourcesPage } from './pages/ResourcesPage';
+import { BriefPage } from './pages/BriefPage';
 
 export function App() {
   const [activeTab, setActiveTab] = useState<TabType>('home');
@@ -92,6 +93,8 @@ export function App() {
             onOpenResourceModal={(res) => setSelectedResource(res)}
           />
         )}
+
+        {activeTab === 'brief' && <BriefPage />}
       </main>
 
       {/* Footer */}
@@ -127,6 +130,7 @@ export function App() {
       <StoryModal
         spotlight={selectedSpotlight}
         onClose={() => setSelectedSpotlight(null)}
+        onSelectSpotlight={(s) => setSelectedSpotlight(s)}
       />
 
       <ResourceModal

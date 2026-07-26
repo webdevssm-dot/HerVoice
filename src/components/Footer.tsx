@@ -26,6 +26,9 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenJoinUs }) =>
 
           {/* Nav Links */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-[#604868]">
+            <button onClick={() => setActiveTab('brief')} className="hover:text-[#e040a0] transition-colors font-bold text-[#e040a0]">
+              WCAG 2.1 A4 Brief
+            </button>
             <button onClick={() => setActiveTab('rights')} className="hover:text-[#e040a0] transition-colors">
               Safety Center
             </button>

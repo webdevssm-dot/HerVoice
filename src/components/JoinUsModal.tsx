@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface JoinUsModalProps {
   isOpen: boolean;
@@ -11,6 +11,16 @@ export const JoinUsModal: React.FC<JoinUsModalProps> = ({ isOpen, onClose }) => 
   const [role, setRole] = useState('Student');
   const [location, setLocation] = useState('Gaborone');
   const [submitted, setSubmitted] = useState(false);
+
+  // Close modal on Escape key press
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -28,14 +38,21 @@ export const JoinUsModal: React.FC<JoinUsModalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">
-      <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-[#f2e8f2] relative text-[#2e1a28]">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm animate-fadeIn"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white rounded-3xl max-w-lg w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-[#f2e8f2] relative text-[#2e1a28] flex flex-col"
+      >
         {/* Top Header */}
-        <div className="bg-[#fce8f5] p-6 text-[#2e1a28] text-center relative border-b border-pink-100">
+        <div className="bg-[#fce8f5] p-5 sm:p-6 text-[#2e1a28] text-center relative border-b border-pink-100 shrink-0">
           <button
             onClick={onClose}
             id="close-join-modal-btn"
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white hover:bg-pink-50 flex items-center justify-center text-[#2e1a28] transition-colors border border-pink-200 shadow-sm"
+            aria-label="Close modal"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white hover:bg-pink-100 flex items-center justify-center text-[#2e1a28] font-bold transition-colors border border-pink-200 shadow-sm"
           >
             <span className="material-symbols-outlined text-xl">close</span>
           </button>
@@ -132,14 +149,25 @@ export const JoinUsModal: React.FC<JoinUsModalProps> = ({ isOpen, onClose }) => 
                 <span>Your details are confidential and protected under HerVoice safety standards.</span>
               </div>
 
-              <button
-                type="submit"
-                id="submit-join-form-btn"
-                className="w-full py-3.5 bg-[#e040a0] text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md shadow-pink-500/20 hover:bg-[#c82f8c] transition-all bouncy-hover flex items-center justify-center gap-2 mt-2"
-              >
-                <span>Complete Registration</span>
-                <span className="material-symbols-outlined text-lg">arrow_forward</span>
-              </button>
+              <div className="flex items-center gap-2 pt-2">
+                <button
+                  type="submit"
+                  id="submit-join-form-btn"
+                  className="flex-1 py-3.5 bg-[#e040a0] text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md shadow-pink-500/20 hover:bg-[#c82f8c] transition-all bouncy-hover flex items-center justify-center gap-2"
+                >
+                  <span>Complete Registration</span>
+                  <span className="material-symbols-outlined text-lg">arrow_forward</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={onClose}
+                  className="px-4 py-3.5 bg-[#f0e5ff] text-[#7c52aa] hover:bg-[#e040a0] hover:text-white font-bold text-xs rounded-full transition-all flex items-center gap-1"
+                >
+                  <span className="material-symbols-outlined text-base">close</span>
+                  <span className="hidden sm:inline">Cancel</span>
+                </button>
+              </div>
             </form>
           )}
         </div>

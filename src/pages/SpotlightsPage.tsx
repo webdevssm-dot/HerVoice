@@ -24,17 +24,33 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#f2e8f2] shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Image */}
-          <div className="lg:col-span-5 relative rounded-2xl overflow-hidden h-[300px] sm:h-[360px]">
+          <div className="lg:col-span-5 relative rounded-2xl overflow-hidden h-[300px] sm:h-[360px] bg-[#1a0f18] flex items-center justify-center p-2">
+            <img
+              src={FEATURED_SPOTLIGHT.image}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+            />
             <img
               src={FEATURED_SPOTLIGHT.image}
               alt={FEATURED_SPOTLIGHT.name}
-              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+              className="max-h-full max-w-full object-contain relative z-10 drop-shadow-xl rounded-lg"
             />
-            <div className="absolute top-4 left-4 flex gap-2">
-              <span className="px-3 py-1 bg-[#e040a0] text-white text-[10px] font-bold rounded-full uppercase tracking-wider">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2e1a28] via-[#7c52aa] to-[#e040a0] flex flex-col items-center justify-center p-6 text-white text-center">
+              <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl font-black border border-white/30 mb-2">
+                UD
+              </div>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#fce8f5]">FEATURED LEADER</span>
+              <p className="text-xl font-black mt-1">Hon. Unity Dow</p>
+            </div>
+            <div className="absolute top-4 left-4 flex gap-2 z-20">
+              <span className="px-3 py-1 bg-[#e040a0] text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-md">
                 FEATURED SPOTLIGHT
               </span>
-              <span className="px-3 py-1 bg-[#7c52aa] text-white text-[10px] font-bold rounded-full uppercase tracking-wider">
+              <span className="px-3 py-1 bg-[#7c52aa] text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-md">
                 BOTSWANA
               </span>
             </div>
@@ -124,13 +140,33 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
               onClick={() => onOpenStory(item)}
               className="bg-white rounded-3xl border border-[#f2e8f2] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
             >
-              <div className="h-64 overflow-hidden relative">
+              <div className="h-64 overflow-hidden relative bg-[#1a0f18] flex items-center justify-center p-2">
+                {/* Ambient blur background */}
+                <img
+                  src={item.image}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
+                />
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    // Hide broken image and reveal parent fallback
+                    e.currentTarget.style.display = 'none';
+                  }}
+                  className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300 relative z-10 drop-shadow-md rounded-md"
                 />
-                <span className="absolute top-3 left-3 px-3 py-1 bg-[#7c52aa] text-white text-[10px] font-bold rounded-full uppercase">
+                {/* Fallback visual if image fails */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2e1a28] via-[#7c52aa] to-[#e040a0] flex flex-col items-center justify-center p-4 text-white text-center">
+                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl font-black border border-white/30 mb-1">
+                    {item.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#fce8f5]">BOTSWANA LEADER</span>
+                  <p className="text-base font-black leading-tight mt-0.5">{item.name}</p>
+                </div>
+
+                <span className="absolute top-3 left-3 z-20 px-3 py-1 bg-[#7c52aa] text-white text-[10px] font-bold rounded-full uppercase shadow-md">
                   {item.category}
                 </span>
               </div>
@@ -139,12 +175,19 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
                   <h3 className="font-bold text-lg text-[#2e1a28] group-hover:text-[#e040a0] transition-colors">
                     {item.name}
                   </h3>
-                  <p className="text-xs text-[#604868] line-clamp-2 mt-1">
+                  <p className="text-xs text-[#604868] line-clamp-2 mt-1 font-medium">
                     {item.quoteOrHeadline}
                   </p>
                 </div>
+
+                {item.officialSource && (
+                  <p className="text-[10px] text-[#7c52aa] font-mono line-clamp-1 border-t border-[#f2e8f2] pt-2">
+                    Source: {item.officialSource}
+                  </p>
+                )}
+
                 <div className="pt-2 text-xs font-bold text-[#e040a0] flex items-center gap-1">
-                  <span>Read Story</span>
+                  <span>Read Full Profile</span>
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                 </div>
               </div>
