@@ -1,0 +1,120 @@
+import React, { useState } from 'react';
+import { DreamGoal } from '../types';
+
+interface AddGoalModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onAddGoal: (goal: DreamGoal) => void;
+}
+
+export const AddGoalModal: React.FC<AddGoalModalProps> = ({ isOpen, onClose, onAddGoal }) => {
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState<'Education' | 'Leadership' | 'Creative Arts'>('Education');
+  const [description, setDescription] = useState('');
+  const [targetDate, setTargetDate] = useState('Dec 2025');
+
+  if (!isOpen) return null;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!title || !description) return;
+
+    const newGoal: DreamGoal = {
+      id: `goal-${Date.now()}`,
+      title,
+      category,
+      description,
+      targetDate,
+      rotation: Math.floor(Math.random() * 5) - 2,
+      completedTasks: [
+        { id: `t-${Date.now()}-1`, text: 'Define action steps', done: false },
+        { id: `t-${Date.now()}-2`, text: 'Find a HerVoice mentor', done: false }
+      ]
+    };
+
+    onAddGoal(newGoal);
+    setTitle('');
+    setDescription('');
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fadeIn">
+      <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-[#f2e8f2] relative text-[#2e1a28]">
+        <div className="bg-[#fce8f5] p-6 text-[#2e1a28] text-center relative border-b border-pink-100">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white hover:bg-pink-50 flex items-center justify-center text-[#2e1a28] transition-colors border border-pink-200 shadow-sm"
+          >
+            <span className="material-symbols-outlined text-xl">close</span>
+          </button>
+          <div className="w-12 h-12 rounded-2xl bg-[#e040a0] text-white mx-auto flex items-center justify-center shadow-md mb-2">
+            <span className="material-symbols-outlined text-2xl font-bold">add_reaction</span>
+          </div>
+          <h2 className="text-2xl font-black text-[#2e1a28]">Pin Your Dream Card</h2>
+          <p className="text-xs text-[#604868] mt-1 font-medium">Declare your aspirations to the HerVoice community canvas</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="p-6 space-y-4">
+          <div>
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] mb-1">GOAL / VISION TITLE</label>
+            <input
+              type="text"
+              required
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="e.g. Launch a Tech Club in Francistown"
+              className="w-full px-4 py-3 bg-[#fcf7fc] text-[#2e1a28] rounded-2xl border border-pink-200 focus:outline-none focus:border-[#e040a0] text-sm font-medium"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] mb-1">CATEGORY</label>
+              <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value as any)}
+                className="w-full px-3 py-3 bg-[#fcf7fc] text-[#2e1a28] rounded-2xl border border-pink-200 focus:outline-none focus:border-[#e040a0] text-xs font-bold"
+              >
+                <option value="Education">🎓 Education</option>
+                <option value="Leadership">👑 Leadership</option>
+                <option value="Creative Arts">🎨 Creative Arts</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] mb-1">TIMELINE</label>
+              <input
+                type="text"
+                value={targetDate}
+                onChange={(e) => setTargetDate(e.target.value)}
+                placeholder="e.g. Dec 2025"
+                className="w-full px-4 py-3 bg-[#fcf7fc] text-[#2e1a28] rounded-2xl border border-pink-200 focus:outline-none focus:border-[#e040a0] text-xs font-medium"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-xs font-bold uppercase tracking-wider text-[#7c52aa] mb-1">NOTES & INSPIRATION</label>
+            <textarea
+              required
+              rows={3}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Why does this dream matter to you? How will you achieve it?"
+              className="w-full px-4 py-3 bg-[#fcf7fc] text-[#2e1a28] rounded-2xl border border-pink-200 focus:outline-none focus:border-[#e040a0] text-xs font-medium"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-3.5 bg-[#e040a0] text-white font-bold text-xs uppercase tracking-wider rounded-full shadow-md shadow-pink-500/20 hover:bg-[#c82f8c] transition-all bouncy-hover flex items-center justify-center gap-2 mt-2"
+          >
+            <span>Pin Goal to Board</span>
+            <span className="material-symbols-outlined text-lg">push_pin</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};

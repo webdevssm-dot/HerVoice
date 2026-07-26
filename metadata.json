@@ -1,0 +1,6 @@
+{
+  "name": "HerVoice",
+  "description": "Empowering the Next Generation of Botswana's Leaders - An interactive platform featuring rights guides, inspirational women spotlights, a dream board, and community resources.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
