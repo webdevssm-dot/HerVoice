@@ -16,6 +16,16 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   onSelectSpotlight
 }) => {
   const [query, setQuery] = useState('');
+  const inputRef = React.useRef<HTMLInputElement>(null);
+
+  // Focus search input instantly on open
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 10);
+    }
+  }, [isOpen]);
 
   // Close modal on Escape key press
   useEffect(() => {
@@ -81,6 +91,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
         <div className="p-4 border-b border-[#f2e8f2] dark:border-[#381f35] bg-[#fcf7fc] dark:bg-[#251223] flex items-center gap-3 shrink-0">
           <span className="material-symbols-outlined text-[#e040a0] dark:text-[#f25cb8] text-2xl ml-2">search</span>
           <input
+            ref={inputRef}
             type="text"
             autoFocus
             value={query}

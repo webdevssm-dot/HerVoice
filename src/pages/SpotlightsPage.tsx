@@ -22,9 +22,9 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
     <div className="space-y-12 pb-16">
       {/* Top Hero Featured Spotlight Card */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <div className="bg-white dark:bg-[#1e0f1d] rounded-3xl p-6 sm:p-8 border border-[#f2e8f2] dark:border-[#381f35] shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-[#f2e8f2] dark:border-[#381f35] shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
           {/* Image */}
-          <div className="lg:col-span-5 relative rounded-2xl overflow-hidden h-[300px] sm:h-[360px] bg-[#1a0f18] flex items-center justify-center p-2">
+          <div className="lg:col-span-5 relative rounded-xl sm:rounded-2xl overflow-hidden h-[220px] sm:h-[360px] bg-[#1a0f18] flex items-center justify-center p-2">
             <img
               src={FEATURED_SPOTLIGHT.image}
               alt=""
@@ -133,14 +133,14 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
         </div>
 
         {/* Spotlights Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {filteredList.map((item) => (
             <div
               key={item.id}
               onClick={() => onOpenStory(item)}
-              className="bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
+              className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
             >
-              <div className="h-64 overflow-hidden relative bg-[#1a0f18] flex items-center justify-center p-2">
+              <div className="h-44 sm:h-64 overflow-hidden relative bg-[#1a0f18] flex items-center justify-center p-2">
                 {/* Ambient blur background */}
                 <img
                   src={item.image}
@@ -170,7 +170,7 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
                   {item.category}
                 </span>
               </div>
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+              <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-2">
                 <div>
                   <h3 className="font-bold text-lg text-[#2e1a28] dark:text-[#f8f0f7] group-hover:text-[#e040a0] dark:group-hover:text-[#f25cb8] transition-colors">
                     {item.name}

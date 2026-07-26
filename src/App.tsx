@@ -47,6 +47,51 @@ export function App() {
     setIsDarkMode((prev) => !prev);
   };
 
+  // Instant scroll to top on tab change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [activeTab]);
+
+  // Global Keyboard Shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ignore shortcut if user is typing in an input or textarea
+      if (
+        ['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName)
+      ) {
+        if (e.key === 'Escape') {
+          setIsJoinUsOpen(false);
+          setIsSearchOpen(false);
+          setIsNominateOpen(false);
+          setIsAddGoalOpen(false);
+          setSelectedSpotlight(null);
+          setSelectedResource(null);
+          setSelectedRightsPillar(null);
+        }
+        return;
+      }
+
+      if (e.key === 'Escape') {
+        setIsJoinUsOpen(false);
+        setIsSearchOpen(false);
+        setIsNominateOpen(false);
+        setIsAddGoalOpen(false);
+        setSelectedSpotlight(null);
+        setSelectedResource(null);
+        setSelectedRightsPillar(null);
+      } else if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen((prev) => !prev);
+      } else if (e.key === '/') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   // Modals state
   const [isJoinUsOpen, setIsJoinUsOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -58,8 +103,22 @@ export function App() {
   const [selectedResource, setSelectedResource] = useState<ResourceAsset | null>(null);
   const [selectedRightsPillar, setSelectedRightsPillar] = useState<RightPillar | null>(null);
 
-  // Goals list state
-  const [goals, setGoals] = useState<DreamGoal[]>(INITIAL_GOALS);
+  // Goals list state with persistent storage
+  const [goals, setGoals] = useState<DreamGoal[]>(() => {
+    const saved = localStorage.getItem('hervoice_goals');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (err) {
+        console.error('Failed to parse saved goals', err);
+      }
+    }
+    return INITIAL_GOALS;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('hervoice_goals', JSON.stringify(goals));
+  }, [goals]);
 
   const handleAddGoal = (newGoal: DreamGoal) => {
     setGoals((prev) => [newGoal, ...prev]);

@@ -99,11 +99,11 @@ export const DreamBoardPage: React.FC<DreamBoardPageProps> = ({
 
       {/* Dream Canvas Area */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="dream-canvas min-h-[550px] p-6 sm:p-10 rounded-3xl border border-[#ebd8eb] dark:border-[#381f35] bg-white/50 dark:bg-[#1c0f1b]/80 shadow-inner">
+        <div className="dream-canvas min-h-[450px] sm:min-h-[550px] p-4 sm:p-10 rounded-2xl sm:rounded-3xl border border-[#ebd8eb] dark:border-[#381f35] bg-white/50 dark:bg-[#1c0f1b]/80 shadow-inner">
           {filteredGoals.length === 0 ? (
-            <div className="text-center py-20 space-y-4">
-              <span className="material-symbols-outlined text-5xl text-[#e040a0] dark:text-[#f25cb8]">cloud</span>
-              <h3 className="text-xl font-bold text-[#2e1a28] dark:text-[#f8f0f7]">No vision cards here yet</h3>
+            <div className="text-center py-12 sm:py-20 space-y-4">
+              <span className="material-symbols-outlined text-4xl sm:text-5xl text-[#e040a0] dark:text-[#f25cb8]">cloud</span>
+              <h3 className="text-lg sm:text-xl font-bold text-[#2e1a28] dark:text-[#f8f0f7]">No vision cards here yet</h3>
               <p className="text-xs text-[#604868] dark:text-[#d2b8cf]">Click 'Add Goal' to pin your first dream to this board!</p>
               <button
                 onClick={onOpenAddGoal}
@@ -113,7 +113,7 @@ export const DreamBoardPage: React.FC<DreamBoardPageProps> = ({
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
               {filteredGoals.map((goal, idx) => {
                 // Card soft colors cycling with dark mode support
                 const cardBgClasses = [
@@ -128,7 +128,7 @@ export const DreamBoardPage: React.FC<DreamBoardPageProps> = ({
                   <div
                     key={goal.id}
                     style={{ transform: `rotate(${goal.rotation || (idx % 2 === 0 ? 1 : -1)}deg)` }}
-                    className={`${cardBg} rounded-3xl p-6 shadow-md border relative flex flex-col justify-between sticky-note group`}
+                    className={`${cardBg} rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-md border relative flex flex-col justify-between sticky-note group`}
                   >
                     {/* Red Pushpin Icon */}
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-rose-500 text-white flex items-center justify-center shadow-md border-2 border-white dark:border-[#1e0f1d]">

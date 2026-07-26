@@ -116,11 +116,11 @@ export const RightsPage: React.FC<RightsPageProps> = ({ onOpenRightsDetail }) =>
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           {RIGHT_PILLARS.map((pillar) => (
             <div
               key={pillar.id}
-              className="bg-white dark:bg-[#1e0f1d] rounded-3xl p-8 border border-[#f2e8f2] dark:border-[#381f35] shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between space-y-6"
+              className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#f2e8f2] dark:border-[#381f35] shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between space-y-4 sm:space-y-6"
             >
               <div className="space-y-4">
                 <div className="w-12 h-12 rounded-2xl bg-[#fce8f5] dark:bg-[#341832] text-[#e040a0] dark:text-[#f25cb8] flex items-center justify-center">
@@ -160,7 +160,7 @@ export const RightsPage: React.FC<RightsPageProps> = ({ onOpenRightsDetail }) =>
 
       {/* Interactive Rights Quiz */}
       <section id="quiz-section" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white dark:bg-[#1e0f1d] rounded-3xl p-8 sm:p-10 shadow-lg border border-[#ebd8eb] dark:border-[#381f35] space-y-6">
+        <div className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl p-5 sm:p-10 shadow-lg border border-[#ebd8eb] dark:border-[#381f35] space-y-4 sm:space-y-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[#f2e8f2] dark:border-[#381f35] pb-4">
             <div>
               <span className="px-3.5 py-1 bg-[#f0e5ff] dark:bg-[#2b172a] text-[#7c52aa] dark:text-[#b08cc9] text-[10px] font-bold rounded-full uppercase tracking-wider">
@@ -260,78 +260,78 @@ export const RightsPage: React.FC<RightsPageProps> = ({ onOpenRightsDetail }) =>
           <p className="text-xs text-[#604868] dark:text-[#d2b8cf]">Quick access to tools, communities, and helpline resources.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* Card 1: Legal Resource Library */}
-          <div className="bg-gradient-to-br from-[#7c52aa] to-[#5d3886] text-white rounded-3xl p-6 flex flex-col justify-between space-y-6 shadow-md">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
-                <span className="material-symbols-outlined text-xl">menu_book</span>
+          <div className="bg-gradient-to-br from-[#7c52aa] to-[#5d3886] text-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between space-y-4 sm:space-y-6 shadow-md">
+            <div className="space-y-2 sm:space-y-3">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                <span className="material-symbols-outlined text-lg sm:text-xl">menu_book</span>
               </div>
-              <h3 className="font-bold text-lg">Legal Resource Library</h3>
+              <h3 className="font-bold text-base sm:text-lg">Legal Resource Library</h3>
               <p className="text-xs text-white/80 leading-relaxed">
                 Downloadable guides, court templates, and legal dictionaries.
               </p>
             </div>
             <button
               onClick={() => onOpenRightsDetail(RIGHT_PILLARS[0])}
-              className="w-full py-2.5 bg-white text-[#7c52aa] font-bold text-xs rounded-full hover:bg-purple-50 transition-colors"
+              className="w-full py-2 sm:py-2.5 bg-white text-[#7c52aa] font-bold text-xs rounded-full hover:bg-purple-50 transition-colors"
             >
               Browse Library
             </button>
           </div>
 
           {/* Card 2: Sisterhood Forum */}
-          <div className="bg-[#0096cc] text-white rounded-3xl p-6 flex flex-col justify-between space-y-6 shadow-md">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
-                <span className="material-symbols-outlined text-xl">forum</span>
+          <div className="bg-[#0096cc] text-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between space-y-4 sm:space-y-6 shadow-md">
+            <div className="space-y-2 sm:space-y-3">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                <span className="material-symbols-outlined text-lg sm:text-xl">forum</span>
               </div>
-              <h3 className="font-bold text-lg">Sisterhood Forum</h3>
+              <h3 className="font-bold text-base sm:text-lg">Sisterhood Forum</h3>
               <p className="text-xs text-white/80 leading-relaxed">
                 Connect safely with peers to discuss rights, career advice, and support.
               </p>
             </div>
             <button
               onClick={() => onOpenRightsDetail(RIGHT_PILLARS[1])}
-              className="w-full py-2.5 bg-white text-[#0096cc] font-bold text-xs rounded-full hover:bg-sky-50 transition-colors"
+              className="w-full py-2 sm:py-2.5 bg-white text-[#0096cc] font-bold text-xs rounded-full hover:bg-sky-50 transition-colors"
             >
               Join Discussion
             </button>
           </div>
 
           {/* Card 3: Advocacy Hotline */}
-          <div className="bg-white dark:bg-[#1e0f1d] rounded-3xl p-6 border border-[#f2e8f2] dark:border-[#381f35] flex flex-col justify-between space-y-6 shadow-sm">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-[#fce8f5] dark:bg-[#341832] text-[#e040a0] dark:text-[#f25cb8] flex items-center justify-center">
-                <span className="material-symbols-outlined text-xl">speed</span>
+          <div className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-[#f2e8f2] dark:border-[#381f35] flex flex-col justify-between space-y-4 sm:space-y-6 shadow-sm">
+            <div className="space-y-2 sm:space-y-3">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#fce8f5] dark:bg-[#341832] text-[#e040a0] dark:text-[#f25cb8] flex items-center justify-center">
+                <span className="material-symbols-outlined text-lg sm:text-xl">speed</span>
               </div>
-              <h3 className="font-bold text-lg text-[#2e1a28] dark:text-[#f8f0f7]">Advocacy Hotline</h3>
+              <h3 className="font-bold text-base sm:text-lg text-[#2e1a28] dark:text-[#f8f0f7]">Advocacy Hotline</h3>
               <p className="text-xs text-[#604868] dark:text-[#d2b8cf] leading-relaxed">
                 Need immediate help or confidential counseling? Toll-free 24/7.
               </p>
             </div>
             <button
               onClick={() => onOpenRightsDetail(RIGHT_PILLARS[2])}
-              className="w-full py-2.5 bg-[#e040a0] text-white font-bold text-xs rounded-full hover:bg-[#c82f8c] transition-colors"
+              className="w-full py-2 sm:py-2.5 bg-[#e040a0] text-white font-bold text-xs rounded-full hover:bg-[#c82f8c] transition-colors"
             >
               Call Now
             </button>
           </div>
 
           {/* Card 4: Know Your Locality */}
-          <div className="bg-[#fce8f5] dark:bg-[#2c152a] rounded-3xl p-6 flex flex-col justify-between space-y-6 shadow-sm">
-            <div className="space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-white dark:bg-[#3a1a38] text-[#d12b8d] dark:text-[#f25cb8] flex items-center justify-center">
-                <span className="material-symbols-outlined text-xl">location_on</span>
+          <div className="bg-[#fce8f5] dark:bg-[#2c152a] rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col justify-between space-y-4 sm:space-y-6 shadow-sm">
+            <div className="space-y-2 sm:space-y-3">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white dark:bg-[#3a1a38] text-[#d12b8d] dark:text-[#f25cb8] flex items-center justify-center">
+                <span className="material-symbols-outlined text-lg sm:text-xl">location_on</span>
               </div>
-              <h3 className="font-bold text-lg text-[#2e1a28] dark:text-[#f8f0f7]">Know Your Locality</h3>
+              <h3 className="font-bold text-base sm:text-lg text-[#2e1a28] dark:text-[#f8f0f7]">Know Your Locality</h3>
               <p className="text-xs text-[#604868] dark:text-[#d2b8cf] leading-relaxed">
                 Find local legal aid clinics, youth centers, and support hubs across Botswana.
               </p>
             </div>
             <button
               onClick={() => onOpenRightsDetail(RIGHT_PILLARS[3])}
-              className="w-full py-2.5 bg-[#d12b8d] text-white font-bold text-xs rounded-full hover:bg-[#b8227a] transition-colors"
+              className="w-full py-2 sm:py-2.5 bg-[#d12b8d] text-white font-bold text-xs rounded-full hover:bg-[#b8227a] transition-colors"
             >
               Explore Map
             </button>

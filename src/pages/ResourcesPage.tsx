@@ -50,44 +50,44 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({ onOpenResourceModa
 
       {/* Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {filteredResources.map((asset) => (
             <div
               key={asset.id}
               onClick={() => onOpenResourceModal(asset)}
-              className={`bg-white dark:bg-[#1e0f1d] rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer group flex flex-col justify-between ${
+              className={`bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer group flex flex-col justify-between ${
                 asset.wide ? 'sm:col-span-2' : ''
               }`}
             >
               {/* Media Preview Container */}
-              <div className="relative overflow-hidden h-64 bg-[#fcf7fc] dark:bg-[#281427] flex items-center justify-center">
+              <div className="relative overflow-hidden h-44 sm:h-64 bg-[#fcf7fc] dark:bg-[#281427] flex items-center justify-center">
                 <img
                   src={asset.image}
                   alt={asset.imageAlt}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
 
-                <div className="absolute top-3 left-3 flex gap-2">
-                  <span className="px-3 py-1 bg-[#7c52aa] text-white text-[10px] font-bold rounded-full uppercase">
+                <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 flex gap-2">
+                  <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-[#7c52aa] text-white text-[9px] sm:text-[10px] font-bold rounded-full uppercase">
                     {asset.type}
                   </span>
                   {asset.isNew && (
-                    <span className="px-3 py-1 bg-[#e040a0] text-white text-[10px] font-bold rounded-full uppercase">
+                    <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-[#e040a0] text-white text-[9px] sm:text-[10px] font-bold rounded-full uppercase">
                       NEW
                     </span>
                   )}
                 </div>
 
                 {/* Quick Action overlay */}
-                <div className="absolute bottom-3 right-3">
-                  <span className="w-10 h-10 rounded-full bg-[#e040a0] dark:bg-[#f25cb8] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined text-lg">download</span>
+                <div className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3">
+                  <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#e040a0] dark:bg-[#f25cb8] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                    <span className="material-symbols-outlined text-base sm:text-lg">download</span>
                   </span>
                 </div>
               </div>
 
               {/* Bottom Metadata */}
-              <div className="p-6 space-y-2">
+              <div className="p-4 sm:p-6 space-y-2">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-[#2e1a28] dark:text-[#f8f0f7] group-hover:text-[#e040a0] dark:group-hover:text-[#f25cb8] transition-colors">{asset.title}</h3>
                   <span className="text-[10px] font-bold text-[#7c52aa] dark:text-[#b08cc9] uppercase bg-[#f0e5ff] dark:bg-[#2b172a] px-2.5 py-1 rounded-full">{asset.format}</span>
