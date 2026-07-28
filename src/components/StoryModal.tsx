@@ -52,7 +52,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
 
   const handleDownloadBrief = () => {
     downloadA4Brief({
-      title: `${spotlight.name} - Leader Biography & Impact Brief`,
+      title: `${spotlight.name} - Leader Profile & Impact Summary`,
       subtitle: spotlight.quoteOrHeadline,
       category: spotlight.category,
       publisherOrCountry: spotlight.country || 'Botswana',
@@ -92,14 +92,14 @@ export const StoryModal: React.FC<StoryModalProps> = ({
           </div>
 
           <div className="flex items-center gap-1.5">
-            {/* Download A4 Brief */}
+            {/* Download Summary */}
             <button
               onClick={handleDownloadBrief}
-              title="Download A4 Brief"
+              title="Download Leader Summary"
               className="px-2.5 py-1.5 rounded-full bg-[#fce8f5] dark:bg-[#341832] hover:bg-[#e040a0] text-[#e040a0] dark:text-[#f25cb8] hover:text-white text-xs font-bold transition-all flex items-center gap-1 border border-pink-200 dark:border-pink-900 shadow-sm"
             >
               <span className="material-symbols-outlined text-base">download</span>
-              <span className="hidden sm:inline">A4 Brief</span>
+              <span className="hidden sm:inline">Summary</span>
             </button>
 
             {/* Prev / Next Story Buttons */}
@@ -160,7 +160,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
                     {/* Ambient blurred background fill */}
                     <img
                       src={spotlight.image}
-                      alt=""
+                      alt={`${spotlight.name} background visual`}
                       aria-hidden="true"
                       className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40 scale-110 pointer-events-none"
                     />
@@ -299,7 +299,7 @@ export const StoryModal: React.FC<StoryModalProps> = ({
                   className="px-3.5 py-2 bg-[#f0e5ff] dark:bg-[#2a1328] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-[#e040a0] hover:text-white font-bold rounded-full text-xs transition-all flex items-center gap-1.5"
                 >
                   <span className="material-symbols-outlined text-base">download</span>
-                  <span>Download A4 Brief</span>
+                  <span>Download Leader Summary</span>
                 </button>
               </div>
 

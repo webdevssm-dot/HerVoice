@@ -68,7 +68,7 @@
   display: none;
 }
 
-/* Print Styles for A4 Compliance Brief */
+/* Print Styles for Document Summaries */
 @media print {
   body {
     background-color: #ffffff !important;

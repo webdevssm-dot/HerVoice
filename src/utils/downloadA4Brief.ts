@@ -21,7 +21,7 @@ export function downloadA4Brief(data: BriefData) {
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>${data.title} - HerVoice A4 Brief</title>
+  <title>${data.title} - HerVoice Summary Document</title>
   <style>
     @page {
       size: A4;
@@ -128,7 +128,7 @@ export function downloadA4Brief(data: BriefData) {
 <body>
   <div class="header">
     <div>
-      <h1 class="brand">HerVoice <span class="badge">A4 Brief</span></h1>
+      <h1 class="brand">HerVoice <span class="badge">Summary</span></h1>
       <p style="margin: 4px 0 0 0; font-size: 9pt; color: #7c52aa; font-weight: 700;">
         Official Executive Summary & Document Pack
       </p>
@@ -171,7 +171,7 @@ export function downloadA4Brief(data: BriefData) {
   }
 
   <div class="footer">
-    © ${new Date().getFullYear()} HerVoice Empowerment Platform | Standard A4 Executive Brief Document | www.hervoice.org.bw
+    © ${new Date().getFullYear()} HerVoice Empowerment Platform | Official Summary Document | www.hervoice.org.bw
   </div>
 
   <script>
@@ -191,7 +191,7 @@ export function downloadA4Brief(data: BriefData) {
     // If popups are blocked, download HTML/PDF brief directly
     const link = document.createElement('a');
     link.href = blobUrl;
-    link.download = `${data.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}-A4-brief.html`;
+    link.download = `${data.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}-summary.html`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

@@ -89,17 +89,17 @@ export const RightsPage: React.FC<RightsPageProps> = ({ onOpenRightsDetail }) =>
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBREkNkVD_l4YJ5g5qzpPWiPUoTYrC24HRwXwED_92rPJBeVCzlImDyknRZ5k66izv2fLbyMuyStCvX_T5esuP6Vyfyt82wsU4FS4x-uaobrFH1s6L7bBHIuTcYDw5hSf_EVTR1FFfAAIfJuZ29cnE0D8c0VGCQbE1LcmszCN3EtwFl96Hmz4cGnQMOPHH--x0g7gz6H5aeuVmjgwsmStaQvpVW1SLFJyhYAxkxC6_1s8gTPbh2VaDeQDaJzZqophx8Tl-Ex57TxHvp"
                 alt="Young African woman smiling in green sweater with books"
-                className="w-full h-[360px] object-cover"
+                className="w-full h-[240px] sm:h-[360px] object-cover"
               />
 
               {/* Floating Badge Card */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-[#1f101e]/90 backdrop-blur-md p-3.5 rounded-2xl shadow-lg border border-pink-100 dark:border-[#381f35] flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#fce8f5] dark:bg-[#341832] text-[#e040a0] dark:text-[#f25cb8] flex items-center justify-center font-bold shrink-0">
-                  <span className="material-symbols-outlined text-xl">verified</span>
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-white/90 dark:bg-[#1f101e]/90 backdrop-blur-md p-2.5 sm:p-3.5 rounded-2xl shadow-lg border border-pink-100 dark:border-[#381f35] flex items-center gap-2.5">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#fce8f5] dark:bg-[#341832] text-[#e040a0] dark:text-[#f25cb8] flex items-center justify-center font-bold shrink-0">
+                  <span className="material-symbols-outlined text-lg sm:text-xl">verified</span>
                 </div>
                 <div>
                   <p className="text-xs font-bold text-[#2e1a28] dark:text-[#f8f0f7]">Verified Legal Standards</p>
-                  <p className="text-[11px] text-[#604868] dark:text-[#d2b8cf]">Aligned with Botswana Constitution & UN Conventions</p>
+                  <p className="text-[10px] sm:text-[11px] text-[#604868] dark:text-[#d2b8cf]">Aligned with Botswana Constitution & UN Conventions</p>
                 </div>
               </div>
             </div>
@@ -109,33 +109,33 @@ export const RightsPage: React.FC<RightsPageProps> = ({ onOpenRightsDetail }) =>
 
       {/* 4 Pillars Grid */}
       <section id="pillars-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
-          <h2 className="text-3xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Fundamental Rights</h2>
+        <div className="text-center max-w-xl mx-auto mb-8 sm:mb-10 space-y-2">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Fundamental Rights</h2>
           <p className="text-xs text-[#604868] dark:text-[#d2b8cf]">
             Explore key areas where your rights are protected by law.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-8">
           {RIGHT_PILLARS.map((pillar) => (
             <div
               key={pillar.id}
-              className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-[#f2e8f2] dark:border-[#381f35] shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between space-y-4 sm:space-y-6"
+              className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-[#f2e8f2] dark:border-[#381f35] shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col justify-between space-y-3 sm:space-y-6"
             >
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#fce8f5] dark:bg-[#341832] text-[#e040a0] dark:text-[#f25cb8] flex items-center justify-center">
-                  <span className="material-symbols-outlined text-2xl font-bold">{pillar.icon}</span>
+              <div className="space-y-2.5 sm:space-y-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-[#fce8f5] dark:bg-[#341832] text-[#e040a0] dark:text-[#f25cb8] flex items-center justify-center">
+                  <span className="material-symbols-outlined text-xl sm:text-2xl font-bold">{pillar.icon}</span>
                 </div>
 
-                <h3 className="text-2xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">{pillar.title}</h3>
+                <h3 className="text-lg sm:text-2xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">{pillar.title}</h3>
                 <p className="text-xs text-[#604868] dark:text-[#d2b8cf] leading-relaxed">
                   {pillar.description}
                 </p>
 
-                <div className="pt-2">
-                  <ul className="space-y-2 text-xs text-[#2e1a28] dark:text-[#f8f0f7] font-semibold">
+                <div className="pt-1">
+                  <ul className="space-y-1.5 sm:space-y-2 text-[11px] sm:text-xs text-[#2e1a28] dark:text-[#f8f0f7] font-semibold">
                     {pillar.points.map((pt, i) => (
-                      <li key={i} className="flex items-start gap-2">
+                      <li key={i} className="flex items-start gap-1.5">
                         <span className="text-[#e040a0] dark:text-[#f25cb8] font-bold mt-0.5">•</span>
                         <span>{pt}</span>
                       </li>
@@ -144,7 +144,7 @@ export const RightsPage: React.FC<RightsPageProps> = ({ onOpenRightsDetail }) =>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#f2e8f2] dark:border-[#381f35]">
+              <div className="pt-3 border-t border-[#f2e8f2] dark:border-[#381f35]">
                 <button
                   onClick={() => onOpenRightsDetail(pillar)}
                   className="text-xs font-bold text-[#e040a0] dark:text-[#f25cb8] hover:text-[#c82f8c] flex items-center gap-1.5 transition-all"

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ResourceAsset } from '../types';
 import { downloadA4Brief } from '../utils/downloadA4Brief';
+import { downloadResourcePack } from '../utils/downloadResourcePack';
 
 interface ResourceModalProps {
   resource: ResourceAsset | null;
@@ -23,18 +24,13 @@ export const ResourceModal: React.FC<ResourceModalProps> = ({ resource, onClose 
 
   const handleDownloadAsset = () => {
     setDownloaded(true);
-    const link = document.createElement('a');
-    link.href = resource.image;
-    link.download = `${resource.title.toLowerCase().replace(/\s+/g, '-')}-her-voice.png`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    downloadResourcePack(resource);
     setTimeout(() => setDownloaded(false), 3000);
   };
 
   const handleDownloadBrief = () => {
     downloadA4Brief({
-      title: `${resource.title} - Resource Asset Brief`,
+      title: `${resource.title} - Resource Overview`,
       subtitle: resource.description || 'Open toolkit asset provided by HerVoice Botswana.',
       category: resource.type,
       publisherOrCountry: resource.officialPublisher || 'HerVoice Botswana',
@@ -70,11 +66,11 @@ export const ResourceModal: React.FC<ResourceModalProps> = ({ resource, onClose 
           <div className="flex items-center gap-2">
             <button
               onClick={handleDownloadBrief}
-              title="Download A4 Brief"
+              title="Download Resource Overview"
               className="px-3 py-1.5 bg-white dark:bg-[#1a0c1a] text-[#e040a0] dark:text-[#f25cb8] hover:bg-[#e040a0] hover:text-white rounded-full text-xs font-bold transition-all border border-pink-200 dark:border-pink-900 shadow-sm flex items-center gap-1"
             >
               <span className="material-symbols-outlined text-base">download</span>
-              <span className="hidden sm:inline">A4 Brief</span>
+              <span className="hidden sm:inline">Overview</span>
             </button>
 
             <button
@@ -129,6 +125,24 @@ export const ResourceModal: React.FC<ResourceModalProps> = ({ resource, onClose 
                     <span className="material-symbols-outlined text-xs">open_in_new</span>
                   </a>
                 )}
+              </div>
+            )}
+
+            {/* Key Takeaways & Pack Contents */}
+            {resource.keyTakeaways && resource.keyTakeaways.length > 0 && (
+              <div className="p-4 bg-[#fce8f5] dark:bg-[#2b152a] border border-pink-200 dark:border-pink-900/50 rounded-2xl space-y-2">
+                <h4 className="text-xs font-black uppercase text-[#e040a0] dark:text-[#f25cb8] tracking-wider flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-base">verified</span>
+                  <span>Included in This Downloadable Pack:</span>
+                </h4>
+                <ul className="space-y-1.5 text-xs text-[#2e1a28] dark:text-[#f8f0f7] font-medium">
+                  {resource.keyTakeaways.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="material-symbols-outlined text-sm text-[#e040a0] dark:text-[#f25cb8] shrink-0">check_circle</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 

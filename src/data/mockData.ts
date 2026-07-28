@@ -10,61 +10,252 @@ import mpuleKwelagobeImg from '../assets/images/mpule_kwelagobe_portrait_1785074
 export const INITIAL_RESOURCES: ResourceAsset[] = [
   {
     id: 'res-1',
-    title: 'Emang Basadi Legal Rights Guide',
+    title: 'Emang Basadi Legal Rights & Protection Handbook',
     type: 'Guidebook',
-    format: 'PDF Booklet',
+    format: 'PDF / Print-Ready Handbook',
     image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600',
-    imageAlt: 'Legal booklet for women rights in Botswana',
-    description: 'Comprehensive legal guidebook published by Emang Basadi Women\'s Association covering domestic violence laws, maintenance claims, property rights, and legal aid in Botswana.',
+    imageAlt: 'Legal handbook for women rights in Botswana',
+    fileSize: '2.8 MB',
+    description: 'Comprehensive legal empowerment handbook published by Emang Basadi Women\'s Association. Provides plain-language explanations of Botswana\'s Domestic Violence Act (2008), Abolition of Marital Power Act (2004), Maintenance Act, child protection rights, and step-by-step guidance for obtaining court protection orders.',
     officialPublisher: 'Emang Basadi Women\'s Association Botswana',
-    sourceUrl: 'https://en.wikipedia.org/wiki/Emang_Basadi_Women%27s_Association'
+    citation: 'Emang Basadi Legal Handbook Series Vol. 4 (Laws of Botswana Alignment)',
+    sourceUrl: 'https://en.wikipedia.org/wiki/Emang_Basadi_Women%27s_Association',
+    keyTakeaways: [
+      'Step-by-step guide to applying for magistrate court protection orders in Botswana',
+      'Equal property rights & financial autonomy under Abolition of Marital Power Act (2004)',
+      'How to access free legal representation at Legal Aid Botswana clinics nationwide',
+      'Child support & maintenance enforcement filing procedures'
+    ],
+    packSections: [
+      {
+        heading: '1. Domestic Violence Protections & Magistrate Orders',
+        content: 'Under the Domestic Violence Act of 2008, any person experiencing physical, emotional, or economic abuse in Botswana can apply for an urgent Protection Order at any Magistrate Court. No legal fee or lawyer is required to initiate an application.',
+        bulletPoints: [
+          'Visit the clerk of court at your nearest Magistrate Court.',
+          'Complete Form 1 detailing the emergency protection requirement.',
+          'Interim protection orders can be granted within 24 hours prohibiting contact or harassment.'
+        ]
+      },
+      {
+        heading: '2. Marital Equality & Property Rights',
+        content: 'Passed in 2004, the Abolition of Marital Power Act repealed traditional male legal supremacy in civil marriages. Married women have full legal capacity, can register property in their own name, and serve as equal legal guardians.',
+        bulletPoints: [
+          'Abolishes male marital power in civil marriages.',
+          'Equal contractual rights to sign business loans and deeds.',
+          'Joint administration of marital estate assets.'
+        ]
+      },
+      {
+        heading: '3. Legal Aid & Community Helpline Directory',
+        content: 'Free legal advice and courtroom representation is available to qualifying Batswana citizens through Legal Aid Botswana offices in Gaborone, Francistown, Maun, Lobatse, Palapye, and Kasane.',
+        bulletPoints: [
+          'Legal Aid Botswana Toll-Free: 0800 600 240',
+          'Emang Basadi Legal Clinic: (+267) 390 9335',
+          'BONELA Rights Desk: (+267) 393 2516'
+        ]
+      }
+    ]
   },
   {
     id: 'res-2',
-    title: 'CEDA & LEA Business Pitch Kit',
+    title: 'CEDA & LEA Youth Business Pitch & Funding Pack',
     type: 'Template',
-    format: 'PowerPoint / PDF',
+    format: 'PowerPoint / PDF Pitch Pack',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600',
-    imageAlt: 'Business plan presentation template for CEDA funding',
-    description: 'Complete presentation pitch template designed to meet the funding guidelines of CEDA Botswana and LEA for young women launching small businesses.',
-    officialPublisher: 'Citizen Entrepreneurial Development Agency (CEDA Botswana)',
-    sourceUrl: 'https://www.ceda.org.bw'
+    imageAlt: 'Business pitch template for CEDA youth funding in Botswana',
+    fileSize: '4.1 MB',
+    description: 'Complete funding proposal & pitch presentation template aligned with the Citizen Entrepreneurial Development Agency (CEDA) youth funding framework and LEA business incubation standards in Botswana.',
+    officialPublisher: 'Citizen Entrepreneurial Development Agency (CEDA) & LEA',
+    citation: 'CEDA Youth Development Fund Proposal Standard (YDF 2026)',
+    sourceUrl: 'https://www.ceda.org.bw',
+    keyTakeaways: [
+      '10-slide standard pitch presentation structure optimized for CEDA reviewers',
+      '3-year financial cash flow projection template in spreadsheet format',
+      'Youth business registration guide (CIPA online portal step-by-step)',
+      'LEA incubation application checklist and market analysis outline'
+    ],
+    packSections: [
+      {
+        heading: '1. CEDA Pitch Presentation Structure',
+        content: 'CEDA evaluates youth funding applications based on commercial viability, employment generation for Batswana, and financial sustainability.',
+        bulletPoints: [
+          'Slide 1: Executive Summary & Problem Statement',
+          'Slide 2: Product / Service Value Proposition in Botswana',
+          'Slide 3: Target Customer Demographics & Market Demand',
+          'Slide 4: Operations Plan & Local Supply Chain',
+          'Slide 5: 3-Year Cash Flow Projection & Funding Request'
+        ]
+      },
+      {
+        heading: '2. CIPA Registration & BURS Compliance Steps',
+        content: 'Before submitting to CEDA or LEA, young entrepreneurs must register their company on the CIPA (Companies and Intellectual Property Authority) online portal.',
+        bulletPoints: [
+          'Reserve business name on CIPA portal (BW 50 fee).',
+          'Obtain Tax Identification Number (TIN) from BURS.',
+          'Open dedicated business bank account in Botswana.'
+        ]
+      }
+    ]
   },
   {
     id: 'res-3',
-    title: 'Youth Health & SRHR Toolkit',
+    title: 'Youth Health & SRHR Empowerment Handbook',
     type: 'Handbook',
     format: 'PDF / Digital Guide',
     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600',
-    imageAlt: 'Youth health and wellness guide for young women in Botswana',
+    imageAlt: 'Adolescent health and rights guide for young women in Botswana',
     wide: true,
     isNew: true,
-    itemCount: 'Official Guide',
-    description: 'Health and reproductive rights guide created in collaboration with BOFWA (Botswana Family Welfare Association) and Ministry of Health.',
+    fileSize: '3.5 MB',
+    description: 'Comprehensive health, wellbeing, and rights handbook developed with BOFWA and Ministry of Health. Explains adolescent health rights, school re-entry guidelines for young mothers, and confidential youth-friendly clinic networks across Botswana.',
     officialPublisher: 'Botswana Family Welfare Association (BOFWA) & Ministry of Health',
-    sourceUrl: 'https://www.bofwa.org.bw'
+    citation: 'Ministry of Health Adolescent & Youth Friendly Services (AYFS) Standard',
+    sourceUrl: 'https://www.bofwa.org.bw',
+    keyTakeaways: [
+      'School Re-entry Policy guidance for young mothers in Botswana secondary schools',
+      'Directory of 25+ confidential youth-friendly health clinics across Botswana',
+      'Mental health coping strategies and peer counselor facilitation outline',
+      'Reproductive health rights under Botswana public healthcare guidelines'
+    ],
+    packSections: [
+      {
+        heading: '1. School Re-Entry Policy Rights for Young Mothers',
+        content: 'Under Ministry of Basic Education Policy Circular No. 2 of 1999, every adolescent mother has the legal right to resume secondary education post-childbirth without academic penalty or administrative refusal.',
+        bulletPoints: [
+          'Schools must re-admit adolescent mothers upon application.',
+          'Flexible attendance allowances during infant care transition.',
+          'Access to school guidance and counseling officers.'
+        ]
+      },
+      {
+        heading: '2. Confidential Youth Clinic Directory',
+        content: 'BOFWA operates youth-friendly centers offering free health screenings, counseling, and wellness education in a supportive environment.',
+        bulletPoints: [
+          'Gaborone BOFWA Youth Center: (+267) 390 0489',
+          'Francistown Youth Clinic: (+267) 241 2802',
+          'Maun Adolescent Health Corner: (+267) 686 0231'
+        ]
+      }
+    ]
   },
   {
     id: 'res-4',
-    title: 'Anti-GBV Helpline Directory',
+    title: 'National Anti-GBV Emergency Hotline & Safety Poster Directory',
     type: 'Directory',
-    format: 'Print / Digital Poster',
+    format: 'Printable Poster & Directory Pack',
     image: 'https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&q=80&w=600',
-    imageAlt: 'Emergency contacts and helpline list for Botswana',
-    description: 'Emergency helpline contact directory for Childline Botswana (116), Police GBV Helpline (0800 600 144), BONELA, and legal aid clinics across Gaborone, Francistown, and Maun.',
+    imageAlt: 'Emergency contacts and helpline directory poster for Botswana',
+    fileSize: '1.9 MB',
+    description: 'Verified emergency helpline directory and safety planning guide. Contains 24/7 toll-free contacts for Childline Botswana (116), Police GBV Helpline (0800 600 144), medical rescue, and safe crisis shelter locations in Gaborone, Francistown, and Maun.',
     officialPublisher: 'Botswana Police Service & Childline Botswana',
-    sourceUrl: 'https://www.gov.bw'
+    citation: 'Republic of Botswana Emergency Response & Anti-GBV Inter-Agency Directory',
+    sourceUrl: 'https://www.gov.bw',
+    keyTakeaways: [
+      '24/7 Toll-free emergency numbers for police, child protection, and medical aid',
+      'Printable A3/A4 community safety posters for schools, kgotla boards, and youth centers',
+      'Personal emergency safety planning checklist for immediate crisis situations',
+      'Locations and contact details for safe shelters and legal escort desks'
+    ],
+    packSections: [
+      {
+        heading: '1. Primary Toll-Free Emergency Hotlines in Botswana',
+        content: 'Emergency assistance is accessible nationwide in Botswana free of charge from any mobile network or landline.',
+        bulletPoints: [
+          'Childline Botswana (24/7 Toll-Free Child & Youth Helpline): 116',
+          'Botswana Police Service GBV Toll-Free Helpline: 0800 600 144',
+          'Botswana Police General Emergency Hotline: 999',
+          'Medical Emergency & Ambulance Services: 997'
+        ]
+      },
+      {
+        heading: '2. Crisis Shelters & Psychosocial Support Services',
+        content: 'Temporary emergency shelter, trauma counseling, and legal escort services are coordinated through the Gender Affairs Department and civil society partners.',
+        bulletPoints: [
+          'Gaborone Emergency Safe House Network',
+          'Francistown Crisis Support Desk',
+          'LifeLine Botswana Counseling Hotline: (+267) 391 1290'
+        ]
+      }
+    ]
   },
   {
     id: 'res-5',
-    title: 'Botswana Innovation Hub STEM Guide',
+    title: 'Botswana Innovation Hub STEM Career & Mentorship Roadmap',
     type: 'Toolkit',
-    format: 'PDF Roadmap',
+    format: 'PDF Career & Mentorship Pack',
     image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=600',
-    imageAlt: 'Young women participating in STEM and technology workshop',
-    description: 'Career roadmap for young Batswana women entering computer science, environmental engineering, and digital innovation, supported by BIH and UB mentors.',
+    imageAlt: 'Young women participating in STEM workshop in Botswana',
+    fileSize: '3.2 MB',
+    description: 'Comprehensive STEM career roadmap and mentorship guide designed by Botswana Digital & Innovation Hub (BDIH) and University of Botswana scholars to guide young women entering technology, engineering, data science, and digital entrepreneurship.',
     officialPublisher: 'Botswana Digital & Innovation Hub (BDIH) & University of Botswana',
-    sourceUrl: 'https://www.bih.co.bw'
+    citation: 'BDIH Women in Innovation & Digital Transformation Framework',
+    sourceUrl: 'https://www.bih.co.bw',
+    keyTakeaways: [
+      'Career pathways in software engineering, data science, renewable energy, and biotech',
+      'Directory of tertiary STEM scholarships (DTEF, BDIH Innovation Fund, Mastercard Foundation)',
+      'Step-by-step guide to joining university coding bootcamps and hackathons in Gaborone',
+      'Mentorship outreach template for connecting with senior female tech leaders'
+    ],
+    packSections: [
+      {
+        heading: '1. High-Growth Tech & Engineering Pathways in Botswana',
+        content: 'Botswana\'s digital transformation agenda prioritizes software engineering, cybersecurity, agricultural technology, clean energy, and health tech innovation.',
+        bulletPoints: [
+          'Software Development & Mobile App Architecture',
+          'Renewable Energy Engineering (Solar & Clean Tech)',
+          'Data Analytics & FinTech Solutions for Southern Africa'
+        ]
+      },
+      {
+        heading: '2. Innovation Hub Incubation & Funding',
+        content: 'Young Batswana innovators can apply for seed funding, prototyping facilities, and business incubation support at BDIH Science Park in Gaborone.',
+        bulletPoints: [
+          'BDIH Innovation Fund seed grants for tech startups.',
+          'Free co-working space and high-speed internet for selected youth projects.',
+          'University of Botswana Computer Science mentorship circles.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'res-6',
+    title: 'Community Youth Leadership & Workshop Facilitation Guide',
+    type: 'Guidebook',
+    format: 'A4 Action Guide & Workshop Kit',
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600',
+    imageAlt: 'Young Batswana women in leadership workshop',
+    fileSize: '2.6 MB',
+    description: 'Grassroots leadership and community workshop facilitation kit created by HerVoice Youth Empowerment Network. Includes ready-to-use 60-minute workshop outlines, discussion cue cards, MYSC youth grant application guides, and volunteer management forms.',
+    officialPublisher: 'HerVoice Youth Empowerment Network & Ministry of Youth',
+    citation: 'HerVoice Community Leadership & Facilitator Handbook (2026 Edition)',
+    sourceUrl: 'https://www.gov.bw',
+    keyTakeaways: [
+      'Ready-to-use 60-minute workshop agendas on girls\' rights and peer leadership',
+      'Ministry of Youth, Sport & Culture (MYSC) Youth Grant Proposal Template',
+      'Printable discussion cue cards for school and kgotla youth sessions',
+      'Community project evaluation form and volunteer tracking sheet'
+    ],
+    packSections: [
+      {
+        heading: '1. 60-Minute Youth Workshop Facilitation Module',
+        content: 'Step-by-step guide for facilitating empowering, interactive discussions with junior and senior secondary school girls.',
+        bulletPoints: [
+          '00-15 Min: Icebreaker & Rights Awareness Warm-up',
+          '15-35 Min: Case Study Discussion (Education, Legal Protections & Health)',
+          '35-50 Min: Action Planning & Goal Setting Canvas',
+          '50-60 Min: Reflection, Support Hotlines & Mentorship Connections'
+        ]
+      },
+      {
+        heading: '2. MYSC Youth Grant Application Guidance',
+        content: 'Instructions for filling out Ministry of Youth, Sport & Culture funding forms to support community youth projects in Botswana villages and towns.',
+        bulletPoints: [
+          'Formulating project objectives and community impact targets.',
+          'Preparing itemized project budget breakdowns.',
+          'Obtaining local leadership and kgotla endorsement letters.'
+        ]
+      }
+    ]
   }
 ];
 
@@ -207,49 +398,119 @@ export const SPOTLIGHTS_LIST: Spotlight[] = [
 
 export const INITIAL_GOALS: DreamGoal[] = [
   {
-    id: 'goal-1',
+    id: 'goal-major-1',
+    tier: 'Major Initiative',
     category: 'Education',
-    title: 'LL.B Law Degree at University of Botswana',
-    description: 'Study law at UB Gaborone, specializing in constitutional human rights and advocating for women\'s legal protection across Botswana.',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600',
-    imageAlt: 'Students studying at University of Botswana',
-    targetDate: 'Nov 2026',
-    rotation: -1
+    title: 'Botswana National Girls STEM & Digital Mentorship Network',
+    description: 'Establishing a nationwide peer mentorship & coding accelerator across 12 secondary schools in Gaborone, Francistown, and Maun.',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800',
+    imageAlt: 'Young African female students collaborating on computer coding project in classroom',
+    targetDate: 'Dec 2026',
+    progressPercent: 75,
+    impactMetric: '1,200 High School Girls Targeted',
+    location: 'Nationwide (Gaborone, Francistown, Maun)',
+    cheersCount: 342,
+    contributors: ['BITRI', 'BIUST', 'Ministry of Education'],
+    completedTasks: [
+      { id: 'm1', text: 'Launch mentor training portal with female tech leaders', done: true },
+      { id: 'm2', text: 'Deploy 50 donated laptops to Maun Secondary School', done: true },
+      { id: 'm3', text: 'Host National Young Women Tech Hackathon', done: false }
+    ]
   },
   {
-    id: 'goal-2',
+    id: 'goal-major-2',
+    tier: 'Major Initiative',
+    category: 'Legal & Health',
+    title: 'Emang Basadi Mobile Legal Aid & Rights Safehouse Clinic',
+    description: 'Providing confidential legal counseling, GBV court protection guidance, and emergency hotline support for rural communities.',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800',
+    imageAlt: 'Legal books, gavel and scales of justice symbolizing legal protection in Botswana',
+    targetDate: 'Oct 2026',
+    progressPercent: 85,
+    impactMetric: '450 Women Supported Pro-Bono',
+    location: 'Gaborone, Lobatse & Kweneng District',
+    cheersCount: 512,
+    contributors: ['Emang Basadi', 'Botswana Law Society'],
+    completedTasks: [
+      { id: 'l1', text: 'Secure 2 mobile legal consultation vehicles', done: true },
+      { id: 'l2', text: 'Train 25 pro-bono volunteer paralegals', done: true },
+      { id: 'l3', text: 'Distribute 2,000 Know Your Rights pocket handbooks', done: false }
+    ]
+  },
+  {
+    id: 'goal-community-1',
+    tier: 'Community Project',
     category: 'Leadership',
-    title: 'Apply for CEDA Youth Enterprise Grant',
-    description: 'Submit business plan to CEDA Botswana for a sustainable agri-tech startup in Francistown.',
-    rotation: 2,
-    contributors: ['CEDA', 'LEA']
+    title: 'Francistown Youth Agri-Tech Enterprise Cooperative',
+    description: 'Empowering young female farmers with climate-resilient hydroponic technology and CEDA micro-grant financing.',
+    image: 'https://images.unsplash.com/photo-1595838787019-3831ec5e5f5f?auto=format&fit=crop&q=80&w=800',
+    imageAlt: 'Young African woman tending to sustainable agricultural greenhouse crops',
+    targetDate: 'Nov 2026',
+    progressPercent: 60,
+    impactMetric: '30 Youth Enterprises Incubated',
+    location: 'Francistown & North East District',
+    cheersCount: 189,
+    contributors: ['CEDA', 'LEA Botswana'],
+    completedTasks: [
+      { id: 'a1', text: 'Submit CEDA Youth Enterprise Group application', done: true },
+      { id: 'a2', text: 'Construct pilot solar-powered greenhouse in Francistown', done: false }
+    ]
   },
   {
-    id: 'goal-3',
+    id: 'goal-community-2',
+    tier: 'Community Project',
     category: 'Creative Arts',
-    title: 'Launch Maun Secondary Girls Code Club',
-    description: 'Establish a weekly digital skills and web development club for high school girls in Maun.',
-    rotation: -2,
-    hasIllustrationPlaceholder: true
+    title: 'Okavango Voices: Young Women Storytelling & Documentary Film',
+    description: 'Training young Batswana women in visual media, documentary filming, and digital publishing to preserve Indigenous culture and climate resilience.',
+    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=800',
+    imageAlt: 'Young photographer holding professional camera in lush natural landscape',
+    targetDate: 'Aug 2026',
+    progressPercent: 40,
+    impactMetric: '15 Short Films Produced',
+    location: 'Maun & Okavango Delta',
+    cheersCount: 210,
+    contributors: ['Botswana National Cultural Council'],
+    completedTasks: [
+      { id: 'c1', text: 'Conduct 3-day video editing & camera workshop', done: true },
+      { id: 'c2', text: 'Premiere short films at Gaborone International Film Showcase', done: false }
+    ]
   },
   {
-    id: 'goal-4',
+    id: 'goal-personal-1',
+    tier: 'Personal Goal',
     category: 'Education',
-    title: 'Volunteer with Childline Botswana',
-    description: 'Complete community peer advocacy training with Childline Botswana (Toll-Free 116) to mentor junior secondary students.',
-    rotation: 1,
+    title: 'LL.B Law Degree & Constitutional Rights Advocacy at UB',
+    description: 'Completing law studies at University of Botswana Gaborone, specializing in gender equality litigation and human rights policy.',
+    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800',
+    imageAlt: 'Students reading in University of Botswana law library',
+    targetDate: 'Nov 2026',
+    progressPercent: 50,
+    impactMetric: 'Personal Legal Career Milestone',
+    location: 'University of Botswana, Gaborone',
+    cheersCount: 145,
+    completedTasks: [
+      { id: 'p1', text: 'Pass Constitutional & Administrative Law examinations', done: true },
+      { id: 'p2', text: 'Publish research paper on Abolition of Marital Power Act', done: false }
+    ]
+  },
+  {
+    id: 'goal-personal-2',
+    tier: 'Personal Goal',
+    category: 'Leadership',
+    title: 'Childline Botswana Youth Peer Mentor Certification',
+    description: 'Completing advocacy peer training with Childline Botswana (Toll-Free 116) to mentor junior secondary school girls against bullying & GBV.',
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800',
+    imageAlt: 'Group of young women smiling and embracing outdoors in unity',
+    targetDate: 'Sep 2026',
+    progressPercent: 90,
+    impactMetric: '5 Junior Secondary Schools Reached',
+    location: 'Lobatse & Gaborone South',
+    cheersCount: 178,
     completedTasks: [
       { id: 't1', text: 'Register for Childline Advocate Training', done: true },
       { id: 't2', text: 'Complete Youth Mentorship Workshop', done: true },
       { id: 't3', text: 'Host School Rights Awareness Session', done: false }
     ]
-  },
-  {
-    id: 'goal-5',
-    category: 'Leadership',
-    title: 'Join Young Women Legal Clinic Network',
-    description: 'Collaborate with Emang Basadi to offer pro-bono legal awareness workshops for rural communities in Botswana.',
-    rotation: -1
   }
 ];
 

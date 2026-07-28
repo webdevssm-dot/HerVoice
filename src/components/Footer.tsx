@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenJoinUs }) =>
               HerVoice
             </span>
             <p className="text-xs text-[#604868] dark:text-[#d2b8cf] max-w-sm">
-              Empowering voices, sharing stories, and building a more equitable future for every woman, everywhere.
+              Botswana's youth platform for legal rights literacy, female mentorship stories, and collaborative community action.
             </p>
             <p className="text-[11px] text-[#886690] dark:text-[#a882a5] pt-1">
               © {new Date().getFullYear()} HerVoice Empowerment. All rights reserved.
@@ -26,8 +26,8 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenJoinUs }) =>
 
           {/* Nav Links */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-[#604868] dark:text-[#d2b8cf]">
-            <button onClick={() => setActiveTab('brief')} className="hover:text-[#e040a0] dark:hover:text-[#f25cb8] transition-colors font-bold text-[#e040a0] dark:text-[#f25cb8]">
-              WCAG 2.1 A4 Brief
+            <button onClick={() => setActiveTab('about')} className="hover:text-[#e040a0] dark:hover:text-[#f25cb8] transition-colors">
+              Our Mission
             </button>
             <button onClick={() => setActiveTab('rights')} className="hover:text-[#e040a0] dark:hover:text-[#f25cb8] transition-colors">
               Safety Center

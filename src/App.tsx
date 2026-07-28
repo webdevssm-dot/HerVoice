@@ -19,7 +19,7 @@ import { RightsPage } from './pages/RightsPage';
 import { SpotlightsPage } from './pages/SpotlightsPage';
 import { DreamBoardPage } from './pages/DreamBoardPage';
 import { ResourcesPage } from './pages/ResourcesPage';
-import { BriefPage } from './pages/BriefPage';
+import { AboutPage } from './pages/AboutPage';
 
 export function App() {
   const [activeTab, setActiveTab] = useState<TabType>('home');
@@ -177,7 +177,12 @@ export function App() {
           />
         )}
 
-        {activeTab === 'brief' && <BriefPage />}
+        {activeTab === 'about' && (
+          <AboutPage
+            setActiveTab={setActiveTab}
+            onOpenJoinUs={() => setIsJoinUsOpen(true)}
+          />
+        )}
       </main>
 
       {/* Footer */}

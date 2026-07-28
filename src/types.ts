@@ -1,4 +1,4 @@
-export type TabType = 'home' | 'rights' | 'spotlights' | 'dream-board' | 'resources' | 'brief';
+export type TabType = 'home' | 'rights' | 'spotlights' | 'dream-board' | 'resources' | 'about';
 
 export interface Spotlight {
   id: string;
@@ -32,20 +32,28 @@ export interface ResourceAsset {
   officialPublisher?: string;
   citation?: string;
   sourceUrl?: string;
+  fileSize?: string;
+  keyTakeaways?: string[];
+  packSections?: { heading: string; content: string; bulletPoints?: string[] }[];
 }
 
 export interface DreamGoal {
   id: string;
-  category: 'Education' | 'Leadership' | 'Creative Arts';
+  category: 'Education' | 'Leadership' | 'Creative Arts' | 'Legal & Health';
+  tier?: 'Major Initiative' | 'Community Project' | 'Personal Goal';
   title: string;
   description: string;
   image?: string;
   imageAlt?: string;
   targetDate?: string;
-  rotation: number;
+  rotation?: number;
   completedTasks?: { id: string; text: string; done: boolean }[];
   contributors?: string[];
   hasIllustrationPlaceholder?: boolean;
+  progressPercent?: number;
+  impactMetric?: string;
+  location?: string;
+  cheersCount?: number;
 }
 
 export interface QuizQuestion {

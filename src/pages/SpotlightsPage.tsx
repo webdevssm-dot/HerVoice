@@ -21,13 +21,13 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
   return (
     <div className="space-y-12 pb-16">
       {/* Top Hero Featured Spotlight Card */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <div className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl p-4 sm:p-8 border border-[#f2e8f2] dark:border-[#381f35] shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6">
+        <div className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl p-3.5 sm:p-8 border border-[#f2e8f2] dark:border-[#381f35] shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 items-center">
           {/* Image */}
-          <div className="lg:col-span-5 relative rounded-xl sm:rounded-2xl overflow-hidden h-[220px] sm:h-[360px] bg-[#1a0f18] flex items-center justify-center p-2">
+          <div className="lg:col-span-5 relative rounded-xl sm:rounded-2xl overflow-hidden h-[180px] sm:h-[360px] bg-[#1a0f18] flex items-center justify-center p-2">
             <img
               src={FEATURED_SPOTLIGHT.image}
-              alt=""
+              alt={`${FEATURED_SPOTLIGHT.name} background visual`}
               aria-hidden="true"
               className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
             />
@@ -39,18 +39,18 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
               }}
               className="max-h-full max-w-full object-contain relative z-10 drop-shadow-xl rounded-lg"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-[#2e1a28] via-[#7c52aa] to-[#e040a0] flex flex-col items-center justify-center p-6 text-white text-center">
-              <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-3xl font-black border border-white/30 mb-2">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#2e1a28] via-[#7c52aa] to-[#e040a0] flex flex-col items-center justify-center p-4 text-white text-center">
+              <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-xl sm:text-3xl font-black border border-white/30 mb-1.5">
                 UD
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest text-[#fce8f5]">FEATURED LEADER</span>
-              <p className="text-xl font-black mt-1">Hon. Unity Dow</p>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#fce8f5]">FEATURED LEADER</span>
+              <p className="text-base sm:text-xl font-black mt-0.5">Hon. Unity Dow</p>
             </div>
-            <div className="absolute top-4 left-4 flex gap-2 z-20">
-              <span className="px-3 py-1 bg-[#e040a0] text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-md">
-                FEATURED SPOTLIGHT
+            <div className="absolute top-3 left-3 flex gap-1.5 z-20">
+              <span className="px-2.5 py-0.5 bg-[#e040a0] text-white text-[9px] font-bold rounded-full uppercase tracking-wider shadow-md">
+                FEATURED
               </span>
-              <span className="px-3 py-1 bg-[#7c52aa] text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-md">
+              <span className="px-2.5 py-0.5 bg-[#7c52aa] text-white text-[9px] font-bold rounded-full uppercase tracking-wider shadow-md">
                 BOTSWANA
               </span>
             </div>
@@ -59,13 +59,13 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
           {/* Content */}
           <div className="lg:col-span-7 space-y-4">
             <span className="text-xs font-bold uppercase tracking-wider text-[#7c52aa] dark:text-[#b08cc9]">
-              LEADERSHIP & INNOVATION
+              {FEATURED_SPOTLIGHT.category} • {FEATURED_SPOTLIGHT.subCategory}
             </span>
             <h1 className="text-3xl sm:text-5xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">
               {FEATURED_SPOTLIGHT.name}
             </h1>
             <p className="text-xs sm:text-sm text-[#604868] dark:text-[#d2b8cf] leading-relaxed font-medium">
-              Pioneering sustainable technology solutions in rural communities and inspiring the next generation of women coders across Botswana.
+              {FEATURED_SPOTLIGHT.description}
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -81,8 +81,8 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
                 onClick={() => onOpenStory(FEATURED_SPOTLIGHT)}
                 className="px-6 py-2.5 bg-white dark:bg-[#281427] border border-[#7c52aa] dark:border-[#b08cc9] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-[#f0e5ff] dark:hover:bg-[#3d223a] text-xs font-bold rounded-full transition-all bouncy-hover flex items-center gap-1.5"
               >
-                <span className="material-symbols-outlined text-base">play_circle</span>
-                <span>Watch Interview</span>
+                <span className="material-symbols-outlined text-base">book_5</span>
+                <span>Read Key Achievements</span>
               </button>
             </div>
           </div>
@@ -93,9 +93,9 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div>
-            <h2 className="text-3xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Voices of Tomorrow</h2>
+            <h2 className="text-3xl font-black text-[#2e1a28] dark:text-[#f8f0f7]">Batswana Pioneer Spotlights</h2>
             <p className="text-xs text-[#604868] dark:text-[#d2b8cf] mt-1">
-              Explore stories of young women breaking barriers in science, art, sports, and leadership.
+              Inspiring stories of women leading in human rights, law, traditional administration, trade, and youth empowerment.
             </p>
           </div>
 
@@ -133,18 +133,18 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
         </div>
 
         {/* Spotlights Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {filteredList.map((item) => (
             <div
               key={item.id}
               onClick={() => onOpenStory(item)}
               className="bg-white dark:bg-[#1e0f1d] rounded-2xl sm:rounded-3xl border border-[#f2e8f2] dark:border-[#381f35] overflow-hidden hover:shadow-xl transition-all cursor-pointer flex flex-col group"
             >
-              <div className="h-44 sm:h-64 overflow-hidden relative bg-[#1a0f18] flex items-center justify-center p-2">
+              <div className="h-32 sm:h-64 overflow-hidden relative bg-[#1a0f18] flex items-center justify-center p-2">
                 {/* Ambient blur background */}
                 <img
                   src={item.image}
-                  alt=""
+                  alt={`${item.name} background visual`}
                   aria-hidden="true"
                   className="absolute inset-0 w-full h-full object-cover blur-xl opacity-40 scale-110 pointer-events-none"
                 />
@@ -159,23 +159,23 @@ export const SpotlightsPage: React.FC<SpotlightsPageProps> = ({
                 />
                 {/* Fallback visual if image fails */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#2e1a28] via-[#7c52aa] to-[#e040a0] flex flex-col items-center justify-center p-4 text-white text-center">
-                  <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl font-black border border-white/30 mb-1">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-lg sm:text-2xl font-black border border-white/30 mb-1">
                     {item.name.split(' ').map(n => n[0]).join('')}
                   </div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#fce8f5]">BOTSWANA LEADER</span>
-                  <p className="text-base font-black leading-tight mt-0.5">{item.name}</p>
+                  <span className="text-[9px] font-bold uppercase tracking-widest text-[#fce8f5]">BOTSWANA LEADER</span>
+                  <p className="text-sm font-black leading-tight mt-0.5">{item.name}</p>
                 </div>
 
-                <span className="absolute top-3 left-3 z-20 px-3 py-1 bg-[#7c52aa] text-white text-[10px] font-bold rounded-full uppercase shadow-md">
+                <span className="absolute top-2.5 left-2.5 z-20 px-2.5 py-0.5 bg-[#7c52aa] text-white text-[9px] font-bold rounded-full uppercase shadow-md">
                   {item.category}
                 </span>
               </div>
-              <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-2">
+              <div className="p-3 sm:p-5 flex-1 flex flex-col justify-between space-y-1.5 sm:space-y-2">
                 <div>
-                  <h3 className="font-bold text-lg text-[#2e1a28] dark:text-[#f8f0f7] group-hover:text-[#e040a0] dark:group-hover:text-[#f25cb8] transition-colors">
+                  <h3 className="font-bold text-sm sm:text-lg text-[#2e1a28] dark:text-[#f8f0f7] group-hover:text-[#e040a0] dark:group-hover:text-[#f25cb8] transition-colors">
                     {item.name}
                   </h3>
-                  <p className="text-xs text-[#604868] dark:text-[#d2b8cf] line-clamp-2 mt-1 font-medium">
+                  <p className="text-[11px] sm:text-xs text-[#604868] dark:text-[#d2b8cf] line-clamp-2 mt-0.5 font-medium">
                     {item.quoteOrHeadline}
                   </p>
                 </div>

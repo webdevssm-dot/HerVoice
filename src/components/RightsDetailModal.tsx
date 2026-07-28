@@ -21,7 +21,7 @@ export const RightsDetailModal: React.FC<RightsDetailModalProps> = ({ pillar, on
 
   const handleDownloadBrief = () => {
     downloadA4Brief({
-      title: `${pillar.title} - Rights & Legal Framework Brief`,
+      title: `${pillar.title} - Rights & Legal Framework Guide`,
       subtitle: pillar.description,
       category: 'Legal Rights',
       publisherOrCountry: 'Republic of Botswana',
@@ -54,11 +54,11 @@ export const RightsDetailModal: React.FC<RightsDetailModalProps> = ({ pillar, on
           <div className="flex items-center gap-2">
             <button
               onClick={handleDownloadBrief}
-              title="Download A4 Brief"
+              title="Download Rights Guide"
               className="px-3 py-1.5 bg-white dark:bg-[#1a0c1a] text-[#e040a0] dark:text-[#f25cb8] hover:bg-[#e040a0] hover:text-white rounded-full text-xs font-bold transition-all border border-pink-200 dark:border-pink-900 shadow-sm flex items-center gap-1 shrink-0"
             >
               <span className="material-symbols-outlined text-base">download</span>
-              <span className="hidden sm:inline">A4 Brief</span>
+              <span className="hidden sm:inline">Download Guide</span>
             </button>
 
             <button
@@ -146,7 +146,7 @@ export const RightsDetailModal: React.FC<RightsDetailModalProps> = ({ pillar, on
             className="px-4 py-2 bg-[#f0e5ff] dark:bg-[#2c152a] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-[#e040a0] hover:text-white text-xs font-bold rounded-full transition-all flex items-center gap-1.5"
           >
             <span className="material-symbols-outlined text-base">download</span>
-            <span>Download A4 Brief</span>
+            <span>Download Legal Guide</span>
           </button>
 
           <button
