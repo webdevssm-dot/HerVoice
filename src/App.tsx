@@ -1,25 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { TabType, Spotlight, ResourceAsset, RightPillar, DreamGoal } from './types';
 import { INITIAL_GOALS } from './data/mockData';
 
-// Components
+// Core layout components & Home page loaded eagerly for instant initial paint
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { JoinUsModal } from './components/JoinUsModal';
-import { SearchModal } from './components/SearchModal';
-import { StoryModal } from './components/StoryModal';
-import { ResourceModal } from './components/ResourceModal';
-import { NominateModal } from './components/NominateModal';
-import { RightsDetailModal } from './components/RightsDetailModal';
-import { AddGoalModal } from './components/AddGoalModal';
-
-// Pages
 import { HomePage } from './pages/HomePage';
-import { RightsPage } from './pages/RightsPage';
-import { SpotlightsPage } from './pages/SpotlightsPage';
-import { DreamBoardPage } from './pages/DreamBoardPage';
-import { ResourcesPage } from './pages/ResourcesPage';
-import { AboutPage } from './pages/AboutPage';
+
+// Lazy load secondary pages to minimize initial bundle size
+const RightsPage = lazy(() => import('./pages/RightsPage').then(m => ({ default: m.RightsPage })));
+const SpotlightsPage = lazy(() => import('./pages/SpotlightsPage').then(m => ({ default: m.SpotlightsPage })));
+const DreamBoardPage = lazy(() => import('./pages/DreamBoardPage').then(m => ({ default: m.DreamBoardPage })));
+const ResourcesPage = lazy(() => import('./pages/ResourcesPage').then(m => ({ default: m.ResourcesPage })));
+const AboutPage = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
+
+// Lazy load modal dialogs on demand
+const JoinUsModal = lazy(() => import('./components/JoinUsModal').then(m => ({ default: m.JoinUsModal })));
+const SearchModal = lazy(() => import('./components/SearchModal').then(m => ({ default: m.SearchModal })));
+const StoryModal = lazy(() => import('./components/StoryModal').then(m => ({ default: m.StoryModal })));
+const ResourceModal = lazy(() => import('./components/ResourceModal').then(m => ({ default: m.ResourceModal })));
+const NominateModal = lazy(() => import('./components/NominateModal').then(m => ({ default: m.NominateModal })));
+const RightsDetailModal = lazy(() => import('./components/RightsDetailModal').then(m => ({ default: m.RightsDetailModal })));
+const AddGoalModal = lazy(() => import('./components/AddGoalModal').then(m => ({ default: m.AddGoalModal })));
+
+// Lightweight page loading fallback
+function PageLoadingFallback() {
+  return (
+    <div className="py-20 flex flex-col items-center justify-center space-y-3 min-h-[50vh]">
+      <div className="w-8 h-8 border-3 border-[#e040a0] border-t-transparent rounded-full animate-spin" />
+      <p className="text-xs font-semibold text-[#604868] dark:text-[#d2b8cf]">Loading page...</p>
+    </div>
+  );
+}
 
 export function App() {
   const [activeTab, setActiveTab] = useState<TabType>('home');
@@ -142,47 +154,49 @@ export function App() {
 
       {/* Main Content Area */}
       <main className="flex-1">
-        {activeTab === 'home' && (
-          <HomePage
-            setActiveTab={setActiveTab}
-            onOpenStory={(spot) => setSelectedSpotlight(spot)}
-            onOpenJoinUs={() => setIsJoinUsOpen(true)}
-          />
-        )}
+        <Suspense fallback={<PageLoadingFallback />}>
+          {activeTab === 'home' && (
+            <HomePage
+              setActiveTab={setActiveTab}
+              onOpenStory={(spot) => setSelectedSpotlight(spot)}
+              onOpenJoinUs={() => setIsJoinUsOpen(true)}
+            />
+          )}
 
-        {activeTab === 'rights' && (
-          <RightsPage
-            onOpenRightsDetail={(pillar) => setSelectedRightsPillar(pillar)}
-          />
-        )}
+          {activeTab === 'rights' && (
+            <RightsPage
+              onOpenRightsDetail={(pillar) => setSelectedRightsPillar(pillar)}
+            />
+          )}
 
-        {activeTab === 'spotlights' && (
-          <SpotlightsPage
-            onOpenStory={(spot) => setSelectedSpotlight(spot)}
-            onOpenNominate={() => setIsNominateOpen(true)}
-          />
-        )}
+          {activeTab === 'spotlights' && (
+            <SpotlightsPage
+              onOpenStory={(spot) => setSelectedSpotlight(spot)}
+              onOpenNominate={() => setIsNominateOpen(true)}
+            />
+          )}
 
-        {activeTab === 'dream-board' && (
-          <DreamBoardPage
-            onOpenAddGoal={() => setIsAddGoalOpen(true)}
-            goals={goals}
-            setGoals={setGoals}
-          />
-        )}
+          {activeTab === 'dream-board' && (
+            <DreamBoardPage
+              onOpenAddGoal={() => setIsAddGoalOpen(true)}
+              goals={goals}
+              setGoals={setGoals}
+            />
+          )}
 
-        {activeTab === 'resources' && (
-          <ResourcesPage
-            onOpenResourceModal={(res) => setSelectedResource(res)}
-          />
-        )}
+          {activeTab === 'resources' && (
+            <ResourcesPage
+              onOpenResourceModal={(res) => setSelectedResource(res)}
+            />
+          )}
 
-        {activeTab === 'about' && (
-          <AboutPage
-            setActiveTab={setActiveTab}
-            onOpenJoinUs={() => setIsJoinUsOpen(true)}
-          />
-        )}
+          {activeTab === 'about' && (
+            <AboutPage
+              setActiveTab={setActiveTab}
+              onOpenJoinUs={() => setIsJoinUsOpen(true)}
+            />
+          )}
+        </Suspense>
       </main>
 
       {/* Footer */}
@@ -191,45 +205,61 @@ export function App() {
         onOpenJoinUs={() => setIsJoinUsOpen(true)}
       />
 
-      {/* Overlays & Modals */}
-      <JoinUsModal
-        isOpen={isJoinUsOpen}
-        onClose={() => setIsJoinUsOpen(false)}
-      />
+      {/* Overlays & Modals - loaded on demand */}
+      <Suspense fallback={null}>
+        {isJoinUsOpen && (
+          <JoinUsModal
+            isOpen={isJoinUsOpen}
+            onClose={() => setIsJoinUsOpen(false)}
+          />
+        )}
 
-      <SearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        setActiveTab={setActiveTab}
-        onSelectSpotlight={handleSelectSpotlightFromSearch}
-      />
+        {isSearchOpen && (
+          <SearchModal
+            isOpen={isSearchOpen}
+            onClose={() => setIsSearchOpen(false)}
+            setActiveTab={setActiveTab}
+            onSelectSpotlight={handleSelectSpotlightFromSearch}
+          />
+        )}
 
-      <NominateModal
-        isOpen={isNominateOpen}
-        onClose={() => setIsNominateOpen(false)}
-      />
+        {isNominateOpen && (
+          <NominateModal
+            isOpen={isNominateOpen}
+            onClose={() => setIsNominateOpen(false)}
+          />
+        )}
 
-      <AddGoalModal
-        isOpen={isAddGoalOpen}
-        onClose={() => setIsAddGoalOpen(false)}
-        onAddGoal={handleAddGoal}
-      />
+        {isAddGoalOpen && (
+          <AddGoalModal
+            isOpen={isAddGoalOpen}
+            onClose={() => setIsAddGoalOpen(false)}
+            onAddGoal={handleAddGoal}
+          />
+        )}
 
-      <StoryModal
-        spotlight={selectedSpotlight}
-        onClose={() => setSelectedSpotlight(null)}
-        onSelectSpotlight={(s) => setSelectedSpotlight(s)}
-      />
+        {selectedSpotlight && (
+          <StoryModal
+            spotlight={selectedSpotlight}
+            onClose={() => setSelectedSpotlight(null)}
+            onSelectSpotlight={(s) => setSelectedSpotlight(s)}
+          />
+        )}
 
-      <ResourceModal
-        resource={selectedResource}
-        onClose={() => setSelectedResource(null)}
-      />
+        {selectedResource && (
+          <ResourceModal
+            resource={selectedResource}
+            onClose={() => setSelectedResource(null)}
+          />
+        )}
 
-      <RightsDetailModal
-        pillar={selectedRightsPillar}
-        onClose={() => setSelectedRightsPillar(null)}
-      />
+        {selectedRightsPillar && (
+          <RightsDetailModal
+            pillar={selectedRightsPillar}
+            onClose={() => setSelectedRightsPillar(null)}
+          />
+        )}
+      </Suspense>
     </div>
   );
 }

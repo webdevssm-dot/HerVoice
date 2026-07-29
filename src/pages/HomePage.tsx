@@ -21,37 +21,37 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center">
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-2.5 sm:space-y-3.5 text-center lg:text-left">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#fce8f5] dark:bg-[#341832] rounded-full border border-pink-200/50 dark:border-[#4a2347]">
-                <span className="material-symbols-outlined text-[11px] text-[#d12b8d] dark:text-[#f25cb8]">auto_awesome</span>
-                <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-[#d12b8d] dark:text-[#f25cb8]">
+            <div className="lg:col-span-7 space-y-2.5 sm:space-y-3.5 lg:space-y-5 text-center lg:text-left">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 lg:px-4 lg:py-1.5 bg-[#fce8f5] dark:bg-[#341832] rounded-full border border-pink-200/50 dark:border-[#4a2347]">
+                <span className="material-symbols-outlined text-[11px] lg:text-sm text-[#d12b8d] dark:text-[#f25cb8]">auto_awesome</span>
+                <span className="text-[9px] sm:text-[10px] lg:text-xs font-bold uppercase tracking-wider lg:tracking-widest text-[#d12b8d] dark:text-[#f25cb8]">
                   BOTSWANA YOUTH NETWORK
                 </span>
               </div>
 
-              <h1 className="text-xl sm:text-3xl font-black tracking-tight text-[#2e1a28] dark:text-[#f8f0f7] leading-tight">
+              <h1 className="text-xl sm:text-3xl lg:text-5xl font-black tracking-tight text-[#2e1a28] dark:text-[#f8f0f7] leading-tight lg:leading-[1.1]">
                 Your Voice. Your Rights. <br className="hidden sm:inline" />
                 <span className="text-[#e040a0] dark:text-[#f25cb8]">Your Future.</span>
               </h1>
 
-              <p className="text-xs text-[#604868] dark:text-[#d2b8cf] max-w-md mx-auto lg:mx-0 leading-relaxed font-medium">
+              <p className="text-xs lg:text-base text-[#604868] dark:text-[#d2b8cf] max-w-md lg:max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
                 A warm, empowering space for young women across Botswana. Learn your legal rights in plain language, discover inspiring mentors, and turn your big ideas into real community impact.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-0.5">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 lg:gap-3 pt-0.5 lg:pt-2">
                 <button
                   onClick={() => setActiveTab('rights')}
                   id="hero-explore-rights-btn"
-                  className="px-4 py-2 sm:px-5 sm:py-2 bg-[#e040a0] dark:bg-[#f25cb8] hover:bg-[#c82f8c] dark:hover:bg-[#e040a0] text-white rounded-full font-bold text-[11px] sm:text-xs shadow-xs transition-all hover:scale-[1.01] flex items-center gap-1"
+                  className="px-4 py-2 sm:px-5 sm:py-2 lg:px-6 lg:py-3 bg-[#e040a0] dark:bg-[#f25cb8] hover:bg-[#c82f8c] dark:hover:bg-[#e040a0] text-white rounded-full font-bold text-[11px] sm:text-xs lg:text-sm shadow-xs lg:shadow-md transition-all hover:scale-[1.02] flex items-center gap-1.5"
                 >
                   <span>Explore Your Rights</span>
-                  <span className="material-symbols-outlined text-xs">arrow_forward</span>
+                  <span className="material-symbols-outlined text-xs lg:text-base">arrow_forward</span>
                 </button>
 
                 <button
                   onClick={() => setActiveTab('about')}
                   id="hero-join-community-btn"
-                  className="px-4 py-2 sm:px-5 sm:py-2 bg-white dark:bg-[#281427] border border-[#7c52aa] dark:border-[#b08cc9] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-[#f0e5ff] dark:hover:bg-[#3d223a] rounded-full font-bold text-[11px] sm:text-xs transition-all hover:scale-[1.01] flex items-center gap-1"
+                  className="px-4 py-2 sm:px-5 sm:py-2 lg:px-6 lg:py-3 bg-white dark:bg-[#281427] border border-[#7c52aa] dark:border-[#b08cc9] text-[#7c52aa] dark:text-[#d8bdd5] hover:bg-[#f0e5ff] dark:hover:bg-[#3d223a] rounded-full font-bold text-[11px] sm:text-xs lg:text-sm transition-all hover:scale-[1.02] flex items-center gap-1.5"
                 >
                   <span>Our Story & Mission</span>
                 </button>
@@ -60,19 +60,21 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             {/* Right Hero Image Card */}
             <div className="lg:col-span-5 relative flex justify-center">
-              <div className="relative rounded-xl bg-white dark:bg-[#1e0f1d] p-1.5 shadow-md border border-pink-100/80 dark:border-[#381f35] max-w-[280px] sm:max-w-xs w-full">
-                <div className="rounded-lg overflow-hidden relative">
+              <div className="relative rounded-xl lg:rounded-2xl bg-white dark:bg-[#1e0f1d] p-1.5 lg:p-2.5 shadow-md lg:shadow-xl border border-pink-100/80 dark:border-[#381f35] max-w-[280px] sm:max-w-xs lg:max-w-md w-full">
+                <div className="rounded-lg lg:rounded-xl overflow-hidden relative">
                   <img
                     src={heroMarchImg}
                     alt="Young Batswana women marching with NO to Gender Based Violence banner"
-                    className="w-full h-[140px] sm:h-[180px] object-cover"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-full h-[140px] sm:h-[180px] lg:h-[280px] object-cover"
                   />
                 </div>
 
                 {/* Overlapping blue badge pill */}
-                <div className="absolute -bottom-1.5 -left-1.5 bg-[#0096cc] text-white px-2.5 py-1.5 rounded-lg shadow-md flex items-center gap-1.5 max-w-[160px]">
-                  <span className="text-sm font-black leading-none">10k+</span>
-                  <span className="text-[8px] sm:text-[9px] font-bold leading-tight text-white/90">Sisters connected nationwide</span>
+                <div className="absolute -bottom-1.5 -left-1.5 lg:-bottom-3 lg:-left-3 bg-[#0096cc] text-white px-2.5 py-1.5 lg:px-4 lg:py-2.5 rounded-lg lg:rounded-xl shadow-md lg:shadow-lg flex items-center gap-1.5 lg:gap-2.5 max-w-[160px] lg:max-w-[210px]">
+                  <span className="text-sm sm:text-base lg:text-2xl font-black leading-none">10k+</span>
+                  <span className="text-[8px] sm:text-[9px] lg:text-xs font-bold leading-tight text-white/90">Sisters connected nationwide</span>
                 </div>
               </div>
             </div>
@@ -178,6 +180,8 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src={SPOTLIGHTS_LIST[0].image}
                 alt={SPOTLIGHTS_LIST[0].name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <span className="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#e040a0] text-white text-[8px] font-bold rounded-full uppercase">
@@ -203,6 +207,8 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF1wLDaYLUEd3LJ3LcA1F6PQn1PBiGqIdWhn-_FIBK62DYUud2YLLg4KZJAhOXZ0zFv8hodTNWhRdjEEGOn1uGKZs1XT8thzl1Y_vkYAlzkFJ-2-PEJLkH33jE6l_GzuODYfpoqRpvriqyoie1rtBXxP3yNp9stR6hIZjv4-XCcj4obASn8USzsw7BIBCOvgGqFYqrqz3Zfy2pDLtGJdqDjxp8Zzbe5k3WWncjpH4k5bkXmwit9oeh98Ref9QDFV3i8Le2hpW8loXy"
                 alt="Voices of the Kalahari"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <span className="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#7c52aa] text-white text-[8px] font-bold rounded-full uppercase">
@@ -228,6 +234,8 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRXDU3WjVNqhr4gJBxkxb9y_pKKSS0vXjQ2GezAXrXVVR1M-mqI9Jt76YJaLs1SC-XC9qMaQvGlonFnP5FP3vcqKNRDqPvn6JyszygXRfGP1X3_yaPrDWjryLk--HKgqUJfMbzYxHMRfLAaD9IVeXhvNf4XTlxAJ9wC6AYiGsB4VMv5vVPqLKUKnZSJixY62RizJQbex5lUI8OtE7_r390VWWJhOqVPDQdDpuwJ-syp5N2qb-vuxn50TdXABgKy2Vf1JLE1lUOrgtn"
                 alt="Canvas for Change"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <span className="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#0096cc] text-white text-[8px] font-bold rounded-full uppercase">
@@ -253,6 +261,8 @@ export const HomePage: React.FC<HomePageProps> = ({
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp2bWf0zMw1qPYn6xCNr21kmNo-79UXvu2WQGltynfcW1MtkH0P_OriNgqAy4H445ikQeKUY933yElgh69pCspBfdbJcm68TkKsbAhT8NfXyI-zA_OnNivu9-UsNF7r5lRSOtGwQzot1u9uVHkS9Z90mx1MJztGCDnDPJi8JXhRDUSRtgh7wyuE74ql94mtj-wgAZr8hMoIkz3frJD-hM3CPQjXrQYuXUWosgCKXffD-C9iF-dXHkLfdb60Tnhojc-ieSp-YM8YD3T"
                 alt="Defending Her Future"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <span className="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#e040a0] text-white text-[8px] font-bold rounded-full uppercase">
