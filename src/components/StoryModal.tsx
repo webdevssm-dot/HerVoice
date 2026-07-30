@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Spotlight } from '../types';
 import { SPOTLIGHTS_LIST, FEATURED_SPOTLIGHT } from '../data/mockData';
 import { downloadA4Brief } from '../utils/downloadA4Brief';
@@ -70,18 +71,27 @@ export const StoryModal: React.FC<StoryModalProps> = ({
   };
 
   return (
-    <div
-      onClick={onClose}
-      className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-6 animate-fadeIn"
-    >
-      {/* Modal Container */}
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className="bg-white dark:bg-[#1a0c1a] rounded-3xl max-w-3xl w-full my-auto shadow-2xl border border-[#f2e8f2] dark:border-[#381f35] flex flex-col relative text-[#2e1a28] dark:text-[#f8f0f7] overflow-hidden max-h-[92vh] sm:max-h-[90vh]"
-      >
-        
-        {/* Sticky Top Navigation Bar */}
-        <div className="bg-white/95 dark:bg-[#1a0c1a]/95 backdrop-blur-md px-4 py-3 border-b border-[#f2e8f2] dark:border-[#381f35] flex items-center justify-between gap-2 z-20 shrink-0">
+    <AnimatePresence>
+      {spotlight && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          onClick={onClose}
+          className="fixed inset-0 z-50 overflow-y-auto bg-black/70 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 md:p-6"
+        >
+          {/* Modal Container */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94, y: 12 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.94, y: 12 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            onClick={(e) => e.stopPropagation()}
+            className="glass-panel rounded-3xl max-w-3xl w-full my-auto shadow-2xl border border-white/80 dark:border-white/10 flex flex-col relative text-[#2e1a28] dark:text-[#f8f0f7] overflow-hidden max-h-[92vh] sm:max-h-[90vh]"
+          >
+            {/* Sticky Top Navigation Bar */}
+            <div className="bg-white/70 dark:bg-[#1a0c1a]/80 backdrop-blur-md px-4 py-3 border-b border-pink-200/50 dark:border-white/10 flex items-center justify-between gap-2 z-20 shrink-0">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-0.5 bg-[#7c52aa] text-white text-[10px] font-bold uppercase tracking-wider rounded-full">
               {spotlight.category}
@@ -282,9 +292,11 @@ export const StoryModal: React.FC<StoryModalProps> = ({
                 </a>
               )}
             </div>
+          </div>
+        </div>
 
-            {/* Bottom Controls & Easy Exit Bar */}
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-[#f2e8f2] dark:border-[#381f35]">
+        {/* Bottom Controls & Easy Exit Bar */}
+          <div className="p-4 bg-white/70 dark:bg-[#1a0c1a]/80 backdrop-blur-md border-t border-pink-200/50 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0 z-20">
               <div className="flex items-center gap-3 w-full sm:w-auto">
                 <button
                   onClick={scrollToTop}
@@ -322,12 +334,10 @@ export const StoryModal: React.FC<StoryModalProps> = ({
               </div>
             </div>
 
-          </div>
-
-        </div>
-
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
