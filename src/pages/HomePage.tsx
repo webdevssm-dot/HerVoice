@@ -86,10 +86,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                   />
                 </div>
 
-                {/* Overlapping liquid glass badge pill */}
-                <div className="absolute -bottom-2 -left-2 lg:-bottom-4 lg:-left-4 glass-pill text-white px-3 py-2 lg:px-4.5 lg:py-3 rounded-xl lg:rounded-2xl shadow-xl flex items-center gap-2 lg:gap-3 max-w-[170px] lg:max-w-[220px] border border-cyan-300/40 bg-gradient-to-r from-[#0096cc]/90 to-[#00b4d8]/90">
-                  <span className="text-base sm:text-lg lg:text-2xl font-black leading-none">10k+</span>
-                  <span className="text-[8px] sm:text-[9px] lg:text-xs font-bold leading-tight text-white/95">Sisters connected nationwide</span>
+                {/* Overlapping liquid glass badge pill with high-contrast gradient background */}
+                <div className="absolute -bottom-2 -left-2 lg:-bottom-4 lg:-left-4 text-white px-3 py-2 lg:px-4 lg:py-3 rounded-xl lg:rounded-2xl shadow-xl flex items-center gap-2 lg:gap-3 max-w-[180px] lg:max-w-[230px] border border-cyan-400/50 dark:border-cyan-300/30 bg-gradient-to-r from-[#0077b6] to-[#00b4d8] backdrop-blur-xl">
+                  <span className="text-base sm:text-lg lg:text-2xl font-black leading-none text-white drop-shadow-xs">10k+</span>
+                  <span className="text-[9px] sm:text-[10px] lg:text-xs font-extrabold leading-tight text-white drop-shadow-xs">Sisters connected nationwide</span>
                 </div>
               </div>
             </motion.div>
